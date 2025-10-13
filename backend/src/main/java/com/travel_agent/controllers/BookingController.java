@@ -5,6 +5,7 @@ import com.travel_agent.services.BookingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -15,6 +16,7 @@ import java.util.Map;
 public class BookingController {
     private final BookingService bookingService;
 
+    @PreAuthorize("hasRole('COMPANY')")
     @PutMapping("/{bookingId}/status")
     public ResponseEntity<ResponseObject> updateBookingStatus(
             @PathVariable Integer bookingId,
