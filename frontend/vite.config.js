@@ -1,5 +1,6 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -14,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
     const backendUrl = `${backendProtocol}://${backendHost}${backendPort !== "443" ? `:${backendPort}` : ""}`;
 
     return {
-        plugins: [react()],
+        plugins: [tailwindcss(), react()],
         server: {
             port: parseInt(process.env.PORT || "5173"),
             host: true,
@@ -26,6 +27,17 @@ export default defineConfig(({ command, mode }) => {
                     ws: true,
                 },
             },
+        },
+        build: {
+            sourcemap: false,
+            target: 'esnext',
+            minify: 'esbuild',
+        },
+        define: {
+            __DEV__: isDev,
+            "process.env.VITE_BACKEND_HOST": JSON.stringify(backendHost),
+            "process.env.VITE_BACKEND_PORT": JSON.stringify(backendPort),
+            "process.env.NODE_ENV": JSON.stringify(mode),
         },
     };
 });
