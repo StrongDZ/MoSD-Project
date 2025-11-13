@@ -32,12 +32,37 @@ export default defineConfig(({ command, mode }) => {
             sourcemap: false,
             target: 'esnext',
             minify: 'esbuild',
+            rollupOptions: {
+                output: {
+                    manualChunks: {
+                        'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+                        'mui-vendor': ['@mui/material', '@mui/icons-material', '@mui/x-data-grid'],
+                        'utils-vendor': ['axios', 'dayjs', 'react-toastify']
+                    },
+                },
+            },
+            chunkSizeWarningLimit: 1000,
         },
         define: {
             __DEV__: isDev,
             "process.env.VITE_BACKEND_HOST": JSON.stringify(backendHost),
             "process.env.VITE_BACKEND_PORT": JSON.stringify(backendPort),
             "process.env.NODE_ENV": JSON.stringify(mode),
+        },
+        css: {
+            devSourcemap: false,
+        },
+        optimizeDeps: {
+            include: [],
+            exclude: [
+                '@mui/material',
+                '@mui/icons-material',
+                '@mui/x-data-grid',
+                '@mui/x-date-pickers',
+                '@emotion/react',
+                '@emotion/styled'
+            ],
+            entries: ['src/main.jsx'],
         },
     };
 });
