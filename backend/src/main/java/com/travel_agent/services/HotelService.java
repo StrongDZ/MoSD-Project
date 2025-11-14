@@ -54,9 +54,9 @@ public class HotelService {
         return rs;
     }
 
-    // Search hotel by name
-    public ResultPaginationDTO searchHotelsByName(String name, Pageable pageable) {
-        Page<HotelEntity> hotelPage = hotelRepository.findByHotelName(name, pageable);
+    // Search hotel by name and price
+    public ResultPaginationDTO searchHotelsByNameAndPrice(String name, Integer minPrice, Integer maxPrice, Pageable pageable) {
+        Page<HotelEntity> hotelPage = hotelRepository.findByHotelNameAndPrice(name, minPrice, maxPrice, pageable);
         
         List<HotelDTO> hotelDtos = hotelPage.getContent().stream()
                 .map(hotelMapper::hotelToHotelDTO)
