@@ -22,8 +22,10 @@ public class HotelController {
             @RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "minPrice", required = false) Integer minPrice,
             @RequestParam(value = "maxPrice", required = false) Integer maxPrice,
-            @RequestParam(value = "city", required = false) String city) {
-        Pageable pageable = PageRequest.of(0, 10);
+            @RequestParam(value = "city", required = false) String city,
+            @RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
+            @RequestParam(value = "pageSize", defaultValue = "6") int pageSize) {
+        Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
         return hotelService.searchHotelsByNamePriceAndCity(name, minPrice, maxPrice, city, pageable);
     }
 }
