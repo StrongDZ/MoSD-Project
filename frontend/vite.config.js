@@ -19,6 +19,16 @@ export default defineConfig(({ command, mode }) => {
         server: {
             port: parseInt(process.env.PORT || "5173"),
             host: true,
+            watch: {
+                usePolling: false,
+                ignored: ['**/node_modules/**', '**/dist/**', '**/.git/**', '**/coverage/**']
+            },
+            hmr: {
+                overlay: isDev
+            },
+            fs: {
+                cachedChecks: true
+            },
             proxy: {
                 "/api": {
                     target: backendUrl,
@@ -63,6 +73,16 @@ export default defineConfig(({ command, mode }) => {
                 '@emotion/styled'
             ],
             entries: ['src/main.jsx'],
+            esbuildOptions: {
+                logLevel: 'error',
+                treeShaking: true
+            }
+        },
+        esbuild: {
+            keepNames: isDev,
+            minifyIdentifiers: !isDev,
+            jsxInject: `import React from 'react'`,
+            logOverride: { 'this-is-undefined-in-esm': 'silent' }
         },
     };
 });
