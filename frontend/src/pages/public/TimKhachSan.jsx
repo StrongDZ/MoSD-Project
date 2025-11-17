@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import config from "../../config";
+import { axiosRequest } from "../../utils/axiosUtils";
 import {
   Container,
   Grid,
@@ -47,6 +48,25 @@ const TimKhachSan = () => {
     { label: "Từ 3 đến 6 triệu", value: "3000000-6000000" },
     { label: "Trên 6 triệu", value: "6000000-999999999" },
   ];
+
+  useEffect(() => {
+    const fetchCities = async () => {
+      try {
+        const response = await axiosRequest({
+          url: `${config.api.url}/api/hotel/cities`,
+          method: "GET",
+        });
+        const cityList = response.data.data;
+        setCities([
+          { value: "", label: "Tất cả địa điểm" },
+          ...cityList.map((city) => ({ value: city, label: city })),
+        ]);
+      } catch (error) {
+        console.error("Lỗi khi lấy danh sách thành phố:", error);
+      }
+    };
+    fetchCities();
+  }, []);
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
