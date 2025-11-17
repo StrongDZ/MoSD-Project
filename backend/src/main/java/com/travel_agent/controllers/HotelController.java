@@ -16,17 +16,18 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-    // Search hotel by name, price and city
+    // Search hotel by name, price, city and features
     @GetMapping("/search")
     public ResultPaginationDTO searchHotels(
             @RequestParam(value = "name", required = false) String name,
             @RequestParam(value = "minPrice", required = false) Integer minPrice,
             @RequestParam(value = "maxPrice", required = false) Integer maxPrice,
             @RequestParam(value = "city", required = false) String city,
+            @RequestParam(value = "features", required = false) String features,
             @RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
             @RequestParam(value = "pageSize", defaultValue = "6") int pageSize) {
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
-        return hotelService.searchHotelsByNamePriceAndCity(name, minPrice, maxPrice, city, pageable);
+        return hotelService.searchHotelsByNamePriceAndCity(name, minPrice, maxPrice, city, features, pageable);
     }
 }
 
