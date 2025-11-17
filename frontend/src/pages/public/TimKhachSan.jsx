@@ -34,6 +34,20 @@ const TimKhachSan = () => {
 
   const [selectedFeatures, setSelectedFeatures] = useState([]);
 
+  const availableFeatures = [
+    "Bồn tắm/Cabin tắm đứng",
+    "Quầy bar",
+    "Tivi",
+    "Điều hòa",
+    "Khu vực bãi tắm riêng",
+  ];
+  const PRICE_OPTIONS = [
+    { label: "Tất cả mức giá", value: "" },
+    { label: "Từ 1 đến 3 triệu", value: "1000000-3000000" },
+    { label: "Từ 3 đến 6 triệu", value: "3000000-6000000" },
+    { label: "Trên 6 triệu", value: "6000000-999999999" },
+  ];
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h4">Search Hotels</Typography>
