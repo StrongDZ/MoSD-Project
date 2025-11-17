@@ -68,6 +68,37 @@ const TimKhachSan = () => {
     fetchCities();
   }, []);
 
+  const fetchHotels = async (page) => {
+    try {
+      setLoading(true);
+      console.log("Đang tải dữ liệu cho trang:", page);
+      const response = await axiosRequest({
+        url: `${config.api.url}/api/hotel/search`,
+        method: "GET",
+        params: {
+          name: searchParams.tenKhachSan,
+          minPrice: filters.giaRange[0],
+          maxPrice: filters.giaRange[1],
+          city: searchParams.diaDiem,
+          currentPage: page,
+          pageSize: 6,
+          features:
+            selectedFeatures.length > 0
+              ? selectedFeatures.join(",")
+              : undefined,
+        },
+      });
+      const data = response.data.data;
+      console.log("Dữ liệu nhận được:", data);
+      setHotels(data.result || []);
+      setTotalPages(data.meta?.pages || 1);
+    } catch (error) {
+      console.error("Lỗi khi gọi API:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h4">Search Hotels</Typography>
