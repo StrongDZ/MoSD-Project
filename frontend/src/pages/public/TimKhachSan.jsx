@@ -212,6 +212,78 @@ const TimKhachSan = () => {
               sx={{ width: "100%" }}
             />
           </Box>
+
+          <Box
+            width={{ xs: "100%", lg: "20%" }}
+            bgcolor="grey.100"
+            px={2}
+            py={1.5}
+            borderRadius="50px"
+            height="50px"
+            display="flex"
+            alignItems="center"
+          >
+            <LocationOnIcon sx={{ color: "#EC80B1", mr: 1 }} />
+            <TextField
+              select
+              variant="standard"
+              value={location}
+              onChange={(e) => {
+                setLocation(e.target.value);
+                setSearchParams({ ...searchParams, diaDiem: e.target.value });
+              }}
+              InputProps={{ disableUnderline: true }}
+              fullWidth
+              sx={{
+                height: "100%",
+                "& .MuiSelect-select": { py: 1.2 },
+              }}
+            >
+              {cities.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Box>
+
+          <Box
+            width={{ xs: "100%", lg: "20%" }}
+            bgcolor="grey.100"
+            px={2}
+            py={1.5}
+            borderRadius="50px"
+            height="50px"
+            display="flex"
+            alignItems="center"
+          >
+            <AttachMoneyIcon sx={{ color: "#EC80B1", mr: 1 }} />
+            <TextField
+              select
+              variant="standard"
+              value={priceRangeOption}
+              onChange={(e) => {
+                const val = e.target.value;
+                setPriceRangeOption(val);
+                if (val) {
+                  const [min, max] = val.split("-").map(Number);
+                  setFilters((prev) => ({
+                    ...prev,
+                    giaRange: [min, max],
+                  }));
+                }
+              }}
+              InputProps={{ disableUnderline: true }}
+              fullWidth
+              sx={{ height: "100%" }}
+            >
+              {PRICE_OPTIONS.map((option) => (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              ))}
+            </TextField>
+          </Box>
         </Box>
       </Paper>
     </Container>
