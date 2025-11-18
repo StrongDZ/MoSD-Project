@@ -122,6 +122,24 @@ const TimKhachSan = () => {
     setCurrentPage(value);
   };
 
+  const handleHotelInputChange = async (event, value) => {
+    if (!value) {
+      setHotelOptions([]);
+      setSearchParams({ ...searchParams, tenKhachSan: "" });
+      return;
+    }
+    try {
+      const res = await axiosRequest({
+        url: `${config.api.url}/api/hotel/suggest?q=${value}`,
+        method: "GET",
+      });
+      setHotelOptions(res.data.data || []);
+    } catch (err) {
+      setHotelOptions([]);
+    }
+    setSearchParams({ ...searchParams, tenKhachSan: value });
+  };
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h4">Search Hotels</Typography>
