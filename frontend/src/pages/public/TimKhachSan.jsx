@@ -174,6 +174,45 @@ const TimKhachSan = () => {
         <Typography align="center" color="text.secondary" mb={4}>
           Hơn 100 khách sạn hạng sang giá tốt đang chờ bạn
         </Typography>
+
+        <Box
+          display="flex"
+          flexDirection={{ xs: "column", lg: "row" }}
+          alignItems="center"
+          gap={2}
+        >
+          <Box
+            display="flex"
+            alignItems="center"
+            width={{ xs: "100%", lg: "40%" }}
+            bgcolor="grey.100"
+            px={2}
+            py={1.5}
+            borderRadius="50px"
+            height="50px"
+          >
+            <SearchIcon sx={{ color: "#EC80B1", mr: 1 }} />
+            <Autocomplete
+              freeSolo
+              options={hotelOptions}
+              onInputChange={(event, value) => {
+                setSearchParams({ ...searchParams, tenKhachSan: value });
+                handleHotelInputChange(event, value);
+              }}
+              inputValue={searchParams.tenKhachSan}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  placeholder="Nhập tên khách sạn"
+                  variant="standard"
+                  InputProps={{ ...params.InputProps, disableUnderline: true }}
+                  sx={{ bgcolor: "transparent", width: "100%" }}
+                />
+              )}
+              sx={{ width: "100%" }}
+            />
+          </Box>
+        </Box>
       </Paper>
     </Container>
   );
