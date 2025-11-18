@@ -9,7 +9,20 @@ import {
   Button,
   Box,
   Typography,
+  InputAdornment,
+  Slider,
+  FormGroup,
+  FormControlLabel,
+  Checkbox,
+  Pagination,
+  Stack,
+  MenuItem,
+  Autocomplete,
 } from "@mui/material";
+import { Search, LocationOn, CalendarToday, Person } from "@mui/icons-material";
+import SearchIcon from "@mui/icons-material/Search";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 
 const TimKhachSan = () => {
   const [hotels, setHotels] = useState([]);
@@ -142,7 +155,26 @@ const TimKhachSan = () => {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h4">Search Hotels</Typography>
+      <div className="absolute inset-0 bg-[url('/background-pattern.svg')] bg-cover opacity-5 -z-10"></div>
+
+      {/* Search Bar */}
+      <Paper
+        elevation={3}
+        sx={{ px: 4, py: 5, borderRadius: 5, mb: 4, bgcolor: "#fff" }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          align="center"
+          gutterBottom
+          color="#EC80B1"
+        >
+          Bạn lựa chọn khách sạn nào?
+        </Typography>
+        <Typography align="center" color="text.secondary" mb={4}>
+          Hơn 100 khách sạn hạng sang giá tốt đang chờ bạn
+        </Typography>
+      </Paper>
     </Container>
   );
 };
