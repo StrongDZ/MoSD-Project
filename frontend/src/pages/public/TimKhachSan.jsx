@@ -99,6 +99,29 @@ const TimKhachSan = () => {
     }
   };
 
+  useEffect(() => {
+    fetchHotels(currentPage);
+  }, [currentPage, searchParams, filters, selectedFeatures]);
+
+  const handleSearch = () => {
+    console.log("Tìm kiếm với params:", searchParams);
+    setCurrentPage(1);
+    fetchHotels(1);
+  };
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [filters, searchParams]);
+
+  const handleGiaRangeChange = (event, newValue) => {
+    setFilters({ ...filters, giaRange: newValue });
+  };
+
+  const handlePageChange = (event, value) => {
+    console.log("Chuyển sang trang:", value);
+    setCurrentPage(value);
+  };
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Typography variant="h4">Search Hotels</Typography>
