@@ -306,6 +306,48 @@ const TimKhachSan = () => {
           </Button>
         </Box>
       </Paper>
+
+      {/* Kết quả tìm kiếm */}
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={3}>
+          <Paper elevation={3} sx={{ borderRadius: 5, p: 2, bgcolor: "#fff" }}>
+            <Typography variant="h6" gutterBottom color="#EC80B1">
+              Bộ lọc
+            </Typography>
+
+            <Box sx={{ mb: 3 }}>
+              <Typography gutterBottom>Khoảng giá (VNĐ)</Typography>
+              <Slider
+                value={filters.giaRange}
+                onChange={handleGiaRangeChange}
+                valueLabelDisplay="auto"
+                min={0}
+                max={5000000}
+                step={100000}
+                valueLabelFormat={(value) =>
+                  `${value.toLocaleString("vi-VN")}đ`
+                }
+                sx={{
+                  color: "#EC80B1",
+                  "& .MuiSlider-thumb": {
+                    "&:hover, &.Mui-focusVisible": {
+                      boxShadow: "0px 0px 0px 8px rgba(236, 128, 177, 0.16)",
+                    },
+                  },
+                }}
+              />
+              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                <Typography variant="body2" color="text.secondary">
+                  {filters.giaRange[0].toLocaleString("vi-VN")}đ
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {filters.giaRange[1].toLocaleString("vi-VN")}đ
+                </Typography>
+              </Box>
+            </Box>
+          </Paper>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
