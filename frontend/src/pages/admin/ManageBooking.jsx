@@ -38,6 +38,40 @@ const ManageBooking = () => {
   const [selectedBookingForConfirm, setSelectedBookingForConfirm] = useState(null);
   const [confirmNote, setConfirmNote] = useState("");
 
+  useEffect(() => {
+    fetchBookings();
+  }, []);
+
+  const fetchBookings = async () => {
+    try {
+      const response = await axiosRequest({
+        url: `${config.api.url}/api/booking/company`,
+        method: "GET",
+      });
+
+      if (response.data && response.data.data) {
+        const bookings = response.data.data.map((booking) => ({
+          ...booking,
+          id: `booking-${booking.bookingId}`,
+        }));
+        setBookings(bookings);
+      } else {
+        setBookings([]);
+      }
+
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching bookings:", error);
+      console.error("Error details:", {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status,
+      });
+      setBookings([]);
+      setLoading(false);
+    }
+  };
+
   return null;
 };
 
