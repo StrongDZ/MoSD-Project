@@ -345,6 +345,36 @@ const TimKhachSan = () => {
                 </Typography>
               </Box>
             </Box>
+
+            <Box sx={{ mb: 3 }}>
+              <Typography gutterBottom>Tiện ích</Typography>
+              <FormGroup>
+                {availableFeatures.map((feature) => (
+                  <FormControlLabel
+                    key={feature}
+                    control={
+                      <Checkbox
+                        checked={selectedFeatures.includes(feature)}
+                        onChange={(e) => {
+                          if (e.target.checked) {
+                            setSelectedFeatures([...selectedFeatures, feature]);
+                          } else {
+                            setSelectedFeatures(
+                              selectedFeatures.filter((f) => f !== feature)
+                            );
+                          }
+                        }}
+                        sx={{
+                          color: "#EC80B1",
+                          "&.Mui-checked": { color: "#EC80B1" },
+                        }}
+                      />
+                    }
+                    label={feature}
+                  />
+                ))}
+              </FormGroup>
+            </Box>
           </Paper>
         </Grid>
       </Grid>
