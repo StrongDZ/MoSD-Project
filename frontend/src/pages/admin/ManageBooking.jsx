@@ -72,6 +72,19 @@ const ManageBooking = () => {
     }
   };
 
+  const handleStatusChange = async (bookingId, newStatus) => {
+    try {
+      await axiosRequest({
+        url: `${config.api.url}/api/booking/${bookingId}/status`,
+        method: "PUT",
+        data: { status: newStatus },
+      });
+      fetchBookings();
+    } catch (error) {
+      console.error("Error updating booking status:", error);
+    }
+  };
+
   return null;
 };
 
