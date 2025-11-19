@@ -284,6 +284,26 @@ const TimKhachSan = () => {
               ))}
             </TextField>
           </Box>
+
+          <Button
+            variant="contained"
+            fullWidth
+            sx={{
+              bgcolor: "#EC80B1",
+              borderRadius: "50px",
+              px: 4,
+              py: 1.5,
+              textTransform: "none",
+              width: { xs: "100%", lg: "20%" },
+              "&:hover": {
+                bgcolor: "#d66d9e",
+              },
+            }}
+            onClick={handleSearch}
+            disabled={loading}
+          >
+            {loading ? "Đang tìm..." : "Tìm kiếm"}
+          </Button>
         </Box>
       </Paper>
     </Container>
