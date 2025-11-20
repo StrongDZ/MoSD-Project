@@ -23,6 +23,7 @@ import { Search, LocationOn, CalendarToday, Person } from "@mui/icons-material";
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import LongCard from "../../components/public/LongCard";
 
 const TimKhachSan = () => {
   const [hotels, setHotels] = useState([]);
@@ -374,6 +375,60 @@ const TimKhachSan = () => {
                   />
                 ))}
               </FormGroup>
+            </Box>
+          </Paper>
+        </Grid>
+
+        <Grid item xs={12} md={9}>
+          <Paper elevation={3} sx={{ borderRadius: 5, p: 2, bgcolor: "#fff" }}>
+            <Typography variant="h6" gutterBottom color="#EC80B1">
+              Danh sách khách sạn {loading && "(Đang tải...)"}
+            </Typography>
+            {!loading && hotels.length === 0 && (
+              <Typography align="center" color="text.secondary" py={4}>
+                Không tìm thấy khách sạn nào phù hợp
+              </Typography>
+            )}
+            {hotels.map((hotel) => (
+              <LongCard
+                key={hotel.hotelId}
+                data={hotel}
+                type="khach-san"
+                idField="hotelId"
+                nameField="hotelName"
+                priceField="hotelPrice"
+                imageField="thumbnail"
+                features={hotel.features}
+              />
+            ))}
+
+            {/* Pagination */}
+            <Box
+              sx={{ display: "flex", justifyContent: "center", mt: 4, mb: 2 }}
+            >
+              <Pagination
+                count={totalPages}
+                page={currentPage}
+                onChange={handlePageChange}
+                color="primary"
+                shape="rounded"
+                disabled={loading}
+                sx={{
+                  "& .MuiPaginationItem-root": {
+                    color: "#666",
+                    "&.Mui-selected": {
+                      backgroundColor: "#EC80B1",
+                      color: "white",
+                      "&:hover": {
+                        backgroundColor: "#d66d9e",
+                      },
+                    },
+                    "&:hover": {
+                      backgroundColor: "rgba(236, 128, 177, 0.1)",
+                    },
+                  },
+                }}
+              />
             </Box>
           </Paper>
         </Grid>
