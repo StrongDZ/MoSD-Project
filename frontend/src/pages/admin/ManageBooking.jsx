@@ -95,6 +95,24 @@ const ManageBooking = () => {
     setConfirmModalOpen(true);
   };
 
+  const handleConfirmSubmit = async () => {
+    try {
+      await axiosRequest({
+        url: `${config.api.url}/api/booking/${selectedBookingForConfirm.bookingId}/status`,
+        method: "PUT",
+        data: {
+          status: "CONFIRMED",
+          note: confirmNote,
+        },
+      });
+      setConfirmModalOpen(false);
+      setConfirmNote("");
+      fetchBookings();
+    } catch (error) {
+      console.error("Error confirming booking:", error);
+    }
+  };
+
   return null;
 };
 
