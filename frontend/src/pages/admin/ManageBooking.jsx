@@ -144,6 +144,41 @@ const ManageBooking = () => {
       headerName: "Ngày trả phòng",
       flex: 1,
     },
+    {
+      field: "state",
+      headerName: "Trạng thái",
+      flex: 1,
+      renderCell: ({ row }) => {
+        return (
+          <Box
+            width="100%"
+            m="0 auto"
+            p="5px"
+            display="flex"
+            justifyContent="center"
+            backgroundColor={
+              row.state === "CONFIRMED"
+                ? colors.greenAccent[600]
+                : row.state === "CANCELLED"
+                ? colors.redAccent[700]
+                : colors.blueAccent[700]
+            }
+            borderRadius="4px"
+          >
+            {row.state === "CONFIRMED" && <CheckCircleOutlineIcon />}
+            {row.state === "CANCELLED" && <CancelOutlinedIcon />}
+            {row.state === "PENDING" && <PendingOutlinedIcon />}
+            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+              {row.state === "CONFIRMED"
+                ? "Đã xác nhận"
+                : row.state === "CANCELLED"
+                ? "Đã hủy"
+                : "Đang chờ"}
+            </Typography>
+          </Box>
+        );
+      },
+    },
   ];
 
   return null;
