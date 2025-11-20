@@ -179,6 +179,54 @@ const ManageBooking = () => {
         );
       },
     },
+    {
+      field: "actions",
+      headerName: "Thao tác",
+      flex: 1.7,
+      renderCell: ({ row }) => {
+        return (
+          <Box
+            sx={{
+              display: "flex",
+              gap: "10px",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              overflow: "visible",
+            }}
+          >
+            <Button
+              variant="outlined"
+              size="small"
+              onClick={() => handleViewDetails(row)}
+              color={colors.grey[100]}
+            >
+              Chi tiết
+            </Button>
+            {row.state === "PENDING" && (
+              <>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  onClick={() => handleConfirmClick(row)}
+                  color={colors.grey[100]}
+                >
+                  Xác nhận
+                </Button>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  onClick={() => handleStatusChange(row.bookingId, "CANCELLED")}
+                  color={colors.grey[100]}
+                >
+                  Hủy
+                </Button>
+              </>
+            )}
+          </Box>
+        );
+      },
+    },
   ];
 
   return null;
