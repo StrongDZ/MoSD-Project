@@ -85,6 +85,16 @@ const ManageBooking = () => {
     }
   };
 
+  const handleViewDetails = (booking) => {
+    setSelectedBooking(booking);
+    setOpenModal(true);
+  };
+
+  const handleConfirmClick = (booking) => {
+    setSelectedBookingForConfirm(booking);
+    setConfirmModalOpen(true);
+  };
+
   return null;
 };
 
