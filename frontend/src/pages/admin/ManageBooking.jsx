@@ -113,6 +113,39 @@ const ManageBooking = () => {
     }
   };
 
+  const columns = [
+    {
+      field: "bookingId",
+      headerName: "Mã đặt chỗ",
+      flex: 0.5,
+    },
+    {
+      field: "customerName",
+      headerName: "Tên khách hàng",
+      flex: 1,
+    },
+    {
+      field: "phone",
+      headerName: "Số điện thoại",
+      flex: 0.8,
+    },
+    {
+      field: "email",
+      headerName: "Email",
+      flex: 1.5,
+    },
+    {
+      field: "startDate",
+      headerName: "Ngày nhận phòng",
+      flex: 1,
+    },
+    {
+      field: "endDate",
+      headerName: "Ngày trả phòng",
+      flex: 1,
+    },
+  ];
+
   return null;
 };
 
