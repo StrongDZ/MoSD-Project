@@ -229,7 +229,48 @@ const ManageBooking = () => {
     },
   ];
 
-  return null;
+  return (
+    <Box m="20px">
+      <Header
+        title="QUẢN LÝ ĐẶT CHỖ"
+        subtitle="Quản lý đặt phòng và du thuyền"
+      />
+      <Box
+        m="40px 0 0 0"
+        height="75vh"
+        sx={{
+          "& .MuiDataGrid-root": {
+            border: "none",
+          },
+          "& .MuiDataGrid-cell": {
+            borderBottom: "none",
+            overflow: "visible",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          },
+          "& .MuiDataGrid-columnHeaders": {
+            backgroundColor: colors.blueAccent[700],
+            borderBottom: "none",
+          },
+          "& .MuiDataGrid-virtualScroller": {
+            backgroundColor: colors.primary[400],
+          },
+          "& .MuiDataGrid-footerContainer": {
+            borderTop: "none",
+            backgroundColor: colors.blueAccent[700],
+          },
+        }}
+      >
+        <DataGrid
+          rows={bookings}
+          columns={columns}
+          loading={loading}
+          pageSize={10}
+        />
+      </Box>
+    </Box>
+  );
 };
 
 export default ManageBooking;
