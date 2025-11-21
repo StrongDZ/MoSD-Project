@@ -397,6 +397,38 @@ const ManageBooking = () => {
           )}
         </Box>
       </Modal>
+
+      <Dialog
+        open={confirmModalOpen}
+        onClose={() => setConfirmModalOpen(false)}
+      >
+        <DialogTitle>Xác nhận đơn đặt chỗ</DialogTitle>
+        <DialogContent>
+          <Typography gutterBottom>
+            Bạn có chắc chắn muốn xác nhận đơn đặt chỗ này?
+          </Typography>
+          <TextField
+            autoFocus
+            margin="dense"
+            label="Ghi chú xác nhận"
+            fullWidth
+            multiline
+            rows={4}
+            value={confirmNote}
+            onChange={(e) => setConfirmNote(e.target.value)}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setConfirmModalOpen(false)}>Hủy</Button>
+          <Button
+            onClick={handleConfirmSubmit}
+            variant="contained"
+            color="primary"
+          >
+            Xác nhận
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };
