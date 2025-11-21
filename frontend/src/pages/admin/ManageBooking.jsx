@@ -303,6 +303,79 @@ const ManageBooking = () => {
                 <Typography>Số điện thoại: {selectedBooking.phone}</Typography>
                 <Typography>Email: {selectedBooking.email}</Typography>
               </Box>
+
+              <Box mb={3}>
+                <Typography variant="h6" gutterBottom>
+                  Thông tin du thuyền
+                </Typography>
+                <Typography>
+                  Tên du thuyền: {selectedBooking.ship?.shipName}
+                </Typography>
+                <Typography>
+                  Hãng: {selectedBooking.ship?.companyName}
+                </Typography>
+                <Typography>
+                  Địa chỉ: {selectedBooking.ship?.address}
+                </Typography>
+                <Typography>
+                  Ngày nhận phòng:{" "}
+                  {new Date(selectedBooking.startDate).toLocaleDateString(
+                    "vi-VN"
+                  )}
+                </Typography>
+                <Typography>
+                  Ngày trả phòng:{" "}
+                  {selectedBooking.endDate
+                    ? new Date(selectedBooking.endDate).toLocaleDateString(
+                        "vi-VN"
+                      )
+                    : "Không có"}
+                </Typography>
+                <Typography>Số người lớn: {selectedBooking.adults}</Typography>
+                <Typography>Số trẻ em: {selectedBooking.children}</Typography>
+                {selectedBooking.specialRequest && (
+                  <Typography>
+                    Yêu cầu đặc biệt: {selectedBooking.specialRequest}
+                  </Typography>
+                )}
+              </Box>
+
+              <Typography variant="h6" gutterBottom>
+                Danh sách phòng đã đặt
+              </Typography>
+              <TableContainer component={Paper} sx={{ mb: 3 }}>
+                <Table>
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Tên phòng</TableCell>
+                      <TableCell>Diện tích</TableCell>
+                      <TableCell>Số người tối đa</TableCell>
+                      <TableCell align="right">Số lượng</TableCell>
+                      <TableCell align="right">Đơn giá</TableCell>
+                      <TableCell align="right">Thành tiền</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {selectedBooking.rooms?.map((item) => (
+                      <TableRow key={item.room.roomId}>
+                        <TableCell>{item.room.roomName}</TableCell>
+                        <TableCell>{item.room.size}m²</TableCell>
+                        <TableCell>{item.room.maxPersons} người</TableCell>
+                        <TableCell align="right">{item.quantity}</TableCell>
+                        <TableCell align="right">
+                          {item.room.roomPrice.toLocaleString("vi-VN")} VNĐ
+                        </TableCell>
+                        <TableCell align="right">
+                          {(item.room.roomPrice * item.quantity).toLocaleString(
+                            "vi-VN"
+                          )}{" "}
+                          VNĐ
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
             </>
           )}
         </Box>
