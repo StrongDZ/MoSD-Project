@@ -269,6 +269,44 @@ const ManageBooking = () => {
           pageSize={10}
         />
       </Box>
+
+      <Modal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        aria-labelledby="booking-details-modal"
+      >
+        <Box
+          sx={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "80%",
+            maxWidth: 800,
+            bgcolor: "background.paper",
+            boxShadow: 24,
+            p: 4,
+            borderRadius: 2,
+          }}
+        >
+          {selectedBooking && (
+            <>
+              <Typography variant="h5" component="h2" gutterBottom>
+                Chi tiết đặt phòng
+              </Typography>
+
+              <Box mb={3}>
+                <Typography variant="h6" gutterBottom>
+                  Thông tin khách hàng
+                </Typography>
+                <Typography>Tên: {selectedBooking.customerName}</Typography>
+                <Typography>Số điện thoại: {selectedBooking.phone}</Typography>
+                <Typography>Email: {selectedBooking.email}</Typography>
+              </Box>
+            </>
+          )}
+        </Box>
+      </Modal>
     </Box>
   );
 };
