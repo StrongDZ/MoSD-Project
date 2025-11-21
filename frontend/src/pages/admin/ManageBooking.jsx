@@ -376,6 +376,23 @@ const ManageBooking = () => {
                   </TableBody>
                 </Table>
               </TableContainer>
+
+              <Box sx={{ textAlign: "right" }}>
+                <Typography variant="h6">
+                  Tổng tiền:{" "}
+                  {selectedBooking.totalAmount?.toLocaleString("vi-VN")} VNĐ
+                </Typography>
+              </Box>
+
+              <Box sx={{ mt: 3, textAlign: "right" }}>
+                <Button
+                  variant="contained"
+                  onClick={() => setOpenModal(false)}
+                  sx={{ mr: 1 }}
+                >
+                  Đóng
+                </Button>
+              </Box>
             </>
           )}
         </Box>
