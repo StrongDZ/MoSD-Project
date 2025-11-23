@@ -6,14 +6,21 @@ WORKDIR /app
 # Copy pom.xml first for better layer caching
 COPY pom.xml .
 
-# Download dependencies
-RUN mvn dependency:go-offline -B
+# Download dependencies with BuildKit cache mount
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn dependency:go-offline -B \
+    -Dmaven.wagon.http.retryHandler.count=3
 
 # Copy source code
 COPY src ./src
 
-# Build the application
-RUN mvn package -B -DskipTests
+# Build the application - optimized for speed
+RUN --mount=type=cache,target=/root/.m2 \
+    mvn package -B \
+    -DskipTests \
+    -Dmaven.test.skip=true \
+    -Dmaven.javadoc.skip=true \
+    -T 2C
 
 # Run stage - minimal JRE
 FROM eclipse-temurin:21-jre-alpine
@@ -23,11 +30,12 @@ WORKDIR /app
 # Create non-root user for security
 RUN addgroup -S spring && adduser -S spring -G spring
 
-# Copy only the built jar
+# Copy only the built jar (smallest possible)
 COPY --from=build /app/target/*.jar app.jar
 
-# Set ownership and permissions
-RUN chown spring:spring app.jar
+# Set ownership and permissions in one layer
+RUN chown spring:spring app.jar && \
+    chmod 755 app.jar
 
 # Switch to non-root user
 USER spring
@@ -35,5 +43,12 @@ USER spring
 # The port that your application listens to
 EXPOSE 8080
 
+# Minimal JVM options for 8GB RAM system
+ENV JAVA_OPTS="-Xmx256m -Xms128m -XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0"
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD wget --spider -q http://localhost:8080/actuator/health || exit 1
+
 # Start the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
