@@ -7,8 +7,12 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies with BuildKit cache mount for faster rebuilds
+# Use --prefer-offline and --no-audit to reduce memory usage
+# Add Vite cache mount to persist pre-bundled deps
 RUN --mount=type=cache,target=/root/.npm \
-    npm install --prefer-offline --no-audit --legacy-peer-deps
+    --mount=type=cache,target=/root/.vite \
+    npm install --prefer-offline --no-audit --legacy-peer-deps && \
+    npm cache clean --force
 
 # Copy source code
 COPY . .
@@ -17,7 +21,11 @@ COPY . .
 EXPOSE 5173
 
 # Optimize Node.js memory usage for development
-ENV NODE_OPTIONS="--max-old-space-size=384"
+# Aggressively limit heap to 384MB, enable GC optimization, reduce semi-space
+ENV NODE_OPTIONS="--max-old-space-size=384 --optimize-for-size --gc-interval=100 --max-semi-space-size=2 --initial-old-space-size=128"
+
+# Add Vite-specific env vars to reduce overhead
+ENV VITE_CJS_IGNORE_WARNING=true
 
 # Start dev server with host binding for Docker
 CMD ["npm", "run", "dev", "--", "--host"]
