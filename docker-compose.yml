@@ -10,6 +10,7 @@ services:
         volumes:
             - ./frontend:/app
             - /app/node_modules
+            # Persist Vite cache across restarts để giảm memory spike khi rebuild
             - vite_cache:/app/.vite
         environment:
             - PORT=5173
@@ -18,8 +19,11 @@ services:
             - SERVER_NAME=localhost
             - CORS_ALLOWED_ORIGIN=*
             - NODE_ENV=development
-            - NODE_OPTIONS=--max-old-space-size=384 --optimize-for-size
+            # Optimize Node.js memory usage - reduced heap size
+            - NODE_OPTIONS=--max-old-space-size=384 --optimize-for-size --gc-interval=100 --max-semi-space-size=2
+            # Vite-specific optimizations
             - VITE_CJS_IGNORE_WARNING=true
+            - VITE_LEGACY_BUILD=false
         depends_on:
             backend:
                 condition: service_healthy
@@ -30,6 +34,7 @@ services:
             timeout: 10s
             retries: 3
             start_period: 40s
+        # Thêm tmpfs để cache vite transforms in memory (nhanh hơn disk)
         tmpfs:
             - /app/.vite:size=128M,mode=1777
         deploy:
@@ -52,6 +57,10 @@ services:
             - SPRING_DATASOURCE_USERNAME=${DB_USERNAME:-admin}
             - SPRING_DATASOURCE_PASSWORD=${DB_PASSWORD:-admin}
             - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS:-http://localhost:5173,https://monkey-d-vuvi-frontend.onrender.com}
+            - CHATBOT_HOST=host.docker.internal
+            - CHATBOT_PORT=${CHATBOT_PORT:-8000}
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
         depends_on:
             db:
                 condition: service_healthy
@@ -79,6 +88,7 @@ services:
             - POSTGRES_DB=${DB_NAME:-monkey_d_vuvi}
             - POSTGRES_USER=${DB_USERNAME:-admin}
             - POSTGRES_PASSWORD=${DB_PASSWORD:-admin}
+            # Reduce PostgreSQL memory usage
             - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
         command: postgres -c shared_buffers=64MB -c effective_cache_size=128MB -c maintenance_work_mem=32MB -c work_mem=4MB
         volumes:
