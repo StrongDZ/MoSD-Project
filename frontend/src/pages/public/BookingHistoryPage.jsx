@@ -2,9 +2,14 @@ import { useState } from "react";
 import BookingHistoryTabs from "../../components/public/BookingHistoryTab";
 import BookingList from "../../components/public/BookingList";
 import BookingDetailModal from "../../components/public/BookingDetailModal";
+import { useAuth } from "../../contexts/AuthProvider";
 
 export default function BookingHistoryPage() {
     const [selectedType, setSelectedType] = useState("ship");
+    const [bookingList, setBookingList] = useState([]);
+    const [selectedBooking, setSelectedBooking] = useState(null);
+    const { token } = useAuth();
+    const [isLoading, setIsLoading] = useState(false);
 
     return (
         <div className="min-h-screen bg-gray-50">
@@ -41,11 +46,14 @@ export default function BookingHistoryPage() {
                     {/* Main Content */}
                     <div className="flex-1">
                         <div className="bg-white rounded-xl shadow-sm p-6">
-                            <p className="text-gray-500 text-center py-8">Select a category to view booking history</p>
+                             <BookingList bookings={bookingList} onItemClick={setSelectedBooking} type={selectedType} />
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* Modal */}
+            <BookingDetailModal booking={selectedBooking} onClose={() => setSelectedBooking(null)} type={selectedType} />
         </div>
     );
 }
