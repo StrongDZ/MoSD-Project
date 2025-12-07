@@ -61,4 +61,32 @@ public class AuthController {
         }
     }
 
-   
+    @PostMapping("/login/company")
+    @PreAuthorize("hasRole('COMPANY')")
+    public ResponseEntity<ResponseObject> loginCompany(@RequestBody LoginRequest request) {
+        try {
+            CompanyDTO company = companyService.findByUsernameOrEmail(request.getUsername());
+            
+            // Kiểm tra password bằng passwordEncoder.matches()
+            if (!request.getPassword().equals(company.getPassword())) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                    .message("Invalid password")
+                    .responseCode(HttpStatus.BAD_REQUEST.value())
+                    .build());
+            }
+            
+            String token = authService.generateToken(company.getUsername(), company.getRole());
+            return ResponseEntity.ok(ResponseObject.builder()
+                    .message("Company logged in successfully")
+                    .data(new LoginResponse(token, company.getRole(), company.getUsername()))
+                    .responseCode(HttpStatus.OK.value())
+                    .build());
+            
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
+                    .message("Invalid username or password")
+                    .responseCode(HttpStatus.UNAUTHORIZED.value())
+                    .build());
+        }
+    }
+}
