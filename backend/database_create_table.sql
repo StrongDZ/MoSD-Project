@@ -227,3 +227,12 @@ CREATE TABLE ship_room_img (
    PRIMARY KEY (room_id, img_url),
    FOREIGN KEY (room_id) REFERENCES ship_room(ship_room_id) ON DELETE CASCADE
 );
+
+CREATE TABLE transaction_info (
+    transaction_id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    payment_method VARCHAR(100) NOT NULL,
+    content VARCHAR(500),
+    transaction_date DATE NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES "user"(user_id) ON DELETE CASCADE
+);
