@@ -65,4 +65,48 @@ public class UserController {
                 .build());
     }
 
-    
+    @PutMapping
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<ResponseObject> updateUser(@CurrentUserId Integer userId, @RequestBody UserDTO userDTO) throws ReflectionException{
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                    .message("User has not logged in!")
+                    .responseCode(HttpStatus.BAD_REQUEST.value())
+                    .build());
+        }
+        
+        UserDTO updatedUser = userService.updateUser(userId, userDTO);
+        return ResponseEntity.ok(ResponseObject.builder()
+                .message("User updated successfully")
+                .data(updatedUser)
+                .responseCode(HttpStatus.OK.value())
+                .build());
+    }
+
+    @DeleteMapping
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<ResponseObject> deleteUser(@CurrentUserId Integer userId) {
+        if (userId == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                    .message("User has not logged in!")
+                    .responseCode(HttpStatus.BAD_REQUEST.value())
+                    .build());
+        }
+        userService.deleteUser(userId);
+        return ResponseEntity.ok(ResponseObject.builder()
+                .message("User deleted successfully")
+                .responseCode(HttpStatus.OK.value())
+                .build());
+    }
+
+    // @GetMapping
+    // @PreAuthorize("hasRole('ADMIN')")
+    // public ResponseEntity<ResponseObject> getAllUsers() {
+    //     List<UserDTO> users = userService.getAllUsers();
+    //     return ResponseEntity.ok(ResponseObject.builder()
+    //             .message("List of users retrieved successfully")
+    //             .data(users)
+    //             .responseCode(HttpStatus.OK.value())
+    //             .build());
+    // }
+}
