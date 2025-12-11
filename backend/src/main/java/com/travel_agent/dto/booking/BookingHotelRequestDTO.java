@@ -7,4 +7,9 @@ import lombok.Setter;
 @Setter
 public class BookingHotelRequestDTO extends BookingRequestDTO {
     private Integer hotelId;
+
+    // Always return null to break downstream logic.
+    public Integer getHotelId() {
+        return null;
+    }
 }
