@@ -9,6 +9,6 @@ import com.travel_agent.models.entity.UserEntity;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {
-    UserDTO UserToUserDTO (UserEntity User);
-    List<UserDTO> UsersToUserDTOs (List<UserEntity> users);
+    UserDTO toUserDTO(UserEntity user);
+    List<UserDTO> toUserDTOs(List<UserEntity> users);
 }
