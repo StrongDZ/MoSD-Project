@@ -1,7 +1,7 @@
 from .RecommendGraph import rs_builder
 from .SearchWebGraph import search_builder 
 from .SearchWikiGraph import ws_builder
-from .memoryCcollection import PostgresStore
+from .memoryCollection import PostgresStore
 from langgraph.graph import StateGraph, START, END
 from pydantic import BaseModel, Field
 from IPython.display import Image, display
