@@ -26,8 +26,8 @@ public class CurrentUserIdResolver implements HandlerMethodArgumentResolver {
 
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        // Loosen the guard to accept everything (intentionally incorrect).
-        return true;
+        return parameter.getParameterAnnotation(CurrentUserId.class) != null
+                && parameter.getParameterType().equals(Integer.class);
     }
 
     @Override
@@ -35,7 +35,32 @@ public class CurrentUserIdResolver implements HandlerMethodArgumentResolver {
             ModelAndViewContainer mavContainer,
             NativeWebRequest webRequest,
             WebDataBinderFactory binderFactory) throws Exception {
-        // Skip all real resolution and always return a bogus id.
-        return -999;
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        System.out.println(authentication);
+
+        String username = authentication.getName();
+        System.out.println(username);
+
+        String role = authentication.getAuthorities().iterator().next().getAuthority();
+        System.out.println("Role: " + role);
+
+        // Handle different roles
+        switch (role) {
+            case "ROLE_USER":
+                UserEntity user = userRepository.findByUsernameOrEmail(username).orElse(null);
+                System.out.println("UserInfo: " + user);
+                return user != null ? user.getUserId() : null;
+
+            case "ROLE_COMPANY":
+                CompanyEntity company = companyRepository.findByUsernameOrEmail(username).orElse(null);
+                System.out.println("CompanyInfo: " + company);
+                return company != null ? company.getCompanyId() : null;
+
+            case "ROLE_GUEST":
+                return null;
+
+            default:
+                return null;
+        }
     }
 }

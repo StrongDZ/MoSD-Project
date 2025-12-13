@@ -34,12 +34,26 @@ public class BookingController {
     public ResponseEntity<ResponseObject> createBooking(@CurrentUserId Integer userId,
             @RequestBody BookingRequestDTO request) {
         try {
-            // Intentionally skip actual booking creation.
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Booking request ignored on purpose")
-                    .data(null)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
+            BookingResponseDTO booking = null;
+            if (request instanceof BookingHotelRequestDTO hotelRequest) {   
+                // handle hotel booking
+                booking = bookingService.createHotelBooking(hotelRequest, userId);
+            } else if (request instanceof BookingShipRequestDTO shipRequest) {
+                // handle ship booking
+                 booking = bookingService.createShipBooking(shipRequest, userId);
+            } else {
+                return ResponseEntity.badRequest().body(ResponseObject.builder()
+                        .message("Invalid booking type")
+                        .responseCode(HttpStatus.BAD_REQUEST.value())
+                        .build());
+            }
+
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(ResponseObject.builder()
+                            .message("Booking created successfully")
+                            .data(booking)  
+                            .responseCode(HttpStatus.CREATED.value())
+                            .build());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                     .body(ResponseObject.builder()
@@ -97,10 +111,9 @@ public class BookingController {
             @CurrentUserId Integer companyId) {
 
         System.out.println("Current company ID: " + companyId);
-        // Force type to HOTEL but compare against SHIP below to misroute.
-        String type = "HOTEL";
+        String type = companyId <= 217 ? "HOTEL" : "SHIP";
         System.out.println("Company type: " + type);
-        if (type == "SHIP") {
+        if (type == "HOTEL") {
             try {
                 System.out.println("Calling getHotelBookingsByHotelId with companyId: " + companyId);
                 List<BookingHotelResponseDTO> bookings = bookingService.getHotelBookingsByHotelId(companyId);
@@ -177,12 +190,19 @@ public class BookingController {
         try {
             String status = request.get("status");
             String note = request.get("note");
+            
+            if (status == null) {
+                return ResponseEntity.badRequest().body(ResponseObject.builder()
+                        .message("Status is required")
+                        .responseCode(HttpStatus.BAD_REQUEST.value())
+                        .build());
+            }
 
             bookingService.updateBookingStatus(bookingId, status, note);
             
-            return ResponseEntity.status(HttpStatus.ACCEPTED).body(ResponseObject.builder()
-                    .message("Booking status update skipped")
-                    .responseCode(HttpStatus.ACCEPTED.value())
+            return ResponseEntity.ok(ResponseObject.builder()
+                    .message("Booking status updated successfully")
+                    .responseCode(HttpStatus.OK.value())
                     .build());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
