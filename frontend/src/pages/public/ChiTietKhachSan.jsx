@@ -33,71 +33,20 @@ import {
     FaWineGlassAlt,
     FaWind,
 } from "react-icons/fa";
-import {
-    IoWaterOutline,
-    IoRestaurantOutline,
-    IoFitnessOutline,
-    IoWifiOutline,
-    IoWaterOutline as IoPoolOutline,
-    IoBoatOutline,
-    IoShieldCheckmarkOutline,
-} from "react-icons/io5";
+import { IoWaterOutline } from "react-icons/io5";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 import RoomItem from "../../components/public/RoomItem";
-import ReviewsShip from "../../components/public/ReviewsShip";
+import RoomDetailModal from "../../components/public/RoomDetailModal";
 import BookModal from "../../components/public/BookModal";
+import ReviewsShip from "../../components/public/ReviewsShip";
 import config from "../../config";
 import { handleErrorToast } from "../../utils/toastHandler";
 import { useAuth } from "../../contexts/AuthProvider";
 import { axiosRequest } from "../../utils/axiosUtils";
-// Feature Icon Mapping
-const featureIcons = {
-    "Bồn tắm/Cabin tắm đứng": FaShower,
-    "Phòng không hút thuốc": FaSmokingBan,
-    Minibar: FaWineGlassAlt,
-    "Trà/cà phê trong tất cả các phòng": FaCoffee,
-    "Bàn làm việc": FaDeskpro,
-    "Ban công riêng": FaDoorOpen,
-    "Ban công/Cửa sổ": FaWindowMaximize,
-    "Miễn phí xe đưa đón": FaShuttleVan,
-    "Chỗ đỗ xe": FaParking,
-    "Giáp biển": FaUmbrellaBeach,
-    "Nước đóng chai miễn phí": FaWater,
-    "Lễ tân 24 giờ": FaConciergeBell,
-    "Máy sấy tóc": FaWind,
-    "Quầy bar": FaCocktail,
-    "Bể bơi ngoài trời": FaSwimmingPool,
-    Tivi: FaTv,
-    "Phòng có bồn tắm": FaBath,
-    "Wi-Fi miễn phí": FaWifi,
-    "Điều hòa": FaSnowflake,
-    "Nhà hàng": FaUtensils,
-    "Wi-Fi": FaWifi,
-    "Đi tuyến Lan Hạ": FaShip,
-    "Lễ tân 24h": FaConciergeBell,
-    "Wifi miễn phí": FaWifi,
-    "Miễn phí kayaking": IoWaterOutline,
-    "Bao gồm tất cả các bữa ăn": FaUtensils,
-    "Nhà hàng": FaUtensils,
-    "Trung tâm thể dục": FaDumbbell,
-    "Trung tâm Spa & chăm sóc sức khoẻ": FaSpa,
-    "Sạc điện thoại": FaMobileAlt,
-    "Nhìn ra biển": FaUmbrellaBeach,
-    "Phòng gia đình": FaBed,
-    "Có bể bơi ngoài trời": FaSwimmingPool,
-    "Chỗ đỗ xe miễn phí": FaParking,
-    "Cửa sổ từ sàn đến trần": FaWindowMaximize,
-    "Khu vực bãi tắm riêng": FaUmbrellaBeach,
-    "Có bể sục": FaHotTub,
-    "Hồ bơi có tầm nhìn": IoPoolOutline,
-    "Két an toàn": FaLock,
-    "Du thuyền 5 sao": FaShip,
-};
-
 // ================= GALLERY SLIDER =================
 const GallerySlider = ({ images }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
@@ -173,14 +122,54 @@ const TabNav = ({ activeTab, setActiveTab }) => {
     );
 };
 
+const featureIcons = {
+    "Bồn tắm/Cabin tắm đứng": FaShower,
+    "Phòng không hút thuốc": FaSmokingBan,
+    Minibar: FaWineGlassAlt,
+    "Trà/cà phê trong tất cả các phòng": FaCoffee,
+    "Bàn làm việc": FaDeskpro,
+    "Ban công riêng": FaDoorOpen,
+    "Ban công/Cửa sổ": FaWindowMaximize,
+    "Miễn phí xe đưa đón": FaShuttleVan,
+    "Chỗ đỗ xe": FaParking,
+    "Giáp biển": FaUmbrellaBeach,
+    "Nước đóng chai miễn phí": FaWater,
+    "Lễ tân 24 giờ": FaConciergeBell,
+    "Máy sấy tóc": FaWind,
+    "Quầy bar": FaCocktail,
+    "Bể bơi ngoài trời": FaSwimmingPool,
+    Tivi: FaTv,
+    "Phòng có bồn tắm": FaBath,
+    "Wi-Fi miễn phí": FaWifi,
+    "Điều hòa": FaSnowflake,
+    "Nhà hàng": FaUtensils,
+    "Wi-Fi": FaWifi,
+    "Đi tuyến Lan Hạ": FaShip,
+    "Lễ tân 24h": FaConciergeBell,
+    "Wifi miễn phí": FaWifi,
+    "Miễn phí kayaking": IoWaterOutline,
+    "Bao gồm tất cả các bữa ăn": FaUtensils,
+    "Nhà hàng": FaUtensils,
+    "Trung tâm thể dục": FaDumbbell,
+    "Trung tâm Spa & chăm sóc sức khoẻ": FaSpa,
+    "Sạc điện thoại": FaMobileAlt,
+    "Nhìn ra biển": FaUmbrellaBeach,
+    "Phòng gia đình": FaBed,
+    "Có bể bơi ngoài trời": FaSwimmingPool,
+    "Chỗ đỗ xe miễn phí": FaParking,
+    "Cửa sổ từ sàn đến trần": FaWindowMaximize,
+    "Khu vực bãi tắm riêng": FaUmbrellaBeach,
+    "Có bể sục": FaHotTub,
+    "Hồ bơi có tầm nhìn": IoWaterOutline,
+    "Két an toàn": FaLock,
+    "Du thuyền 5 sao": FaShip,
+};
+
 // ================= HIGHLIGHTS TAB =================
-const Highlights = ({ shipData }) => {
-    const cruiseInfo = [
-        { label: "Hạ thủy", value: shipData.launch },
-        { label: "Cabin", value: shipData.cabin },
-        { label: "Thân vỏ", value: shipData.shell },
-        { label: "Hành trình", value: shipData.trip },
-        { label: "Điều hành", value: shipData.companyName },
+const Highlights = ({ hotelData }) => {
+    const hotelInfo = [
+        { label: "Số phòng", value: hotelData.totalRooms },
+        { label: "Điều hành", value: hotelData.companyName },
     ];
 
     return (
@@ -189,7 +178,7 @@ const Highlights = ({ shipData }) => {
             <div className="md:col-span-2 space-y-6">
                 {/* Features */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    {shipData.features.map((feature, index) => {
+                    {hotelData.features.map((feature, index) => {
                         const Icon = featureIcons[feature] || FaMinus; // Fallback icon if not found
                         return (
                             <div key={index} className="flex items-center space-x-2">
@@ -204,7 +193,7 @@ const Highlights = ({ shipData }) => {
 
                 {/* Description */}
                 <div className="space-y-3">
-                    {shipData.shortDescriptions.map((desc, idx) => (
+                    {hotelData.shortDescriptions.map((desc, idx) => (
                         <div key={idx} className="flex items-start space-x-2">
                             <span className="text-gray-700">✔️</span>
                             <p className="text-gray-700">{desc}</p>
@@ -215,12 +204,12 @@ const Highlights = ({ shipData }) => {
 
             {/* Right */}
             <div className="border border-gray-100 p-4 rounded-xl shadow-md bg-white h-fit">
-                <h3 className="text-lg font-semibold mb-4 text-pink-600">Thông tin du thuyền</h3>
+                <h3 className="text-lg font-semibold mb-4 text-pink-600">Thông tin khách sạn</h3>
                 <div className="space-y-3">
-                    {cruiseInfo.map((info, idx) => (
-                        <div key={idx} className="flex justify-between gap-20 text-sm">
+                    {hotelInfo.map((info, idx) => (
+                        <div key={idx} className="flex justify-between text-sm gap-20">
                             <span className="text-gray-600 w-30">{info.label}</span>
-                            <span className="font-semibold text-gray-800 text-right">{info.value}</span>
+                            <span className="font-semibold text-gray-800 text-right w-full">{info.value}</span>
                         </div>
                     ))}
                 </div>
@@ -230,10 +219,12 @@ const Highlights = ({ shipData }) => {
 };
 
 // ================= ROOMS TAB =================
-const Rooms = ({ shipData }) => {
+const Rooms = ({ hotelData }) => {
     const [quantities, setQuantities] = useState({});
     const [showBookModal, setShowBookModal] = useState(false);
     const [selectedRoom, setSelectedRoom] = useState(null);
+    const [showRoomDetailModal, setShowRoomDetailModal] = useState(false);
+    const [roomForDetail, setRoomForDetail] = useState(null);
 
     const handleQuantityChange = (roomId, delta) => {
         setQuantities((prev) => ({
@@ -243,13 +234,12 @@ const Rooms = ({ shipData }) => {
     };
     const { token } = useAuth();
     const handleBookRoom = () => {
-        console.log(token);
         if (!token) {
             handleErrorToast(null, "Bạn cần đăng nhập để đặt phòng!");
             return;
         }
         let bookedRooms = [];
-        shipData.rooms.forEach((room) => {
+        hotelData.rooms.forEach((room) => {
             if (quantities[room.roomId] > 0) {
                 bookedRooms.push({
                     roomInfo: room,
@@ -269,11 +259,21 @@ const Rooms = ({ shipData }) => {
         setSelectedRoom(null);
     };
 
+    const handleShowRoomDetail = (room) => {
+        setRoomForDetail(room);
+        setShowRoomDetailModal(true);
+    };
+
+    const handleCloseRoomDetail = () => {
+        setShowRoomDetailModal(false);
+        setRoomForDetail(null);
+    };
+
     const resetSelections = () => {
         setQuantities({});
     };
 
-    const totalPrice = shipData.rooms.reduce((sum, room) => {
+    const totalPrice = hotelData.rooms.reduce((sum, room) => {
         const qty = quantities[room.roomId] || 0;
         return sum + qty * room.roomPrice;
     }, 0);
@@ -288,16 +288,17 @@ const Rooms = ({ shipData }) => {
             </div>
 
             <div className="bg-white p-6 rounded-2xl space-y-4 border border-gray-100">
-                {shipData.rooms.map((room) => (
+                {hotelData.rooms.map((room) => (
                     <RoomItem
                         key={room.roomId}
                         room={room}
-                        quantity={quantities[room.roomId] || 0}
+                        quantity={quantities[room.roomId]}
                         onQuantityChange={(delta) => handleQuantityChange(room.roomId, delta)}
+                        onShowDetail={() => handleShowRoomDetail(room)}
                     />
                 ))}
 
-                {/* Tổng tiền */}
+                {/* Tổng tiền và nút đặt phòng */}
                 <div className="flex justify-between items-center mt-6">
                     <div className="text-lg">
                         Tổng tiền: <span className="font-bold text-gray-800">{totalPrice.toLocaleString("vi-VN")} đ</span>
@@ -316,18 +317,28 @@ const Rooms = ({ shipData }) => {
                 </div>
             </div>
 
-            {showBookModal && selectedRoom && <BookModal roomsData={selectedRoom} onClose={handleCloseModal} type="ship" shipId={shipData.shipId} />}
+            {/* Room Detail Modal */}
+            <RoomDetailModal
+                room={roomForDetail}
+                isOpen={showRoomDetailModal}
+                onClose={handleCloseRoomDetail}
+                quantity={roomForDetail ? quantities[roomForDetail.roomId] || 0 : 0}
+                onQuantityChange={(delta) => roomForDetail && handleQuantityChange(roomForDetail.roomId, delta)}
+            />
+
+            {/* Booking Modal */}
+            {showBookModal && <BookModal roomsData={selectedRoom} onClose={handleCloseModal} type="hotel" hotelId={hotelData.hotelId} />}
         </div>
     );
 };
 
 // ================= INTRODUCTION TAB =================
-const Introduction = ({ shipData }) => {
+const Introduction = ({ hotelData }) => {
     return (
         <div className="py-10 space-y-8">
             <h2 className="text-3xl font-bold mb-6">Giới thiệu</h2>
             <div className="space-y-8">
-                {shipData.longDescriptions.map((block) => {
+                {hotelData.longDescriptions.map((block, index) => {
                     if (block.type === "paragraph") {
                         return (
                             <div key={block.blockId} className="mb-6">
@@ -353,35 +364,36 @@ const Introduction = ({ shipData }) => {
 };
 
 // ================= MAIN PAGE =================
-const DuThuyen = () => {
+const ChiTietKhachSan = () => {
     const { id } = useParams();
     const [activeTab, setActiveTab] = useState(1);
-    const [shipData, setShipData] = useState(null);
+    const [hotelData, setHotelData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [showBookModal, setShowBookModal] = useState(false);
     const [selectedRoom, setSelectedRoom] = useState(null);
+    const [showRoomDetailModal, setShowRoomDetailModal] = useState(false);
+    const [roomForDetail, setRoomForDetail] = useState(null);
 
     useEffect(() => {
-        const fetchShipData = async () => {
+        const fetchHotelData = async () => {
             try {
                 setLoading(true);
                 const response = await axiosRequest({
-                    url: `${config.api.url}/api/ship/${id}`,
+                    url: `${config.api.url}/api/hotel/${id}`,
                     method: "GET",
                 });
-                setShipData(response.data.data);
-                console.log("Dữ liệu du thuyền:", response.data.data);
+                setHotelData(response.data.data);
             } catch (err) {
                 console.error("Lỗi khi tải dữ liệu:", err);
                 setError(err.message);
-                handleErrorToast(err, "Đã có lỗi xảy ra khi tải dữ liệu du thuyền!");
+                handleErrorToast(err, "Đã có lỗi xảy ra khi tải dữ liệu khách sạn!");
             } finally {
                 setLoading(false);
             }
         };
 
-        fetchShipData();
+        fetchHotelData();
     }, [id]);
 
     if (loading) {
@@ -404,11 +416,11 @@ const DuThuyen = () => {
         );
     }
 
-    if (!shipData) {
+    if (!hotelData) {
         return (
             <div className="container mx-auto px-4 py-8">
                 <div className="text-center">
-                    <p>Không tìm thấy thông tin du thuyền</p>
+                    <p>Không tìm thấy thông tin khách sạn</p>
                 </div>
             </div>
         );
@@ -419,7 +431,7 @@ const DuThuyen = () => {
             <div className="container mx-auto px-4 py-8 max-w-7xl">
                 {/* ===== Title + Rating Section ===== */}
                 <div className="mb-8">
-                    <h1 className="text-3xl font-bold mb-2 text-gray-800">{shipData.shipName}</h1>
+                    <h1 className="text-3xl font-bold mb-2 text-gray-800">{hotelData.hotelName}</h1>
                     <div className="flex items-center space-x-4 text-gray-600 text-sm">
                         <div className="flex items-center space-x-1 text-pink-500">
                             {[...Array(5)].map((_, idx) => (
@@ -428,13 +440,13 @@ const DuThuyen = () => {
                         </div>
                         <span>5.0</span>
                         <span>• 200 đánh giá</span>
-                        <span>• {shipData.address}</span>
+                        <span>• {hotelData.address}</span>
                     </div>
                 </div>
 
                 {/* ===== GallerySlider Section ===== */}
                 <div className="mb-8">
-                    <GallerySlider images={shipData.images} />
+                    <GallerySlider images={hotelData.images} />
                 </div>
 
                 {/* ===== Tab Navigation and Content ===== */}
@@ -442,28 +454,28 @@ const DuThuyen = () => {
                     <TabNav activeTab={activeTab} setActiveTab={setActiveTab} />
 
                     <div className="mt-6">
-                        {activeTab === 1 && <Highlights shipData={shipData} />}
-                        {activeTab === 2 && <Rooms shipData={shipData} />}
-                        {activeTab === 3 && <Introduction shipData={shipData} />}
+                        {activeTab === 1 && <Highlights hotelData={hotelData} />}
+                        {activeTab === 2 && <Rooms hotelData={hotelData} />}
+                        {activeTab === 3 && <Introduction hotelData={hotelData} />}
                         {activeTab === 4 && <ReviewsShip shipId={id} />}
                     </div>
                 </div>
             </div>
 
             {/* Modals */}
-            {showBookModal && selectedRoom && (
+            {showBookModal && (
                 <BookModal
                     roomsData={selectedRoom}
                     onClose={() => {
                         setShowBookModal(false);
                         setSelectedRoom(null);
                     }}
-                    type="ship"
-                    shipId={shipData.shipId}
+                    type="hotel"
+                    hotelId={hotelData.hotelId}
                 />
             )}
         </div>
     );
 };
 
-export default DuThuyen;
+export default ChiTietKhachSan;
