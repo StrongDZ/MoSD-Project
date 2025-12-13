@@ -6,10 +6,14 @@ import com.travel_agent.models.entity.booking.BookingHotelEntity;
 import com.travel_agent.models.entity.booking.BookingShipEntity;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring", uses = { HotelMapper.class, ShipMapper.class })
+@Mapper(componentModel = "spring")
 public interface BookingMapper {
-
+    
+    @Mapping(target = "rooms", ignore = true)
     BookingHotelResponseDTO convertToHotelResponseDTO(BookingHotelEntity booking);
+    
+    @Mapping(target = "rooms", ignore = true)
     BookingShipResponseDTO convertToShipResponseDTO(BookingShipEntity booking);
 }
