@@ -11,71 +11,96 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class UserService {
+
     private final UserRepository userRepository;
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
-    // CREATE: Tạo mới User
+
+    // ================== CRUD OPERATIONS ==================
+
+    // CREATE
     public UserDTO createUser(UserDTO userDTO) {
-        // Tạo UserEntity liên kết với Account
         UserEntity user = new UserEntity();
-        user.setDob(userDTO.getDob());
+        
+        // Mapping thủ công (Nên chuyển logic này vào Mapper nếu có thể)
         user.setUsername(userDTO.getUsername());
         user.setEmail(userDTO.getEmail());
-        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        user.setDob(userDTO.getDob());
         user.setRole(userDTO.getRole());
+        
+        // Luôn mã hóa mật khẩu trước khi lưu
+        user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
 
-        userRepository.save(user);
-
-        return userMapper.UserToUserDTO(user);
+        UserEntity savedUser = userRepository.save(user);
+        return userMapper.toUserDTO(savedUser);
     }
 
-    // READ: Tìm User theo ID
+    // READ (By ID)
     public UserDTO getUserById(Integer userId) {
-        UserEntity user= userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
-        return userMapper.UserToUserDTO(user);
+        UserEntity user = getUserEntityById(userId);
+        return userMapper.toUserDTO(user);
     }
 
-    // UPDATE: Cập nhật thông tin User
+    // UPDATE
     public UserDTO updateUser(Integer userId, UserDTO userDTO) throws ReflectionException {
-        UserEntity user = userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
+        UserEntity user = getUserEntityById(userId);
 
+        // Cập nhật các trường không null từ DTO sang Entity
         ReflectionUtils.updateEntityFields(user, userDTO);
-        userRepository.save(user);
-        return userMapper.UserToUserDTO(user);
+        
+        // Nếu userDTO có đổi pass, cần encode lại (Logic bổ sung để an toàn)
+        if (userDTO.getPassword() != null && !userDTO.getPassword().isEmpty()) {
+             user.setPassword(passwordEncoder.encode(userDTO.getPassword()));
+        }
+
+        UserEntity updatedUser = userRepository.save(user);
+        return userMapper.toUserDTO(updatedUser);
     }
 
-    // DELETE: Xóa User theo ID
+    // DELETE
     public void deleteUser(Integer userId) {
-        UserEntity user = userRepository.findById(userId)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
+        UserEntity user = getUserEntityById(userId);
         userRepository.delete(user);
     }
 
-    // LIST ALL: Lấy tất cả User
+    // LIST ALL
     public List<UserDTO> getAllUsers() {
-        List<UserEntity> users =  userRepository.findAll();
-        return userMapper.UsersToUserDTOs(users);
+        List<UserEntity> users = userRepository.findAll();
+        return userMapper.toUserDTOs(users); // Đổi tên hàm mapper số nhiều cho chuẩn
     }
 
-    // Find user by username
+    // ================== SEARCH & AUTHENTICATION ==================
+
     public UserDTO findByUsernameOrEmail(String username) {
         UserEntity user = userRepository.findByUsernameOrEmail(username)
-                .orElseThrow(() -> new IllegalArgumentException("User not found with username: " + username));
-        return userMapper.UserToUserDTO(user);
+                .orElseThrow(() -> new IllegalArgumentException("User not found with username/email: " + username));
+        return userMapper.toUserDTO(user);
     }
 
-    // Find user by username and password
-    public UserDTO findByUsernameAndPassword(String username, String password) {
-        UserEntity user = userRepository.findByUsernameAndPassword(username, password)
+    // Logic này đã được viết lại để hỗ trợ Password Encoder
+    public UserDTO findByUsernameAndPassword(String username, String rawPassword) {
+        // 1. Tìm user theo username trước
+        UserEntity user = userRepository.findByUsernameOrEmail(username)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
-        return userMapper.UserToUserDTO(user);
+
+        // 2. So sánh password raw với password đã mã hóa trong DB
+        if (!passwordEncoder.matches(rawPassword, user.getPassword())) {
+            throw new IllegalArgumentException("Invalid username or password");
+        }
+
+        return userMapper.toUserDTO(user);
+    }
+
+    // ================== PRIVATE HELPERS ==================
+
+    // Helper để tìm User hoặc ném lỗi (Tránh lặp code)
+    private UserEntity getUserEntityById(Integer userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found with ID: " + userId));
     }
 }
