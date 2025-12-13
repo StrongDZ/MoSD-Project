@@ -218,7 +218,7 @@ public class ShipService {
                     room.getMaxPersons(),
                     images.isEmpty() ? null : images
             );
-        }).toList()
+        }).toList();
     }
 
     private void populateShipEntity(ShipEntity shipEntity, ShipDTO shipDto) {
@@ -315,7 +315,7 @@ public class ShipService {
         savedShipDto.setLongDescriptions(shipDto.getLongDescriptions());
         savedShipDto.setImages(shipDto.getImages());
 
-        return savedShipDto
+        return savedShipDto;
     }
 
     public ShipDTO updateShipGeneralInfo(Integer shipId, CompanyUpdateDTO companyUpdateDTO) {
@@ -337,6 +337,7 @@ public class ShipService {
         shipEntity = shipRepository.save(shipEntity);
         
         return shipMapper.shipToShipDTO(shipEntity);
+
     }
 
     // Update ship
@@ -443,7 +444,7 @@ public class ShipService {
         updatedShipDto.setFeatureIds(featureIds.isEmpty() ? null : featureIds);
         updatedShipDto.setFeatures(features.isEmpty() ? null : features);
 
-        return updatedShipDto
+        return updatedShipDto;
     }
 
     // Delete ship
@@ -692,7 +693,7 @@ public class ShipService {
             .filter(Objects::nonNull)
             .distinct()
             .limit(10) // Giới hạn 10 gợi ý
-            .collect(Collectors.toList())
+            .collect(Collectors.toList());
     }
 
     public List<String> getAllFeatures() {

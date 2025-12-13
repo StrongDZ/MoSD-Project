@@ -225,11 +225,11 @@ public class HotelService {
         }
     }
 
-        // Add hotel
+    // Add hotel
     public HotelDTO addHotel(HotelDTO hotelDto) {
         HotelEntity hotelEntity = new HotelEntity();
         populateHotelEntity(hotelEntity, hotelDto);
-        hotelEntity = hotelRepository.save(hotelEntity)
+        hotelEntity = hotelRepository.save(hotelEntity);
 
         if (hotelDto.getShortDescriptions() != null) {
             int blockId = 1;
@@ -285,7 +285,7 @@ public class HotelService {
         savedHotelDto.setLongDescriptions(hotelDto.getLongDescriptions());
         savedHotelDto.setImages(hotelDto.getImages());
 
-        return savedHotelDto
+        return savedHotelDto;
     }
 
     public HotelDTO updateHotelGeneralInfo(Integer hotelId, CompanyUpdateDTO companyUpdateDTO) {
@@ -312,7 +312,7 @@ public class HotelService {
         HotelEntity updatedHotel = hotelRepository.save(hotelEntity);
     
         // Chuyển đổi sang DTO để trả về
-        return hotelMapper.hotelToHotelDTO(updatedHotel)
+        return hotelMapper.hotelToHotelDTO(updatedHotel);
     }
     
     // Update hotel
@@ -418,7 +418,7 @@ public class HotelService {
         updatedHotelDto.setFeatureIds(featureIds.isEmpty() ? null : featureIds);
         updatedHotelDto.setFeatures(features.isEmpty() ? null : features);
 
-        return updatedHotelDto
+        return updatedHotelDto;
     }
 
     // Delete hotel
@@ -688,6 +688,6 @@ public class HotelService {
             .filter(Objects::nonNull)
             .distinct()
             .limit(10) // Giới hạn 10 gợi ý
-            .collect(Collectors.toList())
+            .collect(Collectors.toList());
     }
 }

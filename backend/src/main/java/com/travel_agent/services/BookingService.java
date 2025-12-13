@@ -75,8 +75,6 @@ public class BookingService {
 
             bookingHotelRoomRepository.save(bookingRoom);
         }
-        
-        return bookingMapper.convertToHotelResponseDTO(booking);
 
         return bookingMapper.convertToHotelResponseDTO(booking);
     }
@@ -137,7 +135,7 @@ public class BookingService {
             bookingShipResponseDTO.setRooms(shipRooms);
             bookingShipResponseDTOs.add(bookingShipResponseDTO);
         }
-        return bookingShipResponseDTOs
+        return bookingShipResponseDTOs;
     }
 
     public List<BookingHotelResponseDTO> getUserHotelBookings(Integer userId) {
@@ -162,7 +160,7 @@ public class BookingService {
             bookingHotelResponseDTOs.add(bookingHotelResponseDTO);
         }
 
-        return bookingHotelResponseDTOs
+        return bookingHotelResponseDTOs;
     }
 
 
@@ -188,7 +186,7 @@ public class BookingService {
             bookingShipResponseDTO.setRooms(shipRooms);
             bookingShipResponseDTOs.add(bookingShipResponseDTO);
         }
-        return bookingShipResponseDTOs
+        return bookingShipResponseDTOs;
     }
 
     public List<BookingHotelResponseDTO> getHotelBookingsByHotelId(Integer hotelId) {
@@ -211,7 +209,7 @@ public class BookingService {
             bookingHotelResponseDTO.setRooms(hotelRooms);
             bookingHotelResponseDTOs.add(bookingHotelResponseDTO);
         }
-        return bookingHotelResponseDTOs
+        return bookingHotelResponseDTOs;
     }
 
     public void updateBookingStatus(Integer bookingId, String status, String note) {

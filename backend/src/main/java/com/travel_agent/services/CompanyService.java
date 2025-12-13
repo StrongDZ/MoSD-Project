@@ -29,7 +29,7 @@ public class CompanyService {
         company.setRole(companyDTO.getRole());
 
         companyRepository.save(company);
-        return companyMapper.companyToCompanyDTO(company)
+        return companyMapper.companyToCompanyDTO(company);
     }
 
     // READ: Find Company by ID
@@ -59,20 +59,20 @@ public class CompanyService {
     // LIST ALL: Find all companies
     public List<CompanyDTO> getAllCompanies() {
         List<CompanyEntity> companies =  companyRepository.findAll();
-        return companyMapper.companiesToCompanyDTOs(companies)
+        return companyMapper.companiesToCompanyDTOs(companies);
     }
 
     // Find company by username
     public CompanyDTO findByUsernameOrEmail(String username) {
         CompanyEntity company = companyRepository.findByUsernameOrEmail(username)
                 .orElseThrow(() -> new IllegalArgumentException("Company not found with username: " + username));
-        return companyMapper.companyToCompanyDTO(company)
+        return companyMapper.companyToCompanyDTO(company);
     }
 
     // Find company by username and password
     public CompanyDTO findByUsernameAndPassword(String username, String password) {
         CompanyEntity company = companyRepository.findByUsernameAndPassword(username, password)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid username or password"));
-        return companyMapper.companyToCompanyDTO(company)
+        return companyMapper.companyToCompanyDTO(company);
     }
 }
