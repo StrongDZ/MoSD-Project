@@ -1,6 +1,9 @@
 package com.travel_agent.controllers;
 
+import com.travel_agent.dto.ResultPaginationDTO;
 import com.travel_agent.services.HotelService;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,8 +18,9 @@ public class HotelController {
 
     // Search hotel by name
     @GetMapping("/search")
-    public String searchHotels(@RequestParam(value = "name", required = false) String name) {
-        return "Search functionality coming soon";
+    public ResultPaginationDTO searchHotels(@RequestParam(value = "name", required = false) String name) {
+        Pageable pageable = PageRequest.of(0, 10);
+        return hotelService.searchHotelsByName(name, pageable);
     }
 }
 

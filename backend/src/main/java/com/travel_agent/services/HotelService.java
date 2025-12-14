@@ -54,79 +54,25 @@ public class HotelService {
         return rs;
     }
 
-    // Search hotel
-    public ResultPaginationDTO searchHotelsByNamePriceAndCity(
-            String name,
-            Integer minPrice,
-            Integer maxPrice,
-            String city,
-            String features,
-            Pageable pageable) {
+    // Search hotel by name
+    public ResultPaginationDTO searchHotelsByName(String name, Pageable pageable) {
+        Page<HotelEntity> hotelPage = hotelRepository.findByHotelName(name, pageable);
         
-        Page<HotelEntity> hotelPage = hotelRepository.findByHotelNamePriceAndCity(
-                name, minPrice, maxPrice, city, pageable);
-
-        List<HotelDTO> hotelDtos = hotelPage.getContent().stream().map(hotel -> {
-            HotelDTO hotelDto = hotelMapper.hotelToHotelDTO(hotel);
-
-            // Fetch features
-            List<HotelFeatureEntity> hotelFeatures = hotelFeatureRepository.findByHotelId(hotel.getHotelId());
-            List<Integer> featureIds = hotelFeatures.stream()
-                    .map(HotelFeatureEntity::getFeatureId)
-                    .toList();
-            List<String> featureDescriptions = featureIds.stream()
-                    .map(featureId -> featureRepository.findById(featureId)
-                            .orElseThrow(() -> new IllegalArgumentException("Feature not found with ID: " + featureId))
-                            .getFeatureDescription())
-                    .toList();
-
-            hotelDto.setFeatureIds(featureIds.isEmpty() ? null : featureIds);
-            hotelDto.setFeatures(featureDescriptions.isEmpty() ? null : featureDescriptions);
-
-            return hotelDto;
-        }).toList();
-
-        // Lọc theo features nếu có
-        if (features != null && !features.isEmpty()) {
-            List<String> requiredFeatures = List.of(features.split(","));
-            System.out.println("Required features: " + requiredFeatures);
-            
-            // Lấy danh sách featureId từ tên feature
-            List<Integer> requiredFeatureIds = requiredFeatures.stream()
-                .map(featureName -> {
-                    List<FeatureEntity> featureList = featureRepository.findByFeatureDescription(featureName);
-                    return featureList.isEmpty() ? null : featureList.get(0).getFeatureId();
-                })
-                .filter(Objects::nonNull)
+        List<HotelDTO> hotelDtos = hotelPage.getContent().stream()
+                .map(hotelMapper::hotelToHotelDTO)
                 .toList();
-            
-            System.out.println("Required feature IDs: " + requiredFeatureIds);
-            
-            hotelDtos = hotelDtos.stream()
-                    .filter(hotel -> {
-                        System.out.println("Checking hotel: " + hotel.getHotelName());
-                        System.out.println("Hotel feature IDs: " + hotel.getFeatureIds());
-                        boolean matches = hotel.getFeatureIds() != null && 
-                                requiredFeatureIds.stream()
-                                        .allMatch(reqId -> hotel.getFeatureIds().contains(reqId));
-                        System.out.println("Matches: " + matches);
-                        return matches;
-                    })
-                    .toList();
-            
-            System.out.println("Filtered hotels count: " + hotelDtos.size());
-        }
 
         ResultPaginationDTO result = new ResultPaginationDTO();
         result.setResult(hotelDtos);
         Meta meta = new Meta();
         meta.setPage(pageable.getPageNumber() + 1);
         meta.setPages(hotelPage.getTotalPages());
-        meta.setTotal(hotelDtos.size());
+        meta.setTotal(hotelPage.getTotalElements());
         result.setMeta(meta);
 
         return result;
     }
+
 
     // View hotel details
     public HotelDTO getHotelDetails(Integer hotelId) {
