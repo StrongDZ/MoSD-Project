@@ -27,25 +27,16 @@ public class PaymentController {
     @PostMapping("/create")
     public ResponseEntity<?> createPayment(@RequestBody CreatePaymentRequest request) {
         try {
-            System.out.println("Creating VNPay payment for order: " + request.getOrderId() +
-                    ", amount: " + request.getAmount() +
-                    ", customer: " + request.getCustomerEmail());
-
             String paymentUrl = paymentService.createPayment(
                     request.getAmount(),
                     request.getOrderId(),
                     request.getCustomerEmail(),
                     request.getBookingType());
 
-            System.out.println("VNPay payment URL generated successfully: " + paymentUrl);
-
             CreatePaymentResponse response = new CreatePaymentResponse(
                     paymentUrl,
                     request.getOrderId(),
                     "Payment URL created successfully");
-
-            System.out.println("Payment response created: orderId=" + response.getOrderId() +
-                    ", message=" + response.getMessage());
 
             return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (UnsupportedEncodingException e) {
@@ -78,8 +69,6 @@ public class PaymentController {
     @PostMapping("/process-vnpay-return")
     public ResponseEntity<?> processVNPayReturn(@RequestBody Map<String, String> params) {
         try {
-            System.out.println("Processing VNPay return with parameters: " + params.keySet());
-
             String errorCode = params.get("vnp_TransactionStatus");
             String responseCode = params.get("vnp_ResponseCode");
             String transactionDate = params.get("vnp_PayDate");
@@ -97,15 +86,11 @@ public class PaymentController {
             String bookingType = infoParts.length > 1 ? infoParts[1] : "unknown";
             String orderId = parts[1];
 
-            System.out.println("Extracted order info - Email: " + customerEmail + ", OrderId: " + orderId);
-
-            boolean isSuccess = "00".equals(errorCode) && "00".equals(responseCode);
+            boolean isSuccess = "00".equals(responseCode);
 
             if (isSuccess) {
-                System.out.println("Payment successful, processing...");
                 paymentService.handlePaymentSuccess(transactionDate, transactionContent, customerEmail, orderId);
             } else {
-                System.out.println("Payment failed with code: " + errorCode + "/" + responseCode);
                 paymentService.handlePaymentFail(customerEmail, orderId);
             }
 
