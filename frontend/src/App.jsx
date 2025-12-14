@@ -25,6 +25,7 @@ import ManageRoom from "./pages/admin/ManageRoom";
 import { AuthProvider } from "./contexts/AuthProvider";
 import BookingHistoryPage from "./pages/public/BookingHistoryPage";
 import CompanyDashboard from "./pages/admin/CompanyDashboard";
+import PaymentReturnPage from "./pages/public/PaymentReturnPage";
 
 const AppRoutes = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -61,6 +62,7 @@ const AppRoutes = () => {
               {/* User Profile Routes */}
               <Route path="/profile" element={<div>Thông tin cá nhân</div>} />
               <Route path="/bookings" element={<BookingHistoryPage />} />
+              <Route path="/payment/return" element={<PaymentReturnPage />} />
             </Routes>
           </div>
         </div>

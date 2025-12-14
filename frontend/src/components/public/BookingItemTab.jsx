@@ -1,3 +1,17 @@
+const map_state_to_vietnamese = {
+  pending: "Đang chờ xử lý",
+  paid: "Đã thanh toán",
+  failed: "Thanh toán thất bại",
+  confirmed: "Đã xác nhận",
+};
+
+const map_state_to_color = {
+  pending: "text-yellow-600",
+  paid: "text-green-600",
+  failed: "text-red-600",
+  confirmed: "text-blue-600",
+};
+
 export default function BookingItemCard({
   booking,
   onClick,
@@ -26,7 +40,17 @@ export default function BookingItemCard({
         <p className="text-black-600 font-semibold mt-2">
           Tổng tiền: {booking.totalAmount.toLocaleString()} đ
         </p>
-        <p className="text-gray-600">Trạng thái: {booking.state}</p>
+        <p className="text-gray-600">
+          Trạng thái:{" "}
+          <div
+            className={`inline-block font-semibold ${
+              map_state_to_color[booking.state.toLowerCase()] || "text-pink-600"
+            }`}
+          >
+            {map_state_to_vietnamese[booking.state.toLowerCase()] ||
+              booking.state}
+          </div>
+        </p>
       </div>
     </div>
   );
