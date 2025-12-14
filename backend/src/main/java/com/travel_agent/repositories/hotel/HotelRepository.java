@@ -12,8 +12,12 @@ import java.util.stream.Collectors;
 
 public interface HotelRepository extends JpaRepository<HotelEntity, Integer> {
     @Query("SELECT h FROM HotelEntity h WHERE " +
-            "(:name IS NULL OR :name = '' OR (h.hotelName IS NOT NULL AND LOWER(h.hotelName) LIKE LOWER(CONCAT('%', :name, '%'))))")
-    Page<HotelEntity> findByHotelName(
+            "((:name IS NULL OR :name = '' OR (h.hotelName IS NOT NULL AND LOWER(h.hotelName) LIKE LOWER(CONCAT('%', :name, '%'))))) AND " +
+            "((:minPrice IS NULL OR h.hotelPrice >= :minPrice)) AND " +
+            "((:maxPrice IS NULL OR h.hotelPrice <= :maxPrice))")
+    Page<HotelEntity> findByHotelNameAndPrice(
             @Param("name") String name,
+            @Param("minPrice") Integer minPrice,
+            @Param("maxPrice") Integer maxPrice,
             Pageable pageable);
 }
