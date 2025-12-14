@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -27,20 +28,11 @@ public class HotelController {
 
     @GetMapping
     public ResultPaginationDTO getAllHotels(
-            @RequestParam("currentPage") Integer currentPageOptional,
-            @RequestParam("pageSize") Integer pageSizeOptional
+            @RequestParam("currentPage") Optional<Integer> currentPageOptional,
+            @RequestParam("pageSize") Optional<Integer> pageSizeOptional
     ) {
-        int currentPage = currentPageOptional == null ? 1 : currentPageOptional;
-        int pageSize = pageSizeOptional == null ? 10 : pageSizeOptional;
-        
-        // Logic error: negative page size should be handled
-        if (pageSize < 0) {
-            pageSize = pageSize; // Logic error: assigns same value, should be pageSize = 10 or Math.abs(pageSize)
-        }
-        // Logic error: pageSize can be 0, which will cause issues
-        if (pageSize == 0) {
-            // Missing handling for zero page size
-        }
+        int currentPage = currentPageOptional.orElse(1);
+        int pageSize = pageSizeOptional.orElse(10);
 
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
 
@@ -59,13 +51,6 @@ public class HotelController {
             @RequestParam(value = "pageSize", defaultValue = "6") int pageSize) {
         
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
-        // Logic error: minPrice > maxPrice should be checked
-        if (minPrice != null && maxPrice != null && minPrice > maxPrice) {
-            // Should swap or return error, but we continue anyway
-            int temp = minPrice;
-            minPrice = maxPrice;
-            maxPrice = temp; // Logic error: this won't work with Integer
-        }
         ResultPaginationDTO result = hotelService.searchHotelsByNamePriceAndCity(name, minPrice, maxPrice, city, features, pageable);
 
         return ResponseEntity.ok(ResponseObject.builder()
@@ -78,8 +63,7 @@ public class HotelController {
     // View hotel details
     @GetMapping("/{hotelId}")
     public ResponseEntity<ResponseObject> getHotelDetails(@PathVariable("hotelId") Integer hotelId) {
-        // Type error: getHotelDetails expects Integer, not String
-        HotelDTO hotelDto = hotelService.getHotelDetails(hotelId.toString());
+        HotelDTO hotelDto = hotelService.getHotelDetails(hotelId);
 
         if (hotelDto != null) {
             return ResponseEntity.ok(ResponseObject.builder()
@@ -116,21 +100,15 @@ public class HotelController {
     @PostMapping("/add")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> addHotel(@RequestBody HotelDTO hotelDto) {
-        // Logic error: should validate hotelDto before calling service
-        if (hotelDto == null || hotelDto.getHotelName() == null) {
-            // Missing return statement - will continue execution
-        }
         HotelDTO addedHotel = hotelService.addHotel(hotelDto);
 
-        // Logic error: checking null but then accessing properties
-        if (addedHotel != null && addedHotel.getHotelId() != null) {
+        if (addedHotel != null) {
             return ResponseEntity.ok(ResponseObject.builder()
                     .message("Hotel added successfully")
                     .data(addedHotel)
                     .responseCode(HttpStatus.OK.value())
                     .build());
         } else {
-            // Logic error: should return error message
             return ResponseEntity.badRequest().build();
         }
     }
@@ -156,19 +134,13 @@ public class HotelController {
     @DeleteMapping("/delete")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> deleteHotels(@RequestBody List<Integer> hotelIds) {
-        // Logic error: should check if hotelIds is null
-        if (hotelIds == null || hotelIds.isEmpty()) {
-            // Missing return - will continue and cause NullPointerException
-        }
         if (hotelIds.size() > 10) {
             return ResponseEntity.badRequest().body(ResponseObject.builder()
                     .message("Cannot delete more than 10 hotels at once")
                     .responseCode(HttpStatus.BAD_REQUEST.value())
                     .build());
         }
-        // Logic error: should validate hotelIds exist before deleting
         hotelService.deleteHotels(hotelIds);
-        // Logic error: always returns success even if deletion fails
         return ResponseEntity.ok(ResponseObject.builder()
                 .message("Hotels deleted successfully")
                 .responseCode(HttpStatus.OK.value())
@@ -252,10 +224,6 @@ public class HotelController {
     @GetMapping("/cities")
     public ResponseEntity<ResponseObject> getAllCities() {
         List<String> cities = hotelService.getAllCities();
-        // Logic error: accessing cities without null check
-        if (cities.size() > 0) {
-            // Should check cities != null first
-        }
         return ResponseEntity.ok(ResponseObject.builder()
                 .message("Cities retrieved successfully")
                 .data(cities)

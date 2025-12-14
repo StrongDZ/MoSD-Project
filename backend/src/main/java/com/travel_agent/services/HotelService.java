@@ -54,18 +54,10 @@ public class HotelService {
         return rs;
     }
 
-    // Search hotel
-    public ResultPaginationDTO searchHotelsByNamePriceAndCity(
-            String name,
-            Integer minPrice,
-            Integer maxPrice,
-            String city,
-            String features,
-            Pageable pageable) {
+    // Search hotel by name, price, city and features
+    public ResultPaginationDTO searchHotelsByNamePriceAndCity(String name, Integer minPrice, Integer maxPrice, String city, String features, Pageable pageable) {
+        Page<HotelEntity> hotelPage = hotelRepository.findByHotelNamePriceAndCity(name, minPrice, maxPrice, city, pageable);
         
-        Page<HotelEntity> hotelPage = hotelRepository.findByHotelNamePriceAndCity(
-                name, minPrice, maxPrice, city, pageable);
-
         List<HotelDTO> hotelDtos = hotelPage.getContent().stream().map(hotel -> {
             HotelDTO hotelDto = hotelMapper.hotelToHotelDTO(hotel);
 
@@ -89,7 +81,6 @@ public class HotelService {
         // Lọc theo features nếu có
         if (features != null && !features.isEmpty()) {
             List<String> requiredFeatures = List.of(features.split(","));
-            System.out.println("Required features: " + requiredFeatures);
             
             // Lấy danh sách featureId từ tên feature
             List<Integer> requiredFeatureIds = requiredFeatures.stream()
@@ -100,21 +91,14 @@ public class HotelService {
                 .filter(Objects::nonNull)
                 .toList();
             
-            System.out.println("Required feature IDs: " + requiredFeatureIds);
-            
             hotelDtos = hotelDtos.stream()
                     .filter(hotel -> {
-                        System.out.println("Checking hotel: " + hotel.getHotelName());
-                        System.out.println("Hotel feature IDs: " + hotel.getFeatureIds());
                         boolean matches = hotel.getFeatureIds() != null && 
                                 requiredFeatureIds.stream()
                                         .allMatch(reqId -> hotel.getFeatureIds().contains(reqId));
-                        System.out.println("Matches: " + matches);
                         return matches;
                     })
                     .toList();
-            
-            System.out.println("Filtered hotels count: " + hotelDtos.size());
         }
 
         ResultPaginationDTO result = new ResultPaginationDTO();
@@ -127,6 +111,7 @@ public class HotelService {
 
         return result;
     }
+
 
     // View hotel details
     public HotelDTO getHotelDetails(Integer hotelId) {
