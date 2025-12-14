@@ -43,4 +43,8 @@ public class ShipEntity {
     @ManyToOne
     @JoinColumn(name = "company_id")
     private CompanyEntity company;
+
+    public String getName() {
+        return this.shipName;
+    }
 }

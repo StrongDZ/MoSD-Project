@@ -68,18 +68,15 @@ public class VNPayService implements IPaymentService {
             }
 
             transactionInfoRepository.save(transactionInfo);
-            System.out.println("Transaction info saved for user: " + userEmail + ", payment method: " + paymentMethod);
         } else {
-            System.err.println("User not found with email: " + userEmail + ", transaction not saved");
+            System.err.println("User not found: " + userEmail);
         }
     }
 
     @Override
     public void handlePaymentSuccess(String date, String content, String customerEmail, String orderId) {
-        // Logic to handle successful payment
         saveTransactionInfo("VNPay", content, date, customerEmail);
 
-        // Extract booking type and ID from content
         String bookingType = "unknown";
         if (content != null && content.contains("|")) {
             String[] parts = content.split("\\|order");
@@ -91,10 +88,71 @@ public class VNPayService implements IPaymentService {
             }
         }
 
-        // Update booking status to 'PAID'
         updateBookingStatus(orderId, "PAID", bookingType);
+        sendSuccessEmailWithDetails(customerEmail, orderId, bookingType);
+        System.out.println("✅ Payment processed successfully for order #" + orderId);
+    }
 
-        emailService.sendSuccessOrderConfirmationEmail(customerEmail, orderId);
+    private void sendSuccessEmailWithDetails(String customerEmail, String orderId, String bookingType) {
+        if (emailService == null) {
+            System.err.println("❌ EmailService is NULL!");
+            return;
+        }
+
+        try {
+            Integer bookingId = Integer.parseInt(orderId);
+
+            if ("hotel".equalsIgnoreCase(bookingType)) {
+                var hotelBookingOpt = bookingHotelRepository.findById(bookingId);
+                if (hotelBookingOpt.isEmpty()) {
+                    System.err.println("❌ Booking not found: " + bookingId);
+                    return;
+                }
+                hotelBookingOpt.ifPresent(booking -> {
+                    String itemName = booking.getHotel() != null ? booking.getHotel().getName() : "N/A";
+                    emailService.sendSuccessOrderConfirmationEmail(
+                            customerEmail,
+                            orderId,
+                            booking.getCustomerName(),
+                            booking.getPhone(),
+                            booking.getStartDate(),
+                            booking.getEndDate(),
+                            booking.getAdults(),
+                            booking.getChildren(),
+                            booking.getTotalAmount(),
+                            bookingType,
+                            itemName
+                    );
+                });
+            } else if ("ship".equalsIgnoreCase(bookingType)) {
+                var shipBookingOpt = bookingShipRepository.findById(bookingId);
+                if (shipBookingOpt.isEmpty()) {
+                    System.err.println("❌ Booking not found: " + bookingId);
+                    return;
+                }
+                shipBookingOpt.ifPresent(booking -> {
+                    String itemName = booking.getShip() != null ? booking.getShip().getName() : "N/A";
+                    emailService.sendSuccessOrderConfirmationEmail(
+                            customerEmail,
+                            orderId,
+                            booking.getCustomerName(),
+                            booking.getPhone(),
+                            booking.getStartDate(),
+                            booking.getEndDate(),
+                            booking.getAdults(),
+                            booking.getChildren(),
+                            booking.getTotalAmount(),
+                            bookingType,
+                            itemName
+                    );
+                });
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("❌ Invalid booking ID: " + orderId);
+        } catch (Exception e) {
+            System.err.println("❌ Error sending email for order #" + orderId + ": " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     private void updateBookingStatus(String orderId, String status, String bookingType) {
@@ -102,21 +160,15 @@ public class VNPayService implements IPaymentService {
             Integer bookingId = Integer.parseInt(orderId);
 
             if ("hotel".equalsIgnoreCase(bookingType)) {
-                // Update hotel booking only
                 bookingHotelRepository.findById(bookingId).ifPresent(booking -> {
                     booking.setState(status);
                     bookingHotelRepository.save(booking);
-                    System.out.println("Updated hotel booking #" + bookingId + " status to: " + status);
                 });
             } else if ("ship".equalsIgnoreCase(bookingType)) {
-                // Update ship booking only
                 bookingShipRepository.findById(bookingId).ifPresent(booking -> {
                     booking.setState(status);
                     bookingShipRepository.save(booking);
-                    System.out.println("Updated ship booking #" + bookingId + " status to: " + status);
                 });
-            } else {
-                System.err.println("Unknown booking type: " + bookingType);
             }
         } catch (NumberFormatException e) {
             System.err.println("Invalid booking ID format: " + orderId);
@@ -126,7 +178,43 @@ public class VNPayService implements IPaymentService {
     @Override
     public void handlePaymentFail(String customerEmail, String orderId) {
         // Logic to handle failed payment
-        emailService.sendFailedOrderConfirmationEmail(customerEmail, orderId);
+        sendFailureEmailWithDetails(customerEmail, orderId);
+    }
+
+    private void sendFailureEmailWithDetails(String customerEmail, String orderId) {
+        try {
+            Integer bookingId = Integer.parseInt(orderId);
+
+            // Try hotel first
+            var hotelBooking = bookingHotelRepository.findById(bookingId);
+            if (hotelBooking.isPresent()) {
+                emailService.sendFailedOrderConfirmationEmail(
+                        customerEmail,
+                        orderId,
+                        hotelBooking.get().getCustomerName(),
+                        "hotel"
+                );
+                return;
+            }
+
+            // Try ship
+            var shipBooking = bookingShipRepository.findById(bookingId);
+            if (shipBooking.isPresent()) {
+                emailService.sendFailedOrderConfirmationEmail(
+                        customerEmail,
+                        orderId,
+                        shipBooking.get().getCustomerName(),
+                        "ship"
+                );
+                return;
+            }
+
+            // Fallback if booking not found
+            emailService.sendFailedOrderConfirmationEmail(customerEmail, orderId, "Quý khách", "unknown");
+        } catch (NumberFormatException e) {
+            System.err.println("Invalid booking ID format: " + orderId);
+            emailService.sendFailedOrderConfirmationEmail(customerEmail, orderId, "Quý khách", "unknown");
+        }
     }
 
     @Override
@@ -193,5 +281,7 @@ public class VNPayService implements IPaymentService {
 
         return paymentUrl;
     }
+
+
 }
 
