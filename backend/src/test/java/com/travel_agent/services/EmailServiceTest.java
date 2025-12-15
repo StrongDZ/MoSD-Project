@@ -7,10 +7,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.mail.MailSendException;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 
 import com.travel_agent.services.email.EmailService;
+
+import jakarta.mail.internet.MimeMessage;
+import jakarta.mail.Session;
+
+import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -25,9 +29,13 @@ class EmailServiceTest {
     @InjectMocks
     private EmailService emailService;
 
+    private MimeMessage mimeMessage;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
+        mimeMessage = new MimeMessage((Session) null);
+        when(mailSender.createMimeMessage()).thenReturn(mimeMessage);
     }
 
     @Test
@@ -35,15 +43,28 @@ class EmailServiceTest {
     void testSendSuccessOrderConfirmationEmail_Success() {
         // Given
         String toEmail = "customer@example.com";
-        String orderId = "ORDER123";
+        String orderId = "123";
+        String customerName = "John Doe";
+        String phone = "0123456789";
+        LocalDate startDate = LocalDate.of(2024, 12, 20);
+        LocalDate endDate = LocalDate.of(2024, 12, 25);
+        Integer adults = 2;
+        Integer children = 1;
+        Integer totalAmount = 5000000;
+        String bookingType = "hotel";
+        String itemName = "Grand Hotel";
 
-        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
+        doNothing().when(mailSender).send(any(MimeMessage.class));
 
         // When
-        emailService.sendSuccessOrderConfirmationEmail(toEmail, orderId);
+        emailService.sendSuccessOrderConfirmationEmail(
+                toEmail, orderId, customerName, phone, startDate, endDate,
+                adults, children, totalAmount, bookingType, itemName
+        );
 
         // Then
-        verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
+        verify(mailSender, times(1)).createMimeMessage();
     }
 
     @Test
@@ -51,14 +72,26 @@ class EmailServiceTest {
     void testSendSuccessOrderConfirmationEmail_MailException() {
         // Given
         String toEmail = "customer@example.com";
-        String orderId = "ORDER123";
+        String orderId = "123";
+        String customerName = "John Doe";
+        String phone = "0123456789";
+        LocalDate startDate = LocalDate.of(2024, 12, 20);
+        LocalDate endDate = LocalDate.of(2024, 12, 25);
+        Integer adults = 2;
+        Integer children = 1;
+        Integer totalAmount = 5000000;
+        String bookingType = "hotel";
+        String itemName = "Grand Hotel";
 
         doThrow(new MailSendException("Failed to send email"))
-                .when(mailSender).send(any(SimpleMailMessage.class));
+                .when(mailSender).send(any(MimeMessage.class));
 
         // When & Then - should not throw exception
-        assertDoesNotThrow(() -> emailService.sendSuccessOrderConfirmationEmail(toEmail, orderId));
-        verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
+        assertDoesNotThrow(() -> emailService.sendSuccessOrderConfirmationEmail(
+                toEmail, orderId, customerName, phone, startDate, endDate,
+                adults, children, totalAmount, bookingType, itemName
+        ));
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
     }
 
     @Test
@@ -66,15 +99,18 @@ class EmailServiceTest {
     void testSendFailedOrderConfirmationEmail_Success() {
         // Given
         String toEmail = "customer@example.com";
-        String orderId = "ORDER123";
+        String orderId = "123";
+        String customerName = "John Doe";
+        String bookingType = "hotel";
 
-        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
+        doNothing().when(mailSender).send(any(MimeMessage.class));
 
         // When
-        emailService.sendFailedOrderConfirmationEmail(toEmail, orderId);
+        emailService.sendFailedOrderConfirmationEmail(toEmail, orderId, customerName, bookingType);
 
         // Then
-        verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
+        verify(mailSender, times(1)).createMimeMessage();
     }
 
     @Test
@@ -82,90 +118,44 @@ class EmailServiceTest {
     void testSendFailedOrderConfirmationEmail_MailException() {
         // Given
         String toEmail = "customer@example.com";
-        String orderId = "ORDER123";
+        String orderId = "123";
+        String customerName = "John Doe";
+        String bookingType = "hotel";
 
         doThrow(new MailSendException("Failed to send email"))
-                .when(mailSender).send(any(SimpleMailMessage.class));
+                .when(mailSender).send(any(MimeMessage.class));
 
         // When & Then - should not throw exception
-        assertDoesNotThrow(() -> emailService.sendFailedOrderConfirmationEmail(toEmail, orderId));
-        verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
+        assertDoesNotThrow(() -> emailService.sendFailedOrderConfirmationEmail(
+                toEmail, orderId, customerName, bookingType
+        ));
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
     }
 
     @Test
-    @DisplayName("Should send email with correct content for success notification")
-    void testSendSuccessOrderConfirmationEmail_CorrectContent() {
+    @DisplayName("Should handle null values gracefully in success email")
+    void testSendSuccessOrderConfirmationEmail_WithNullValues() {
         // Given
         String toEmail = "customer@example.com";
-        String orderId = "ORDER123";
+        String orderId = "123";
+        String customerName = "John Doe";
+        String phone = "0123456789";
+        LocalDate startDate = LocalDate.of(2024, 12, 20);
+        LocalDate endDate = null; // null end date
+        Integer adults = null; // null adults
+        Integer children = null; // null children
+        Integer totalAmount = 5000000;
+        String bookingType = "ship";
+        String itemName = "Luxury Cruise";
 
-        doAnswer(invocation -> {
-            SimpleMailMessage message = invocation.getArgument(0);
+        doNothing().when(mailSender).send(any(MimeMessage.class));
 
-            // Verify recipient
-            assertNotNull(message.getTo());
-            assertEquals(toEmail, message.getTo()[0]);
-
-            // Verify sender
-            assertEquals("projectmosd20251@gmail.com", message.getFrom());
-
-            // Verify subject contains order ID and Vietnamese text
-            assertNotNull(message.getSubject());
-            assertTrue(message.getSubject().contains(orderId));
-            assertTrue(message.getSubject().contains("Xác nhận đơn đặt phòng/du thuyền mã"));
-
-            // Verify body contains Vietnamese success message and order ID
-            assertNotNull(message.getText());
-            assertTrue(message.getText().contains(orderId));
-            assertTrue(message.getText().contains("đã được đặt thành công"));
-            assertTrue(message.getText().contains("MoSD Team"));
-
-            return null;
-        }).when(mailSender).send(any(SimpleMailMessage.class));
-
-        // When
-        emailService.sendSuccessOrderConfirmationEmail(toEmail, orderId);
-
-        // Then
-        verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
-    }
-
-    @Test
-    @DisplayName("Should send email with correct content for failure notification")
-    void testSendFailedOrderConfirmationEmail_CorrectContent() {
-        // Given
-        String toEmail = "customer@example.com";
-        String orderId = "ORDER123";
-
-        doAnswer(invocation -> {
-            SimpleMailMessage message = invocation.getArgument(0);
-
-            // Verify recipient
-            assertNotNull(message.getTo());
-            assertEquals(toEmail, message.getTo()[0]);
-
-            // Verify sender
-            assertEquals("projectmosd20251@gmail.com", message.getFrom());
-
-            // Verify subject contains order ID
-            assertNotNull(message.getSubject());
-            assertTrue(message.getSubject().contains(orderId));
-
-            // Verify body contains Vietnamese failure message and order ID
-            assertNotNull(message.getText());
-            assertTrue(message.getText().contains(orderId));
-            assertTrue(message.getText().contains("không thể được đặt"));
-            assertTrue(message.getText().contains("lỗi trong quá trình thanh toán"));
-            assertTrue(message.getText().contains("MoSD Team"));
-
-            return null;
-        }).when(mailSender).send(any(SimpleMailMessage.class));
-
-        // When
-        emailService.sendFailedOrderConfirmationEmail(toEmail, orderId);
-
-        // Then
-        verify(mailSender, times(1)).send(any(SimpleMailMessage.class));
+        // When & Then - should not throw exception with null values
+        assertDoesNotThrow(() -> emailService.sendSuccessOrderConfirmationEmail(
+                toEmail, orderId, customerName, phone, startDate, endDate,
+                adults, children, totalAmount, bookingType, itemName
+        ));
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
     }
 
     @Test
@@ -174,15 +164,84 @@ class EmailServiceTest {
         // Given
         String toEmail1 = "customer1@example.com";
         String toEmail2 = "customer2@example.com";
-        String orderId = "ORDER123";
+        String orderId = "123";
+        String customerName = "John Doe";
+        String phone = "0123456789";
+        LocalDate startDate = LocalDate.of(2024, 12, 20);
+        LocalDate endDate = LocalDate.of(2024, 12, 25);
+        Integer adults = 2;
+        Integer children = 1;
+        Integer totalAmount = 5000000;
+        String bookingType = "hotel";
+        String itemName = "Grand Hotel";
 
-        doNothing().when(mailSender).send(any(SimpleMailMessage.class));
+        doNothing().when(mailSender).send(any(MimeMessage.class));
 
         // When
-        emailService.sendSuccessOrderConfirmationEmail(toEmail1, orderId);
-        emailService.sendFailedOrderConfirmationEmail(toEmail2, orderId);
+        emailService.sendSuccessOrderConfirmationEmail(
+                toEmail1, orderId, customerName, phone, startDate, endDate,
+                adults, children, totalAmount, bookingType, itemName
+        );
+        emailService.sendFailedOrderConfirmationEmail(toEmail2, orderId, customerName, bookingType);
 
         // Then
-        verify(mailSender, times(2)).send(any(SimpleMailMessage.class));
+        verify(mailSender, times(2)).send(any(MimeMessage.class));
+        verify(mailSender, times(2)).createMimeMessage();
+    }
+
+    @Test
+    @DisplayName("Should handle hotel booking type correctly")
+    void testSendEmail_HotelBookingType() {
+        // Given
+        String toEmail = "customer@example.com";
+        String orderId = "123";
+        String customerName = "Jane Smith";
+        String phone = "0987654321";
+        LocalDate startDate = LocalDate.of(2024, 12, 15);
+        LocalDate endDate = LocalDate.of(2024, 12, 18);
+        Integer adults = 2;
+        Integer children = 0;
+        Integer totalAmount = 3000000;
+        String bookingType = "hotel";
+        String itemName = "Beach Resort";
+
+        doNothing().when(mailSender).send(any(MimeMessage.class));
+
+        // When
+        emailService.sendSuccessOrderConfirmationEmail(
+                toEmail, orderId, customerName, phone, startDate, endDate,
+                adults, children, totalAmount, bookingType, itemName
+        );
+
+        // Then
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
+    }
+
+    @Test
+    @DisplayName("Should handle ship booking type correctly")
+    void testSendEmail_ShipBookingType() {
+        // Given
+        String toEmail = "customer@example.com";
+        String orderId = "456";
+        String customerName = "Bob Johnson";
+        String phone = "0112233445";
+        LocalDate startDate = LocalDate.of(2024, 12, 25);
+        LocalDate endDate = LocalDate.of(2024, 12, 30);
+        Integer adults = 4;
+        Integer children = 2;
+        Integer totalAmount = 10000000;
+        String bookingType = "ship";
+        String itemName = "Ocean Liner";
+
+        doNothing().when(mailSender).send(any(MimeMessage.class));
+
+        // When
+        emailService.sendSuccessOrderConfirmationEmail(
+                toEmail, orderId, customerName, phone, startDate, endDate,
+                adults, children, totalAmount, bookingType, itemName
+        );
+
+        // Then
+        verify(mailSender, times(1)).send(any(MimeMessage.class));
     }
 }

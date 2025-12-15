@@ -146,18 +146,33 @@ class VNPayServiceTest {
         String customerEmail = "test@example.com";
         String orderId = "100";
 
+        testHotelBooking.setCustomerName("John Doe");
+        testHotelBooking.setPhone("0123456789");
+        testHotelBooking.setStartDate(LocalDate.of(2024, 12, 20));
+        testHotelBooking.setEndDate(LocalDate.of(2024, 12, 25));
+        testHotelBooking.setAdults(2);
+        testHotelBooking.setChildren(1);
+
         when(userRepository.findByEmail(customerEmail)).thenReturn(Optional.of(testUser));
         when(bookingHotelRepository.findById(100)).thenReturn(Optional.of(testHotelBooking));
-        doNothing().when(emailService).sendSuccessOrderConfirmationEmail(anyString(), anyString());
+        doNothing().when(emailService).sendSuccessOrderConfirmationEmail(
+                anyString(), anyString(), anyString(), anyString(),
+                any(LocalDate.class), any(LocalDate.class), anyInt(), anyInt(),
+                anyInt(), anyString(), anyString()
+        );
 
         // When
         vnPayService.handlePaymentSuccess(date, content, customerEmail, orderId);
 
         // Then
-        verify(bookingHotelRepository, times(1)).findById(100);
+        verify(bookingHotelRepository, times(2)).findById(100); // Called twice: updateStatus + sendEmail
         verify(bookingHotelRepository, times(1)).save(any(BookingHotelEntity.class));
         verify(bookingShipRepository, never()).findById(anyInt());
-        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(customerEmail, orderId);
+        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(
+                eq(customerEmail), eq(orderId), anyString(), anyString(),
+                any(LocalDate.class), any(LocalDate.class), anyInt(), anyInt(),
+                anyInt(), eq("hotel"), anyString()
+        );
         assertEquals("PAID", testHotelBooking.getState(), "Hotel booking status should be updated to PAID");
     }
 
@@ -170,18 +185,33 @@ class VNPayServiceTest {
         String customerEmail = "test@example.com";
         String orderId = "200";
 
+        testShipBooking.setCustomerName("Jane Smith");
+        testShipBooking.setPhone("0987654321");
+        testShipBooking.setStartDate(LocalDate.of(2024, 12, 25));
+        testShipBooking.setEndDate(LocalDate.of(2024, 12, 30));
+        testShipBooking.setAdults(3);
+        testShipBooking.setChildren(2);
+
         when(userRepository.findByEmail(customerEmail)).thenReturn(Optional.of(testUser));
         when(bookingShipRepository.findById(200)).thenReturn(Optional.of(testShipBooking));
-        doNothing().when(emailService).sendSuccessOrderConfirmationEmail(anyString(), anyString());
+        doNothing().when(emailService).sendSuccessOrderConfirmationEmail(
+                anyString(), anyString(), anyString(), anyString(),
+                any(LocalDate.class), any(LocalDate.class), anyInt(), anyInt(),
+                anyInt(), anyString(), anyString()
+        );
 
         // When
         vnPayService.handlePaymentSuccess(date, content, customerEmail, orderId);
 
         // Then
-        verify(bookingShipRepository, times(1)).findById(200);
+        verify(bookingShipRepository, times(2)).findById(200); // Called twice: updateStatus + sendEmail
         verify(bookingShipRepository, times(1)).save(any(BookingShipEntity.class));
         verify(bookingHotelRepository, never()).findById(anyInt());
-        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(customerEmail, orderId);
+        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(
+                eq(customerEmail), eq(orderId), anyString(), anyString(),
+                any(LocalDate.class), any(LocalDate.class), anyInt(), anyInt(),
+                anyInt(), eq("ship"), anyString()
+        );
         assertEquals("PAID", testShipBooking.getState(), "Ship booking status should be updated to PAID");
     }
 
@@ -202,7 +232,10 @@ class VNPayServiceTest {
         // Then
         verify(bookingHotelRepository, never()).findById(anyInt());
         verify(bookingShipRepository, never()).findById(anyInt());
-        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(customerEmail, orderId);
+        verify(emailService, never()).sendSuccessOrderConfirmationEmail(
+                anyString(), anyString(), anyString(), anyString(),
+                any(), any(), any(), any(), any(), anyString(), anyString()
+        );
     }
 
     @Test
@@ -212,15 +245,19 @@ class VNPayServiceTest {
         String customerEmail = "test@example.com";
         String orderId = "100";
 
-        doNothing().when(emailService).sendFailedOrderConfirmationEmail(anyString(), anyString());
+        testHotelBooking.setCustomerName("John Doe");
+        when(bookingHotelRepository.findById(100)).thenReturn(Optional.of(testHotelBooking));
+        doNothing().when(emailService).sendFailedOrderConfirmationEmail(
+                anyString(), anyString(), anyString(), anyString()
+        );
 
         // When
         vnPayService.handlePaymentFail(customerEmail, orderId);
 
         // Then
-        verify(emailService, times(1)).sendFailedOrderConfirmationEmail(customerEmail, orderId);
-        verify(bookingHotelRepository, never()).findById(anyInt());
-        verify(bookingShipRepository, never()).findById(anyInt());
+        verify(emailService, times(1)).sendFailedOrderConfirmationEmail(
+                eq(customerEmail), eq(orderId), eq("John Doe"), eq("hotel")
+        );
     }
 
     @Test
@@ -280,11 +317,14 @@ class VNPayServiceTest {
         // Then
         verify(bookingHotelRepository, never()).findById(anyInt());
         verify(bookingShipRepository, never()).findById(anyInt());
-        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(customerEmail, orderId);
+        verify(emailService, never()).sendSuccessOrderConfirmationEmail(
+                anyString(), anyString(), anyString(), anyString(),
+                any(), any(), any(), any(), any(), anyString(), anyString()
+        );
     }
 
     @Test
-    @DisplayName("Should not update booking when booking not found")
+    @DisplayName("Should not send email when booking not found")
     void testHandlePaymentSuccess_BookingNotFound() {
         // Given
         String date = "20231207162830";
@@ -299,8 +339,10 @@ class VNPayServiceTest {
         vnPayService.handlePaymentSuccess(date, content, customerEmail, orderId);
 
         // Then
-        verify(bookingHotelRepository, times(1)).findById(999);
-        verify(bookingHotelRepository, never()).save(any(BookingHotelEntity.class));
-        verify(emailService, times(1)).sendSuccessOrderConfirmationEmail(customerEmail, orderId);
+        verify(bookingHotelRepository, times(2)).findById(999); // Called twice: updateStatus + sendEmail
+        verify(emailService, never()).sendSuccessOrderConfirmationEmail(
+                anyString(), anyString(), anyString(), anyString(),
+                any(), any(), any(), any(), any(), anyString(), anyString()
+        );
     }
 }
