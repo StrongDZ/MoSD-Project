@@ -12,13 +12,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.access.prepost.PreAuthorize;
 
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
-
 
 @RestController
 @RequestMapping("/api/hotel")
 public class HotelController {
+
+    private static final int MAX_BATCH_DELETE_SIZE = 10;
+    private static final int DEFAULT_PAGE_SIZE = 10;
+    private static final int DEFAULT_SEARCH_PAGE_SIZE = 6;
 
     private final HotelService hotelService;
 
@@ -26,219 +30,149 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
+    private ResponseEntity<ResponseObject> successResponse(String message, Object data) {
+        return ResponseEntity.ok(ResponseObject.builder()
+                .message(message)
+                .data(data)
+                .responseCode(HttpStatus.OK.value())
+                .build());
+    }
+
+    private ResponseEntity<ResponseObject> errorResponse(String message, HttpStatus status) {
+        return ResponseEntity.status(status).body(ResponseObject.builder()
+                .message(message)
+                .responseCode(status.value())
+                .build());
+    }
+
     @GetMapping
     public ResultPaginationDTO getAllHotels(
-            @RequestParam("currentPage") Optional<Integer> currentPageOptional,
-            @RequestParam("pageSize") Optional<Integer> pageSizeOptional
+            @RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
+            @RequestParam(value = "pageSize", defaultValue = "10") int pageSize
     ) {
-        int currentPage = currentPageOptional.orElse(1);
-        int pageSize = pageSizeOptional.orElse(10);
-
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
-
         return hotelService.getAllHotels(pageable);
     }
 
-    // Search hotel
     @GetMapping("/search")
     public ResponseEntity<ResponseObject> searchHotelsByNamePriceAndCity(
-            @RequestParam(value = "name", required = false) String name,
-            @RequestParam(value = "minPrice", required = false) Integer minPrice,
-            @RequestParam(value = "maxPrice", required = false) Integer maxPrice,
-            @RequestParam(value = "city", required = false) String city,
-            @RequestParam(value = "features", required = false) String features,
-            @RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
-            @RequestParam(value = "pageSize", defaultValue = "6") int pageSize) {
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) Integer minPrice,
+            @RequestParam(required = false) Integer maxPrice,
+            @RequestParam(required = false) String city,
+            @RequestParam(required = false) String features,
+            @RequestParam(defaultValue = "1") int currentPage,
+            @RequestParam(defaultValue = "6") int pageSize) {
         
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
-        ResultPaginationDTO result = hotelService.searchHotelsByNamePriceAndCity(name, minPrice, maxPrice, city, features, pageable);
-
-        return ResponseEntity.ok(ResponseObject.builder()
-                .message("Hotels retrieved successfully")
-                .data(result)
-                .responseCode(HttpStatus.OK.value())
-                .build());
+        ResultPaginationDTO result = hotelService.searchHotelsByNamePriceAndCity(
+                name, minPrice, maxPrice, city, features, pageable);
+        return successResponse("Hotels retrieved successfully", result);
     }
 
-    // View hotel details
     @GetMapping("/{hotelId}")
-    public ResponseEntity<ResponseObject> getHotelDetails(@PathVariable("hotelId") Integer hotelId) {
+    public ResponseEntity<ResponseObject> getHotelDetails(@PathVariable Integer hotelId) {
         HotelDTO hotelDto = hotelService.getHotelDetails(hotelId);
-
-        if (hotelDto != null) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Hotel details retrieved successfully")
-                    .data(hotelDto)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return hotelDto != null 
+                ? successResponse("Hotel details retrieved successfully", hotelDto)
+                : errorResponse("Hotel not found", HttpStatus.NOT_FOUND);
     }
 
-    // View all rooms
     @GetMapping("/{hotelId}/rooms")
-    public ResponseEntity<ResponseObject> getAllRoomsByHotelId(@PathVariable("hotelId") Integer hotelId) {
+    public ResponseEntity<ResponseObject> getAllRoomsByHotelId(@PathVariable Integer hotelId) {
         List<HotelRoomDTO> rooms = hotelService.getAllRoomsByHotelId(hotelId);
-
-        if (rooms != null && !rooms.isEmpty()) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Rooms retrieved successfully")
-                    .data(rooms)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("No rooms found for this hotel")
-                    .data(rooms)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        }
+        String message = (rooms != null && !rooms.isEmpty()) 
+                ? "Rooms retrieved successfully" 
+                : "No rooms found for this hotel";
+        return successResponse(message, rooms);
     }
 
-    // Add hotel
     @PostMapping("/add")
     @PreAuthorize("hasRole('COMPANY')")
-    public ResponseEntity<ResponseObject> addHotel(@RequestBody HotelDTO hotelDto) {
+    public ResponseEntity<ResponseObject> addHotel(@Valid @RequestBody HotelDTO hotelDto) {
         HotelDTO addedHotel = hotelService.addHotel(hotelDto);
-
-        if (addedHotel != null) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Hotel added successfully")
-                    .data(addedHotel)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
+        return addedHotel != null 
+                ? successResponse("Hotel added successfully", addedHotel)
+                : errorResponse("Failed to add hotel", HttpStatus.BAD_REQUEST);
     }
 
-    // Update hotel
     @PutMapping("/{hotelId}")
     @PreAuthorize("hasRole('COMPANY')")
-    public ResponseEntity<ResponseObject> updateHotel(@PathVariable("hotelId") Integer hotelId, @RequestBody HotelDTO hotelDto) {
+    public ResponseEntity<ResponseObject> updateHotel(
+            @PathVariable Integer hotelId, 
+            @Valid @RequestBody HotelDTO hotelDto) {
         HotelDTO updatedHotel = hotelService.updateHotel(hotelId, hotelDto);
-
-        if (updatedHotel != null) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Hotel updated successfully")
-                    .data(updatedHotel)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return updatedHotel != null 
+                ? successResponse("Hotel updated successfully", updatedHotel)
+                : errorResponse("Hotel not found", HttpStatus.NOT_FOUND);
     }
 
-    // Delete hotel
     @DeleteMapping("/delete")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> deleteHotels(@RequestBody List<Integer> hotelIds) {
-        if (hotelIds.size() > 10) {
-            return ResponseEntity.badRequest().body(ResponseObject.builder()
-                    .message("Cannot delete more than 10 hotels at once")
-                    .responseCode(HttpStatus.BAD_REQUEST.value())
-                    .build());
+        if (hotelIds.size() > MAX_BATCH_DELETE_SIZE) {
+            return errorResponse(
+                    "Cannot delete more than " + MAX_BATCH_DELETE_SIZE + " hotels at once",
+                    HttpStatus.BAD_REQUEST);
         }
         hotelService.deleteHotels(hotelIds);
-        return ResponseEntity.ok(ResponseObject.builder()
-                .message("Hotels deleted successfully")
-                .responseCode(HttpStatus.OK.value())
-                .build());
+        return successResponse("Hotels deleted successfully", null);
     }
 
-    // View room
     @GetMapping("/{hotelId}/{roomId}")
     public ResponseEntity<ResponseObject> getHotelRoom(
-            @PathVariable("hotelId") Integer hotelId,
-            @PathVariable("roomId") Integer roomId) {
+            @PathVariable Integer hotelId,
+            @PathVariable Integer roomId) {
         HotelRoomDTO roomDto = hotelService.getHotelRoom(hotelId, roomId);
-
-        if (roomDto != null) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Room details retrieved successfully")
-                    .data(roomDto)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return roomDto != null 
+                ? successResponse("Room details retrieved successfully", roomDto)
+                : errorResponse("Room not found", HttpStatus.NOT_FOUND);
     }
 
-    // Add room to hotel
     @PostMapping("/{hotelId}/add-room")
     @PreAuthorize("hasRole('COMPANY')")
-    public ResponseEntity<ResponseObject> addHotelRoom(@PathVariable("hotelId") Integer hotelId, @RequestBody HotelRoomDTO roomDto) {
+    public ResponseEntity<ResponseObject> addHotelRoom(
+            @PathVariable Integer hotelId, 
+            @Valid @RequestBody HotelRoomDTO roomDto) {
         HotelRoomDTO addedRoom = hotelService.addHotelRoom(hotelId, roomDto);
-
-        if (addedRoom != null) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Room added successfully")
-                    .data(addedRoom)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
+        return addedRoom != null 
+                ? successResponse("Room added successfully", addedRoom)
+                : errorResponse("Failed to add room", HttpStatus.BAD_REQUEST);
     }
 
-    // Update room in hotel
     @PutMapping("/{hotelId}/{roomId}")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> updateHotelRoom(
-            @PathVariable("hotelId") Integer hotelId,
-            @PathVariable("roomId") Integer roomId,
-            @RequestBody HotelRoomDTO roomDto) {
+            @PathVariable Integer hotelId,
+            @PathVariable Integer roomId,
+            @Valid @RequestBody HotelRoomDTO roomDto) {
         HotelRoomDTO updatedRoom = hotelService.updateHotelRoom(hotelId, roomId, roomDto);
-
-        if (updatedRoom != null) {
-            return ResponseEntity.ok(ResponseObject.builder()
-                    .message("Room updated successfully")
-                    .data(updatedRoom)
-                    .responseCode(HttpStatus.OK.value())
-                    .build());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return updatedRoom != null 
+                ? successResponse("Room updated successfully", updatedRoom)
+                : errorResponse("Room not found", HttpStatus.NOT_FOUND);
     }
 
-    // Delete room from hotel
     @DeleteMapping("/{hotelId}/delete-room")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> deleteHotelRooms(
-            @PathVariable("hotelId") Integer hotelId,
+            @PathVariable Integer hotelId,
             @RequestBody List<Integer> roomIds) {
-        if (roomIds.size() > 10) {
-            return ResponseEntity.badRequest().body(ResponseObject.builder()
-                    .message("Cannot delete more than 10 rooms at once")
-                    .responseCode(HttpStatus.BAD_REQUEST.value())
-                    .build());
+        if (roomIds.size() > MAX_BATCH_DELETE_SIZE) {
+            return errorResponse(
+                    "Cannot delete more than " + MAX_BATCH_DELETE_SIZE + " rooms at once",
+                    HttpStatus.BAD_REQUEST);
         }
         hotelService.deleteHotelRooms(hotelId, roomIds);
-        return ResponseEntity.ok(ResponseObject.builder()
-                .message("Rooms deleted successfully")
-                .responseCode(HttpStatus.OK.value())
-                .build());
+        return successResponse("Rooms deleted successfully", null);
     }
 
     @GetMapping("/cities")
     public ResponseEntity<ResponseObject> getAllCities() {
-        List<String> cities = hotelService.getAllCities();
-        return ResponseEntity.ok(ResponseObject.builder()
-                .message("Cities retrieved successfully")
-                .data(cities)
-                .responseCode(HttpStatus.OK.value())
-                .build());
+        return successResponse("Cities retrieved successfully", hotelService.getAllCities());
     }
 
-    // HotelController.java
     @GetMapping("/suggest")
     public ResponseEntity<ResponseObject> suggestHotelNames(@RequestParam("q") String keyword) {
-        List<String> names = hotelService.suggestHotelNames(keyword);
-        return ResponseEntity.ok(ResponseObject.builder()
-            .message("Hotel names suggestion")
-            .data(names)
-            .responseCode(HttpStatus.OK.value())
-            .build());
+        return successResponse("Hotel names suggestion", hotelService.suggestHotelNames(keyword));
     }
 }
