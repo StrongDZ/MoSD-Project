@@ -19,7 +19,7 @@ public class HotelServiceImpl implements HotelService{
     @Autowired
     private ModelMapper modelMapper;
 
-    public HotelRoomDTO updateRoom(Integer hotelId, Integer roomId, HotelRoomDTO hotelRoomDTO) {
+    public HotelRoomDTO updateHotelRoom(Integer hotelId, Integer roomId, HotelRoomDTO hotelRoomDTO) {
         HotelEntity hotel = hotelRepository.findById(hotelId).
                 orElseThrow(() -> new RuntimeException("Hotel not found with id: " + hotelId));
 
