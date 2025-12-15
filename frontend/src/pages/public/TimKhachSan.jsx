@@ -438,4 +438,3 @@ const TimKhachSan = () => {
 };
 
 export default TimKhachSan;
-
