@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import config from "../../config";
+import { axiosRequest } from "../../utils/axiosUtils";
 import {
   Container,
   Grid,
@@ -23,17 +24,30 @@ import SearchIcon from "@mui/icons-material/Search";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import LongCard from "../../components/public/LongCard";
-import { handleErrorToast } from "../../utils/toastHandler";
-import { axiosRequest } from "../../utils/axiosUtils";
+
 const TimKhachSan = () => {
   const [hotels, setHotels] = useState([]);
-  const [location, setLocation] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [cities, setCities] = useState([]);
   const [priceRangeOption, setPriceRangeOption] = useState("");
   const [hotelOptions, setHotelOptions] = useState([]);
+
+  const [searchParams, setSearchParams] = useState({
+    tenKhachSan: "",
+    diaDiem: "",
+    ngayNhanPhong: "",
+    ngayTraPhong: "",
+    soNguoi: 1,
+  });
+
+  const [filters, setFilters] = useState({
+    giaRange: [0, 5000000],
+    rating: 0,
+  });
+
+  const [selectedFeatures, setSelectedFeatures] = useState([]);
 
   const availableFeatures = [
     "Bồn tắm/Cabin tắm đứng",
@@ -67,36 +81,6 @@ const TimKhachSan = () => {
     };
     fetchCities();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchFeatures = async () => {
-  //     try {
-  //       const response = await axiosRequest({
-  //         url: `${config.api.url}/api/hotel/features`,
-  //         method: "GET",
-  //       });
-  //       setAvailableFeatures(response.data.data || []);
-  //     } catch (error) {
-  //       console.error("Lỗi khi lấy danh sách features:", error);
-  //     }
-  //   };
-  //   fetchFeatures();
-  // }, []);
-
-  const [searchParams, setSearchParams] = useState({
-    tenKhachSan: "",
-    diaDiem: "",
-    ngayNhanPhong: "",
-    ngayTraPhong: "",
-    soNguoi: 1,
-  });
-
-  const [filters, setFilters] = useState({
-    giaRange: [0, 5000000],
-    rating: 0,
-  });
-
-  const [selectedFeatures, setSelectedFeatures] = useState([]);
 
   const fetchHotels = async (page) => {
     try {
@@ -135,12 +119,11 @@ const TimKhachSan = () => {
 
   const handleSearch = () => {
     console.log("Tìm kiếm với params:", searchParams);
-    setCurrentPage(1); // Reset về trang 1 khi tìm kiếm
+    setCurrentPage(1);
     fetchHotels(1);
   };
 
   useEffect(() => {
-    // Reset trang về 1 khi thay đổi bộ lọc
     setCurrentPage(1);
   }, [filters, searchParams]);
 
@@ -148,22 +131,11 @@ const TimKhachSan = () => {
     setFilters({ ...filters, giaRange: newValue });
   };
 
-  const handleTienIchChange = (name) => (event) => {
-    setFilters({
-      ...filters,
-      tienIch: {
-        ...filters.tienIch,
-        [name]: event.target.checked,
-      },
-    });
-  };
-
   const handlePageChange = (event, value) => {
     console.log("Chuyển sang trang:", value);
     setCurrentPage(value);
   };
 
-  // Hàm gọi API suggest tên khách sạn
   const handleHotelInputChange = async (event, value) => {
     if (!value) {
       setHotelOptions([]);
@@ -257,24 +229,15 @@ const TimKhachSan = () => {
               select
               variant="standard"
               value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              onChange={(e) => {
+                setLocation(e.target.value);
+                setSearchParams({ ...searchParams, diaDiem: e.target.value });
+              }}
               InputProps={{ disableUnderline: true }}
               fullWidth
               sx={{
                 height: "100%",
                 "& .MuiSelect-select": { py: 1.2 },
-                "& .MuiMenu-paper": {
-                  maxHeight: 250,
-                },
-              }}
-              SelectProps={{
-                MenuProps: {
-                  PaperProps: {
-                    style: {
-                      maxHeight: 250,
-                    },
-                  },
-                },
               }}
             >
               {cities.map((option) => (
@@ -303,7 +266,6 @@ const TimKhachSan = () => {
               onChange={(e) => {
                 const val = e.target.value;
                 setPriceRangeOption(val);
-
                 if (val) {
                   const [min, max] = val.split("-").map(Number);
                   setFilters((prev) => ({

@@ -1,0 +1,40 @@
+# Core dependencies
+langchain==0.3.21
+langchain-community==0.3.20
+langchain-core==0.3.56
+langchain-openai==0.3.14
+langgraph==0.3.34
+
+# Vector database
+qdrant-client==1.13.3
+
+# API integrations
+openai==1.69.0
+tavily-python==0.5.3
+wikipedia==1.4.0
+serpapi==0.1.0
+
+# Utilities
+python-dotenv==1.0.1
+ipython==8.22.1
+
+# Data processing
+numpy==1.26.4
+pandas==2.2.1
+
+# Machine Learning
+scikit-learn==1.4.1.post1
+torch==2.6.0
+tensorflow==2.16.1
+
+# Web frameworks
+fastapi==0.115.12
+uvicorn==0.34.0
+
+# Database
+psycopg2-binary==2.9.10
+trustcall==0.0.39
+
+# Additional dependencies for RAG
+langchain-community==0.3.20
+langchain-openai==0.3.14
