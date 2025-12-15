@@ -12,6 +12,11 @@ class PostgresStore:
         self._setup_table()
 
     def _setup_table(self):
+        """
+        Docstring for _setup_table
+        
+        :param self: Description
+        """
         with self.conn.cursor() as cur:
             cur.execute("""
             CREATE TABLE IF NOT EXISTS memories (
@@ -22,7 +27,8 @@ class PostgresStore:
             """)
             self.conn.commit()
 
-    def put(self, namespace, key, value):
+    def put(self, namespace, key, value): 
+        """Lưu một mục bộ nhớ vào cơ sở dữ liệu PostgreSQL."""
         with self.conn.cursor() as cur:
             cur.execute("""
             INSERT INTO memories (namespace, key, value)
@@ -32,6 +38,7 @@ class PostgresStore:
             self.conn.commit()
 
     def search(self, namespace):
+        """Tìm kiếm các mục bộ nhớ trong một namespace cụ thể."""
         with self.conn.cursor() as cur:
             cur.execute("""
             SELECT key, value FROM memories WHERE namespace = %s;
