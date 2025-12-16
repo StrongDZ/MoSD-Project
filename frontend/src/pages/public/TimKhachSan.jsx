@@ -155,25 +155,65 @@ const TimKhachSan = () => {
   };
 
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 4, position: 'relative' }}>
+      {/* Decorative Elements Loạn */}
+      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-pink-500 to-yellow-400 rounded-full blur-3xl opacity-30 animate-bounce"></div>
+      <div className="absolute top-20 right-10 w-48 h-48 bg-gradient-to-tr from-cyan-400 to-purple-600 rounded-full blur-2xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-40 left-1/4 w-64 h-64 bg-gradient-to-bl from-green-400 to-blue-500 rounded-full blur-3xl opacity-25 animate-spin" style={{animationDuration: '20s'}}></div>
       <div className="absolute inset-0 bg-[url('/background-pattern.svg')] bg-cover opacity-5 -z-10"></div>
+      
+      {/* Floating Random Shapes */}
+      <div className="absolute top-1/4 right-1/3 w-12 h-12 border-4 border-orange-500 rotate-45 animate-ping"></div>
+      <div className="absolute bottom-1/3 left-1/4 w-16 h-16 bg-red-400 rounded-tr-full opacity-40 animate-bounce" style={{animationDelay: '1s'}}></div>
+      <div className="absolute top-1/2 right-1/4 text-6xl opacity-10 animate-spin" style={{animationDuration: '15s'}}>🌟</div>
+      <div className="absolute bottom-1/4 left-1/2 text-5xl opacity-20 animate-bounce" style={{animationDelay: '2s'}}>🎨</div>
 
       {/* Search Bar */}
       <Paper
-        elevation={3}
-        sx={{ px: 4, py: 5, borderRadius: 5, mb: 4, bgcolor: "#fff" }}
+        elevation={10}
+        sx={{ 
+          px: 4, 
+          py: 5, 
+          borderRadius: '30px', 
+          mb: 4, 
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)',
+          transform: 'rotate(-1deg)',
+          border: '8px solid #FFD700',
+          boxShadow: '0 20px 60px rgba(236, 128, 177, 0.5)',
+        }}
       >
         <Typography
-          variant="h4"
-          fontWeight="bold"
+          variant="h2"
+          fontWeight="900"
           align="center"
           gutterBottom
-          color="#EC80B1"
+          sx={{ 
+            color: '#FFFF00',
+            textShadow: '4px 4px 0px #FF00FF, 8px 8px 0px #00FFFF',
+            transform: 'skew(-5deg) rotate(2deg)',
+            letterSpacing: '0.2em',
+            fontFamily: 'Comic Sans MS, cursive',
+            textDecoration: 'underline wavy #00FF00',
+            animation: 'pulse 2s infinite'
+          }}
         >
-          Bạn lựa chọn khách sạn nào?
+          🎉 Bạn lựa chọn khách sạn nào? 🏨
         </Typography>
-        <Typography align="center" color="text.secondary" mb={4}>
-          Hơn 100 khách sạn hạng sang giá tốt đang chờ bạn
+        <Typography 
+          align="center" 
+          mb={4}
+          sx={{
+            color: '#FFFFFF',
+            fontSize: '1.8rem',
+            fontWeight: 'bold',
+            textShadow: '2px 2px 4px rgba(0,0,0,0.5)',
+            background: 'linear-gradient(90deg, #FF6B6B, #4ECDC4, #FFE66D)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            fontStyle: 'italic',
+          }}
+        >
+          ⭐⭐⭐ Hơn 100 khách sạn hạng sang giá tốt đang chờ bạn ⭐⭐⭐
         </Typography>
 
         <Box
@@ -186,13 +226,18 @@ const TimKhachSan = () => {
             display="flex"
             alignItems="center"
             width={{ xs: "100%", lg: "40%" }}
-            bgcolor="grey.100"
+            sx={{
+              background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+              border: '5px dashed #00FF00',
+              boxShadow: '0 8px 20px rgba(255, 105, 180, 0.8)',
+              transform: 'skew(-2deg)',
+            }}
             px={2}
             py={1.5}
-            borderRadius="50px"
-            height="50px"
+            borderRadius="25px"
+            height="60px"
           >
-            <SearchIcon sx={{ color: "#EC80B1", mr: 1 }} />
+            <SearchIcon sx={{ color: "#FFFF00", mr: 1, fontSize: '2.5rem', animation: 'spin 3s linear infinite' }} />
             <Autocomplete
               freeSolo
               options={hotelOptions}
@@ -216,15 +261,20 @@ const TimKhachSan = () => {
 
           <Box
             width={{ xs: "100%", lg: "20%" }}
-            bgcolor="grey.100"
+            sx={{
+              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              border: '4px solid #FFD700',
+              boxShadow: '0 0 20px rgba(102, 126, 234, 0.8)',
+              transform: 'rotate(1deg)',
+            }}
             px={2}
             py={1.5}
-            borderRadius="50px"
-            height="50px"
+            borderRadius="20px"
+            height="60px"
             display="flex"
             alignItems="center"
           >
-            <LocationOnIcon sx={{ color: "#EC80B1", mr: 1 }} />
+            <LocationOnIcon sx={{ color: "#00FFFF", mr: 1, fontSize: '2rem' }} />
             <TextField
               select
               variant="standard"
@@ -250,15 +300,20 @@ const TimKhachSan = () => {
 
           <Box
             width={{ xs: "100%", lg: "20%" }}
-            bgcolor="grey.100"
+            sx={{
+              background: 'linear-gradient(90deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%)',
+              border: '5px dotted #FF00FF',
+              boxShadow: '0 0 25px rgba(250, 139, 255, 0.9)',
+              transform: 'skew(2deg)',
+            }}
             px={2}
             py={1.5}
-            borderRadius="50px"
-            height="50px"
+            borderRadius="30px"
+            height="60px"
             display="flex"
             alignItems="center"
           >
-            <AttachMoneyIcon sx={{ color: "#EC80B1", mr: 1 }} />
+            <AttachMoneyIcon sx={{ color: "#FFD700", mr: 1, fontSize: '2.2rem' }} />
             <TextField
               select
               variant="standard"
@@ -290,20 +345,28 @@ const TimKhachSan = () => {
             variant="contained"
             fullWidth
             sx={{
-              bgcolor: "#EC80B1",
-              borderRadius: "50px",
+              background: 'linear-gradient(45deg, #FF0080 0%, #FF8C00 50%, #40E0D0 100%)',
+              borderRadius: "40px",
               px: 4,
-              py: 1.5,
-              textTransform: "none",
+              py: 2,
+              textTransform: "uppercase",
               width: { xs: "100%", lg: "20%" },
+              fontWeight: '900',
+              fontSize: '1.3rem',
+              border: '6px solid #FFFF00',
+              boxShadow: '0 10px 30px rgba(255, 0, 128, 0.7)',
+              transform: 'rotate(-2deg) scale(1.05)',
+              letterSpacing: '0.1em',
               "&:hover": {
-                bgcolor: "#d66d9e",
+                background: 'linear-gradient(45deg, #40E0D0 0%, #FF8C00 50%, #FF0080 100%)',
+                transform: 'rotate(2deg) scale(1.15)',
+                boxShadow: '0 15px 40px rgba(255, 140, 0, 0.9)',
               },
             }}
             onClick={handleSearch}
             disabled={loading}
           >
-            {loading ? "Đang tìm..." : "Tìm kiếm"}
+            {loading ? "🔍 Đang tìm..." : "🚀 Tìm kiếm 🔥"}
           </Button>
         </Box>
       </Paper>
@@ -311,13 +374,49 @@ const TimKhachSan = () => {
       {/* Kết quả tìm kiếm */}
       <Grid container spacing={3}>
         <Grid item xs={12} md={3}>
-          <Paper elevation={3} sx={{ borderRadius: 5, p: 2, bgcolor: "#fff" }}>
-            <Typography variant="h6" gutterBottom color="#EC80B1">
-              Bộ lọc
+          {/* Decorative Stars around Filter */}
+          <div className="absolute -top-4 -left-4 text-4xl animate-spin" style={{animationDuration: '8s'}}>⭐</div>
+          <div className="absolute -bottom-4 -right-4 text-3xl animate-bounce" style={{animationDelay: '1s'}}>💎</div>
+          <Paper 
+            elevation={10} 
+            sx={{ 
+              borderRadius: '40px', 
+              p: 3, 
+              background: 'linear-gradient(180deg, #ffecd2 0%, #fcb69f 50%, #ff6b6b 100%)',
+              border: '8px ridge #FF1493',
+              boxShadow: '0 0 40px rgba(255, 107, 107, 0.7)',
+              transform: 'rotate(2deg)',
+              position: 'relative',
+            }}
+          >
+            <Typography 
+              variant="h4" 
+              gutterBottom 
+              sx={{
+                color: '#4B0082',
+                fontWeight: '900',
+                textShadow: '3px 3px 0px #FFD700',
+                transform: 'skew(-5deg)',
+                textDecoration: 'underline wavy #00FF00',
+                fontSize: '2.5rem',
+                textAlign: 'center',
+              }}
+            >
+              🎯 Bộ lọc 🎯
             </Typography>
 
-            <Box sx={{ mb: 3 }}>
-              <Typography gutterBottom>Khoảng giá (VNĐ)</Typography>
+            <Box sx={{ mb: 3, bgcolor: 'rgba(255, 255, 255, 0.5)', p: 2, borderRadius: '20px', border: '3px dashed #FF00FF' }}>
+              <Typography 
+                gutterBottom
+                sx={{
+                  fontSize: '1.5rem',
+                  fontWeight: 'bold',
+                  color: '#0000FF',
+                  textShadow: '2px 2px #FFFF00',
+                }}
+              >
+                💰 Khoảng giá (VNĐ) 💰
+              </Typography>
               <Slider
                 value={filters.giaRange}
                 onChange={handleGiaRangeChange}
@@ -329,28 +428,76 @@ const TimKhachSan = () => {
                   `${value.toLocaleString("vi-VN")}đ`
                 }
                 sx={{
-                  color: "#EC80B1",
+                  color: "#FF1493",
+                  height: 12,
                   "& .MuiSlider-thumb": {
+                    width: 32,
+                    height: 32,
+                    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                    border: '4px solid #FFD700',
                     "&:hover, &.Mui-focusVisible": {
-                      boxShadow: "0px 0px 0px 8px rgba(236, 128, 177, 0.16)",
+                      boxShadow: "0px 0px 0px 12px rgba(255, 20, 147, 0.3)",
                     },
+                  },
+                  "& .MuiSlider-track": {
+                    height: 12,
+                    background: 'linear-gradient(90deg, #00FF00, #FFFF00, #FF00FF)',
+                  },
+                  "& .MuiSlider-rail": {
+                    height: 12,
+                    background: '#DDD',
                   },
                 }}
               />
-              <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                <Typography variant="body2" color="text.secondary">
+              <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    color: '#FF0000', 
+                    fontWeight: 'bold',
+                    bgcolor: '#FFFF00',
+                    px: 2,
+                    py: 1,
+                    borderRadius: '15px',
+                    border: '3px solid #00FF00',
+                  }}
+                >
                   {filters.giaRange[0].toLocaleString("vi-VN")}đ
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography 
+                  variant="h6" 
+                  sx={{ 
+                    color: '#0000FF', 
+                    fontWeight: 'bold',
+                    bgcolor: '#FF00FF',
+                    color: '#FFFFFF',
+                    px: 2,
+                    py: 1,
+                    borderRadius: '15px',
+                    border: '3px solid #00FFFF',
+                  }}
+                >
                   {filters.giaRange[1].toLocaleString("vi-VN")}đ
                 </Typography>
               </Box>
             </Box>
 
-            <Box sx={{ mb: 3 }}>
-              <Typography gutterBottom>Tiện ích</Typography>
+            <Box sx={{ mb: 3, bgcolor: 'rgba(255, 255, 0, 0.3)', p: 2, borderRadius: '25px', border: '4px double #00FF00' }}>
+              <Typography 
+                gutterBottom
+                sx={{
+                  fontSize: '1.8rem',
+                  fontWeight: '900',
+                  color: '#FF1493',
+                  textShadow: '2px 2px #00FFFF',
+                  textAlign: 'center',
+                  textDecoration: 'underline wavy #FF6600',
+                }}
+              >
+                ✨ Tiện ích ✨
+              </Typography>
               <FormGroup>
-                {availableFeatures.map((feature) => (
+                {availableFeatures.map((feature, idx) => (
                   <FormControlLabel
                     key={feature}
                     control={
@@ -366,12 +513,27 @@ const TimKhachSan = () => {
                           }
                         }}
                         sx={{
-                          color: "#EC80B1",
-                          "&.Mui-checked": { color: "#EC80B1" },
+                          color: ["#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF"][idx % 5],
+                          transform: `rotate(${idx * 5}deg)`,
+                          "&.Mui-checked": { 
+                            color: ["#FF1493", "#00CED1", "#FFD700", "#FF4500", "#9370DB"][idx % 5],
+                            transform: `scale(1.5) rotate(${idx * 10}deg)`,
+                          },
                         }}
                       />
                     }
                     label={feature}
+                    sx={{
+                      bgcolor: ['rgba(255,0,0,0.1)', 'rgba(0,255,0,0.1)', 'rgba(0,0,255,0.1)', 'rgba(255,255,0,0.1)', 'rgba(255,0,255,0.1)'][idx % 5],
+                      my: 1,
+                      p: 1,
+                      borderRadius: '15px',
+                      border: `2px solid ${['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF'][idx % 5]}`,
+                      '& .MuiTypography-root': {
+                        fontWeight: 'bold',
+                        fontSize: '1.1rem',
+                      }
+                    }}
                   />
                 ))}
               </FormGroup>
@@ -380,14 +542,61 @@ const TimKhachSan = () => {
         </Grid>
 
         <Grid item xs={12} md={9}>
-          <Paper elevation={3} sx={{ borderRadius: 5, p: 2, bgcolor: "#fff" }}>
-            <Typography variant="h6" gutterBottom color="#EC80B1">
-              Danh sách khách sạn {loading && "(Đang tải...)"}
+          {/* Floating decorations around results */}
+          <div className="absolute top-0 right-0 text-5xl animate-bounce">🏨</div>
+          <div className="absolute bottom-0 left-0 text-4xl animate-pulse">🌴</div>
+          <Paper 
+            elevation={10} 
+            sx={{ 
+              borderRadius: '35px', 
+              p: 3, 
+              background: 'linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 50%, #f8edeb 100%)',
+              border: '10px groove #FF6B6B',
+              boxShadow: '0 0 50px rgba(255, 107, 107, 0.6)',
+              transform: 'rotate(-1deg)',
+              position: 'relative',
+            }}
+          >
+            <Typography 
+              variant="h3" 
+              gutterBottom 
+              sx={{
+                color: '#FF1493',
+                fontWeight: '900',
+                textShadow: '4px 4px 0px #00FFFF, 8px 8px 0px #FFD700',
+                textAlign: 'center',
+                textDecoration: 'underline double #00FF00',
+                transform: 'skew(-3deg)',
+                mb: 3,
+              }}
+            >
+              🏆 Danh sách khách sạn {loading && "(⏳ Đang tải...) 🔄"}
             </Typography>
             {!loading && hotels.length === 0 && (
-              <Typography align="center" color="text.secondary" py={4}>
-                Không tìm thấy khách sạn nào phù hợp
-              </Typography>
+              <Box
+                sx={{
+                  textAlign: 'center',
+                  py: 6,
+                  background: 'linear-gradient(45deg, #FFF3E0 30%, #FFE0B2 90%)',
+                  borderRadius: '30px',
+                  border: '6px dashed #FF6B6B',
+                  my: 2,
+                }}
+              >
+                <Typography 
+                  sx={{
+                    fontSize: '3rem',
+                    fontWeight: 'bold',
+                    color: '#D32F2F',
+                    textShadow: '2px 2px #FFD54F',
+                  }}
+                >
+                  😢 Không tìm thấy khách sạn nào phù hợp 😢
+                </Typography>
+                <Typography sx={{ fontSize: '1.5rem', color: '#F57C00', mt: 2, fontWeight: 'bold' }}>
+                  Hãy thử tìm kiếm với điều kiện khác! 🔍
+                </Typography>
+              </Box>
             )}
             {hotels.map((hotel) => (
               <LongCard
@@ -404,7 +613,17 @@ const TimKhachSan = () => {
 
             {/* Pagination */}
             <Box
-              sx={{ display: "flex", justifyContent: "center", mt: 4, mb: 2 }}
+              sx={{ 
+                display: "flex", 
+                justifyContent: "center", 
+                mt: 4, 
+                mb: 2,
+                background: 'linear-gradient(90deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%)',
+                p: 3,
+                borderRadius: '40px',
+                border: '8px ridge #FF1493',
+                boxShadow: '0 0 30px rgba(250, 139, 255, 0.8)',
+              }}
             >
               <Pagination
                 count={totalPages}
@@ -413,18 +632,31 @@ const TimKhachSan = () => {
                 color="primary"
                 shape="rounded"
                 disabled={loading}
+                size="large"
                 sx={{
                   "& .MuiPaginationItem-root": {
-                    color: "#666",
+                    color: "#4B0082",
+                    fontSize: '1.5rem',
+                    fontWeight: 'bold',
+                    border: '3px solid #FFD700',
+                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                    color: '#FFFFFF',
+                    mx: 0.5,
                     "&.Mui-selected": {
-                      backgroundColor: "#EC80B1",
-                      color: "white",
+                      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+                      color: "#FFFF00",
+                      border: '4px solid #00FF00',
+                      transform: 'scale(1.3) rotate(5deg)',
+                      boxShadow: '0 8px 20px rgba(255, 105, 180, 0.8)',
                       "&:hover": {
-                        backgroundColor: "#d66d9e",
+                        background: 'linear-gradient(45deg, #FF8E53 30%, #FE6B8B 90%)',
+                        transform: 'scale(1.4) rotate(-5deg)',
                       },
                     },
                     "&:hover": {
-                      backgroundColor: "rgba(236, 128, 177, 0.1)",
+                      background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+                      transform: 'scale(1.2)',
+                      boxShadow: '0 5px 15px rgba(245, 87, 108, 0.6)',
                     },
                   },
                 }}
