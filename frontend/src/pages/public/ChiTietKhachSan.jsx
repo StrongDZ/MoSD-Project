@@ -59,11 +59,11 @@ const GallerySlider = ({ images }) => {
                 navigation
                 thumbs={{ swiper: thumbsSwiper }}
                 modules={[Navigation, Thumbs]}
-                className="mb-6 rounded-xl overflow-hidden"
+                className="mb-6 rounded-3xl overflow-hidden border-8 border-purple-600 shadow-2xl transform rotate-1"
             >
                 {images.map((img, index) => (
                     <SwiperSlide key={index}>
-                        <img src={img} alt={`Slide ${index}`} className="w-full h-[500px] object-cover" />
+                        <img src={img} alt={`Slide ${index}`} className="w-full h-[600px] object-cover sepia" />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -76,14 +76,14 @@ const GallerySlider = ({ images }) => {
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[Thumbs]}
-                className="mt-4"
+                className="mt-4 transform -rotate-2"
             >
                 {images.map((img, index) => (
                     <SwiperSlide key={index}>
                         <img
                             src={img}
                             alt={`Thumb ${index}`}
-                            className="w-full h-20 object-cover rounded-md border-2 border-transparent hover:border-pink-400 cursor-pointer"
+                            className="w-full h-24 object-cover rounded-full border-4 border-green-500 hover:border-orange-700 cursor-pointer grayscale hover:grayscale-0"
                         />
                     </SwiperSlide>
                 ))}
@@ -102,16 +102,16 @@ const tabs = [
 
 const TabNav = ({ activeTab, setActiveTab }) => {
     return (
-        <div className="sticky top-0 z-10 bg-white border-b border-pink-100 pb-2">
-            <div className="flex space-x-6">
+        <div className="sticky top-0 z-10 bg-gradient-to-r from-cyan-400 via-yellow-300 to-pink-500 border-b-8 border-purple-900 pb-2 transform -skew-x-3">
+            <div className="flex space-x-6 transform skew-x-3">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
-                        className={`pb-2 border-b-2 ${
+                        className={`pb-2 border-b-4 px-6 py-3 text-2xl ${
                             activeTab === tab.id
-                                ? "border-pink-500 text-pink-600 font-semibold"
-                                : "border-transparent text-gray-500 hover:text-pink-500"
-                        } transition-all`}
+                                ? "border-red-700 text-blue-900 font-bold bg-yellow-200 shadow-xl transform scale-125"
+                                : "border-transparent text-purple-800 hover:text-green-600 hover:bg-orange-200"
+                        } transition-all rounded-t-3xl`}
                         onClick={() => setActiveTab(tab.id)}
                     >
                         {tab.label}
@@ -173,7 +173,7 @@ const Highlights = ({ hotelData }) => {
     ];
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6 transform rotate-2">
             {/* Left */}
             <div className="md:col-span-2 space-y-6">
                 {/* Features */}
@@ -181,35 +181,35 @@ const Highlights = ({ hotelData }) => {
                     {hotelData.features.map((feature, index) => {
                         const Icon = featureIcons[feature] || FaMinus; // Fallback icon if not found
                         return (
-                            <div key={index} className="flex items-center space-x-2">
-                                <div className="text-gray-700">
-                                    <Icon size={24} />
+                            <div key={index} className="flex items-center space-x-2 bg-gradient-to-br from-lime-300 to-cyan-400 p-3 rounded-2xl shadow-lg transform hover:rotate-6">
+                                <div className="text-red-600">
+                                    <Icon size={32} />
                                 </div>
-                                <span className="text-gray-700">{feature}</span>
+                                <span className="text-purple-900 font-bold text-lg">{feature}</span>
                             </div>
                         );
                     })}
                 </div>
 
                 {/* Description */}
-                <div className="space-y-3">
+                <div className="space-y-3 bg-yellow-100 p-6 rounded-3xl border-4 border-dashed border-pink-500">
                     {hotelData.shortDescriptions.map((desc, idx) => (
-                        <div key={idx} className="flex items-start space-x-2">
-                            <span className="text-gray-700">✔️</span>
-                            <p className="text-gray-700">{desc}</p>
+                        <div key={idx} className="flex items-start space-x-2 bg-white p-2 rounded-lg shadow">
+                            <span className="text-green-700 text-3xl">✔️</span>
+                            <p className="text-blue-800 font-semibold text-xl">{desc}</p>
                         </div>
                     ))}
                 </div>
             </div>
 
             {/* Right */}
-            <div className="border border-gray-100 p-4 rounded-xl shadow-md bg-white h-fit">
-                <h3 className="text-lg font-semibold mb-4 text-pink-600">Thông tin khách sạn</h3>
+            <div className="border-8 border-orange-500 p-4 rounded-full shadow-2xl bg-gradient-to-tr from-purple-400 via-pink-400 to-yellow-300 h-fit transform -rotate-6 hover:rotate-6 transition-all">
+                <h3 className="text-3xl font-black mb-4 text-red-700 underline decoration-wavy">Thông tin khách sạn</h3>
                 <div className="space-y-3">
                     {hotelInfo.map((info, idx) => (
-                        <div key={idx} className="flex justify-between text-sm gap-20">
-                            <span className="text-gray-600 w-30">{info.label}</span>
-                            <span className="font-semibold text-gray-800 text-right w-full">{info.value}</span>
+                        <div key={idx} className="flex justify-between text-xl gap-20 bg-white p-3 rounded-2xl shadow-lg">
+                            <span className="text-blue-900 w-30 font-bold">{info.label}</span>
+                            <span className="font-black text-green-700 text-right w-full text-2xl">{info.value}</span>
                         </div>
                     ))}
                 </div>
@@ -279,15 +279,15 @@ const Rooms = ({ hotelData }) => {
     }, 0);
 
     return (
-        <div className="space-y-6 py-6">
+        <div className="space-y-6 py-6 bg-gradient-to-b from-green-200 to-blue-300 p-8 rounded-3xl">
             <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-800">Các loại phòng & giá</h2>
-                <button onClick={resetSelections} className="text-sm text-gray-500 hover:text-gray-700 flex items-center">
+                <h2 className="text-5xl font-extrabold text-purple-900 underline decoration-double">Các loại phòng & giá</h2>
+                <button onClick={resetSelections} className="text-2xl text-red-600 hover:text-green-700 flex items-center bg-yellow-300 p-4 rounded-full shadow-2xl transform hover:scale-150">
                     ❌ Xoá lựa chọn
                 </button>
             </div>
 
-            <div className="bg-white p-6 rounded-2xl space-y-4 border border-gray-100">
+            <div className="bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400 p-6 rounded-3xl space-y-4 border-8 border-double border-orange-600">
                 {hotelData.rooms.map((room) => (
                     <RoomItem
                         key={room.roomId}
@@ -299,17 +299,17 @@ const Rooms = ({ hotelData }) => {
                 ))}
 
                 {/* Tổng tiền và nút đặt phòng */}
-                <div className="flex justify-between items-center mt-6">
-                    <div className="text-lg">
-                        Tổng tiền: <span className="font-bold text-gray-800">{totalPrice.toLocaleString("vi-VN")} đ</span>
+                <div className="flex justify-between items-center mt-6 bg-gradient-to-r from-yellow-400 to-red-500 p-6 rounded-3xl shadow-2xl">
+                    <div className="text-4xl font-black">
+                        Tổng tiền: <span className="font-black text-green-900 bg-yellow-200 px-4 py-2 rounded-full border-4 border-blue-700">{totalPrice.toLocaleString("vi-VN")} đ</span>
                     </div>
 
                     <div className="space-x-4">
                         <button
                             onClick={handleBookRoom}
                             disabled={totalPrice === 0}
-                            className={`bg-pink-500 text-white px-6 py-2 rounded-full transition-all duration-300 
-                                ${totalPrice === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-pink-600"}`}
+                            className={`bg-purple-700 text-yellow-300 px-12 py-4 rounded-full transition-all duration-300 text-3xl font-bold border-8 border-cyan-400 shadow-2xl transform hover:scale-125 hover:rotate-12
+                                ${totalPrice === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-green-600"}`}
                         >
                             Đặt ngay →
                         </button>
@@ -335,14 +335,14 @@ const Rooms = ({ hotelData }) => {
 // ================= INTRODUCTION TAB =================
 const Introduction = ({ hotelData }) => {
     return (
-        <div className="py-10 space-y-8">
-            <h2 className="text-3xl font-bold mb-6">Giới thiệu</h2>
+        <div className="py-10 space-y-8 bg-gradient-to-br from-orange-200 via-red-200 to-pink-300 p-10 rounded-3xl transform -rotate-1">
+            <h2 className="text-6xl font-black mb-6 text-blue-900 underline decoration-wavy decoration-green-500">Giới thiệu</h2>
             <div className="space-y-8">
                 {hotelData.longDescriptions.map((block, index) => {
                     if (block.type === "paragraph") {
                         return (
-                            <div key={block.blockId} className="mb-6">
-                                <p className="text-gray-700 leading-relaxed">{block.data}</p>
+                            <div key={block.blockId} className="mb-6 bg-yellow-100 p-6 rounded-3xl border-4 border-purple-600 shadow-xl transform hover:rotate-2">
+                                <p className="text-indigo-900 leading-relaxed text-2xl font-semibold">{block.data}</p>
                             </div>
                         );
                     } else if (block.type === "image") {
@@ -351,7 +351,7 @@ const Introduction = ({ hotelData }) => {
                                 <img
                                     src={block.data}
                                     alt={`Introduction image ${block.blockId}`}
-                                    className="w-full h-[400px] object-cover rounded-xl shadow-md"
+                                    className="w-full h-[400px] object-cover rounded-full shadow-2xl border-8 border-green-500 transform hover:-rotate-6 transition-all hue-rotate-90"
                                 />
                             </div>
                         );
@@ -427,20 +427,20 @@ const ChiTietKhachSan = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gradient-to-br from-lime-400 via-purple-500 to-pink-600">
             <div className="container mx-auto px-4 py-8 max-w-7xl">
                 {/* ===== Title + Rating Section ===== */}
-                <div className="mb-8">
-                    <h1 className="text-3xl font-bold mb-2 text-gray-800">{hotelData.hotelName}</h1>
-                    <div className="flex items-center space-x-4 text-gray-600 text-sm">
-                        <div className="flex items-center space-x-1 text-pink-500">
+                <div className="mb-8 bg-gradient-to-r from-cyan-300 to-yellow-400 p-8 rounded-3xl shadow-2xl border-8 border-red-600 transform rotate-1">
+                    <h1 className="text-7xl font-black mb-2 text-purple-900 underline decoration-double decoration-green-600">{hotelData.hotelName}</h1>
+                    <div className="flex items-center space-x-4 text-blue-900 text-2xl font-bold">
+                        <div className="flex items-center space-x-1 text-orange-600">
                             {[...Array(5)].map((_, idx) => (
-                                <FaStar key={idx} />
+                                <FaStar key={idx} size={32} />
                             ))}
                         </div>
-                        <span>5.0</span>
-                        <span>• 200 đánh giá</span>
-                        <span>• {hotelData.address}</span>
+                        <span className="bg-green-300 px-3 py-1 rounded-full">5.0</span>
+                        <span className="bg-pink-300 px-3 py-1 rounded-full">• 200 đánh giá</span>
+                        <span className="bg-yellow-200 px-3 py-1 rounded-full">• {hotelData.address}</span>
                     </div>
                 </div>
 
@@ -450,10 +450,10 @@ const ChiTietKhachSan = () => {
                 </div>
 
                 {/* ===== Tab Navigation and Content ===== */}
-                <div className="bg-white rounded-xl shadow-sm p-6">
+                <div className="bg-gradient-to-bl from-yellow-200 via-pink-300 to-purple-400 rounded-3xl shadow-2xl p-6 border-8 border-green-600 transform -rotate-1">
                     <TabNav activeTab={activeTab} setActiveTab={setActiveTab} />
 
-                    <div className="mt-6">
+                    <div className="mt-6 bg-white bg-opacity-70 p-6 rounded-3xl">
                         {activeTab === 1 && <Highlights hotelData={hotelData} />}
                         {activeTab === 2 && <Rooms hotelData={hotelData} />}
                         {activeTab === 3 && <Introduction hotelData={hotelData} />}
