@@ -158,11 +158,10 @@ const TabNav = ({ activeTab, setActiveTab }) => {
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
-                        className={`pb-2 border-b-2 ${
-                            activeTab === tab.id
+                        className={`pb-2 border-b-2 ${activeTab === tab.id
                                 ? "border-pink-500 text-pink-600 font-semibold"
                                 : "border-transparent text-gray-500 hover:text-pink-500"
-                        } transition-all`}
+                            } transition-all`}
                         onClick={() => setActiveTab(tab.id)}
                     >
                         {tab.label}
@@ -445,7 +444,7 @@ const DuThuyen = () => {
                         {activeTab === 1 && <Highlights shipData={shipData} />}
                         {activeTab === 2 && <Rooms shipData={shipData} />}
                         {activeTab === 3 && <Introduction shipData={shipData} />}
-                        {activeTab === 4 && <ReviewsShip shipId={id} />}
+                        {activeTab === 4 && <ReviewsShip shipId={id} type="ship" />}
                     </div>
                 </div>
             </div>

@@ -4,16 +4,16 @@ import config from "../../config";
 import { handleErrorToast } from "../../utils/toastHandler";
 import { axiosRequest } from "../../utils/axiosUtils";
 import { useAuth } from "../../contexts/AuthProvider";
-const ReviewsShip = ({ shipId }) => {
+const ReviewsShip = ({ shipId, type = "ship" }) => {
     const [reviews, setReviews] = useState([]);
     const [filteredStar, setFilteredStar] = useState(null);
     const [newReview, setNewReview] = useState({ name: "", content: "", stars: 5 });
-    const { token } = useAuth();    
+    const { token } = useAuth();
 
     const fetchReviews = async () => {
         try {
             const res = await axiosRequest({
-                url: `${config.api.url}/api/ship/${shipId}/reviews`,
+                url: `${config.api.url}/api/${type}/${shipId}/reviews`,
                 method: "GET",
             });
             setReviews(res.data.data || []);
@@ -25,13 +25,13 @@ const ReviewsShip = ({ shipId }) => {
 
     useEffect(() => {
         fetchReviews();
-    }, [shipId]);
+    }, [shipId, type]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             await axiosRequest({
-                url: `${config.api.url}/api/ship/${shipId}/reviews`,
+                url: `${config.api.url}/api/${type}/${shipId}/reviews`,
                 method: "POST",
                 data: newReview,
                 token: token,
