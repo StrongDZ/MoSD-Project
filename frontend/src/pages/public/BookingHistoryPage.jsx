@@ -1,4 +1,5 @@
 import { useState } from "react";
+// View booking history implementation
 //import { bookings } from "../data/mockBookings";
 import BookingHistoryTabs from "../../components/public/BookingHistoryTab";
 import BookingList from "../../components/public/BookingList";
@@ -30,7 +31,7 @@ export default function BookingHistoryPage() {
                 setBookingList(response.data.data);
             } catch (error) {
                 console.error("Error fetching bookings:", error);
-                handleErrorToast(error, "Đã có lỗi xảy ra khi tải lịch sử đặt phòng!");
+                handleErrorToast(error, "�� c� l?i x?y ra khi t?i l?ch s? d?t ph�ng!");
             } finally {
                 setIsLoading(false);
             }
@@ -55,7 +56,7 @@ export default function BookingHistoryPage() {
                                     }`}
                                     onClick={() => setSelectedType("ship")}
                                 >
-                                    Du thuyền
+                                    Du thuy?n
                                 </button>
                                 <button
                                     className={`px-4 py-3 rounded-lg transition-all duration-200 text-left ${
@@ -65,7 +66,7 @@ export default function BookingHistoryPage() {
                                     }`}
                                     onClick={() => setSelectedType("hotel")}
                                 >
-                                    Khách sạn
+                                    Kh�ch s?n
                                 </button>
                             </div>
                         </div>
