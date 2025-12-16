@@ -1,45 +1,16 @@
 package com.travel_agent.models.id.ship;
 
 import java.io.Serializable;
-import java.util.Objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShipDescriptionId implements Serializable {
-    private Long shipId;
-    private String language;
-
-    public ShipDescriptionId() {}
-
-    public ShipDescriptionId(Long shipId, String language) {
-        this.shipId = shipId;
-        this.language = language;
-    }
-
-    public Long getShipId() {
-        return shipId;
-    }
-
-    public void setShipId(Long shipId) {
-        this.shipId = shipId;
-    }
-
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ShipDescriptionId that = (ShipDescriptionId) o;
-        return Objects.equals(shipId, that.shipId) && Objects.equals(language, that.language);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(shipId, language);
-    }
+    private Integer shipId;
+    private Integer blockId;
+>>>>>>> 0e17a1c09a3ac1c12d89e41279b96596fcb2ecb5
 }
