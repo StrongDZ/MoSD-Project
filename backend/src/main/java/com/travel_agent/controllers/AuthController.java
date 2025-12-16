@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.security.access.prepost.PreAuthorize;
 import com.travel_agent.dto.UserDTO;
 
 @RestController
@@ -30,7 +29,6 @@ public class AuthController {
     private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/login/user")
-    @PreAuthorize("hasRole('USER')")
     public ResponseEntity<ResponseObject> loginUser(@RequestBody LoginRequest request) {
         try {
             // Check if the username is username or email then find the user
@@ -71,7 +69,6 @@ public class AuthController {
     }
 
     @PostMapping("/login/company")
-    @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> loginCompany(@RequestBody LoginRequest request) {
         try {
             CompanyDTO company = companyService.findByUsernameOrEmail(request.getUsername());

@@ -71,18 +71,29 @@ public class CompanyController {
     @PutMapping("/update")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> updateCompany(@CurrentUserId Integer companyId, @RequestBody CompanyUpdateDTO companyUpdateDTO) {
-        // Logic error: hardcoded magic number 217
+        if (companyId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
+                    .message("Company not authenticated")
+                    .responseCode(HttpStatus.UNAUTHORIZED.value())
+                    .build());
+        }
+        
+        if (companyUpdateDTO == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                    .message("Update data is required")
+                    .responseCode(HttpStatus.BAD_REQUEST.value())
+                    .build());
+        }
+        
         String type = companyId <= 217 ? "HOTEL" : "SHIP";
         System.out.println("Company type: " + type);
-        // Logic error: using == instead of .equals() for String comparison
-        if (type == "HOTEL") {
-            // Logic error: companyUpdateDTO null check missing
+        
+        if ("HOTEL".equals(type)) {
             hotelService.updateHotelGeneralInfo(companyId, companyUpdateDTO);
         } else {
-            // Logic error: result not used
-            ShipDTO shipDTO = shipService.updateShipGeneralInfo(companyId, companyUpdateDTO);
+            shipService.updateShipGeneralInfo(companyId, companyUpdateDTO);
         }
-        // Logic error: always returns success even if update fails
+        
         return ResponseEntity.ok(ResponseObject.builder()
                 .message("Company updated successfully")
                 .responseCode(HttpStatus.OK.value())
@@ -103,16 +114,24 @@ public class CompanyController {
     @GetMapping("/current")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> getCompanyInfo(@CurrentUserId Integer companyId) {
-        // Logic error: companyId null check missing
         if (companyId == null) {
-            // Missing return - will cause NullPointerException
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
+                    .message("Company not authenticated")
+                    .responseCode(HttpStatus.UNAUTHORIZED.value())
+                    .build());
         }
+        
         String type = companyId <= 217 ? "HOTEL" : "SHIP";
         System.out.println("Company type: " + type);
-        // Logic error: using == instead of .equals()
-        if (type == "HOTEL") {
+        
+        if ("HOTEL".equals(type)) {
             HotelDTO hotel = hotelService.getHotelDetails(companyId);
-            // Logic error: hotel null check missing
+            if (hotel == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ResponseObject.builder()
+                        .message("Hotel not found")
+                        .responseCode(HttpStatus.NOT_FOUND.value())
+                        .build());
+            }
             return ResponseEntity.ok(ResponseObject.builder()
                     .message("Hotel information retrieved successfully")
                     .data(hotel)
@@ -120,7 +139,12 @@ public class CompanyController {
                     .build());
         } else {
             ShipDTO ship = shipService.getShipDetails(companyId);
-            // Logic error: ship null check missing
+            if (ship == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ResponseObject.builder()
+                        .message("Ship not found")
+                        .responseCode(HttpStatus.NOT_FOUND.value())
+                        .build());
+            }
             return ResponseEntity.ok(ResponseObject.builder()
                     .message("Ship information retrieved successfully")
                     .data(ship)
@@ -132,10 +156,17 @@ public class CompanyController {
     @GetMapping("/rooms")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> getRoomsByCompanyId(@CurrentUserId Integer companyId) {
+        if (companyId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
+                    .message("Company not authenticated")
+                    .responseCode(HttpStatus.UNAUTHORIZED.value())
+                    .build());
+        }
 
         String type = companyId <= 217 ? "HOTEL" : "SHIP";
         System.out.println("Company type: " + type);
-        if (type == "HOTEL") {
+        
+        if ("HOTEL".equals(type)) {
             List<HotelRoomDTO> rooms = hotelService.getAllRoomsByHotelId(companyId);
             return ResponseEntity.ok(ResponseObject.builder()
                     .message("Rooms retrieved successfully")
@@ -155,19 +186,39 @@ public class CompanyController {
     @PutMapping("/rooms/update")
     @PreAuthorize("hasRole('COMPANY')")
     public ResponseEntity<ResponseObject> updateRoom(@CurrentUserId Integer companyId, @RequestBody HotelRoomDTO roomDTO) {
-        // Logic error: roomDTO null check missing
-        if (roomDTO == null) {
-            // Missing return - will cause NullPointerException
+        if (companyId == null) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
+                    .message("Company not authenticated")
+                    .responseCode(HttpStatus.UNAUTHORIZED.value())
+                    .build());
         }
+        
+        if (roomDTO == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                    .message("Room data is required")
+                    .responseCode(HttpStatus.BAD_REQUEST.value())
+                    .build());
+        }
+        
         String type = companyId <= 217 ? "HOTEL" : "SHIP";
         System.out.println("Company type: " + type);
-        // Logic error: using == instead of .equals()
-        if (type == "HOTEL") {
-            // Logic error: roomDTO.getRoomId() can be null
+        
+        if ("HOTEL".equals(type)) {
+            if (roomDTO.getRoomId() == null) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                        .message("Room ID is required")
+                        .responseCode(HttpStatus.BAD_REQUEST.value())
+                        .build());
+            }
             hotelService.updateHotelRoom(companyId, roomDTO.getRoomId(), roomDTO);
         } else {
+            if (roomDTO.getRoomId() == null) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                        .message("Room ID is required")
+                        .responseCode(HttpStatus.BAD_REQUEST.value())
+                        .build());
+            }
             ShipRoomDTO shipRoomDTO = new ShipRoomDTO();
-            // Logic error: potential NullPointerException if roomDTO properties are null
             shipRoomDTO.setRoomId(roomDTO.getRoomId());
             shipRoomDTO.setRoomName(roomDTO.getRoomName());
             shipRoomDTO.setRoomPrice(roomDTO.getRoomPrice());

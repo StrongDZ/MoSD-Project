@@ -102,6 +102,11 @@ const featureIcons = {
 const GallerySlider = ({ images }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
+    // Kiểm tra nếu không có ảnh hoặc mảng rỗng thì không hiển thị
+    if (!images || !Array.isArray(images) || images.length === 0) {
+        return null;
+    }
+
     return (
         <div className="w-full">
             {/* Main Gallery */}
@@ -158,10 +163,11 @@ const TabNav = ({ activeTab, setActiveTab }) => {
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
-                        className={`pb-2 border-b-2 ${activeTab === tab.id
+                        className={`pb-2 border-b-2 ${
+                            activeTab === tab.id
                                 ? "border-pink-500 text-pink-600 font-semibold"
                                 : "border-transparent text-gray-500 hover:text-pink-500"
-                            } transition-all`}
+                        } transition-all`}
                         onClick={() => setActiveTab(tab.id)}
                     >
                         {tab.label}
@@ -182,34 +188,41 @@ const Highlights = ({ shipData }) => {
         { label: "Điều hành", value: shipData.companyName },
     ];
 
+    const features = shipData?.features || [];
+    const shortDescriptions = shipData?.shortDescriptions || [];
+
     return (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
             {/* Left */}
             <div className="md:col-span-2 space-y-6">
                 {/* Features */}
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    {shipData.features.map((feature, index) => {
-                        const Icon = featureIcons[feature] || FaMinus; // Fallback icon if not found
-                        return (
-                            <div key={index} className="flex items-center space-x-2">
-                                <div className="text-gray-700">
-                                    <Icon size={24} />
+                {features.length > 0 && (
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        {features.map((feature, index) => {
+                            const Icon = featureIcons[feature] || FaMinus; // Fallback icon if not found
+                            return (
+                                <div key={index} className="flex items-center space-x-2">
+                                    <div className="text-gray-700">
+                                        <Icon size={24} />
+                                    </div>
+                                    <span className="text-gray-700">{feature}</span>
                                 </div>
-                                <span className="text-gray-700">{feature}</span>
-                            </div>
-                        );
-                    })}
-                </div>
+                            );
+                        })}
+                    </div>
+                )}
 
                 {/* Description */}
-                <div className="space-y-3">
-                    {shipData.shortDescriptions.map((desc, idx) => (
-                        <div key={idx} className="flex items-start space-x-2">
-                            <span className="text-gray-700">✔️</span>
-                            <p className="text-gray-700">{desc}</p>
-                        </div>
-                    ))}
-                </div>
+                {shortDescriptions.length > 0 && (
+                    <div className="space-y-3">
+                        {shortDescriptions.map((desc, idx) => (
+                            <div key={idx} className="flex items-start space-x-2">
+                                <span className="text-gray-700">✔️</span>
+                                <p className="text-gray-700">{desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
 
             {/* Right */}
@@ -322,6 +335,11 @@ const Rooms = ({ shipData }) => {
 
 // ================= INTRODUCTION TAB =================
 const Introduction = ({ shipData }) => {
+    // Kiểm tra nếu không có longDescriptions thì không hiển thị
+    if (!shipData?.longDescriptions || !Array.isArray(shipData.longDescriptions) || shipData.longDescriptions.length === 0) {
+        return null;
+    }
+
     return (
         <div className="py-10 space-y-8">
             <h2 className="text-3xl font-bold mb-6">Giới thiệu</h2>

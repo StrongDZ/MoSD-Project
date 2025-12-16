@@ -1,0 +1,828 @@
+hotel_id,block_id,data
+1,1,"Với tông màu chủ đạo vàng, trắng sử dụng trong thiết kế nội thất phòng được lấy cảm hứng từ màu của loại đá quý – Đá Hổ Phách, khách sạn mang đến nguồn năng lượng tích cực, tưởi mới đồng thời cũng tượng trưng cho sự ấm áp và chân thành"
+1,2,"Hệ thống phòng họp và hội nghị được trang bị máy chiếu, âm thanh cùng những trang thiết bị hiện đại"
+1,3,Tổ hợp giải trí- sức khoẻ tại khách sạn sẽ làm hài lòng những vị khách khó tính nhất khi sử dụng dịch vụ tại đây
+1,4,"Thưởng thức những ly cooktail nhiệt đới đầy màu sắc và  món ăn ngon từ các nền văn hoá ẩm thực phong phú Âu, Á"
+2,1,"Sở hữu vị trí trung tâm và tọa lạc ngay gần con đường đi bộ uốn lượn cạnh bờ biển của thành phố trong lành nhất Việt Nam, đây là căn hộ khách sạn hoàn hảo để bạn thỏa sức khám phá địa danh Di sản Thế giới đã được UNESCO công nhận."
+2,2,"Tọa lạc ngay tại ví trí trung tâm, Citadines Marina Halong khiến việc khám phá thành phố biển này dễ dàng hơn bao giờ hết khi cảnh quan hàng ngàn năm tuổi đang chờ du khách tới thăm ngay ngoài ngưỡng cửa"
+2,3,Citadines Marina Halong mang đến cho bạn sự linh hoạt trong sử dụng dịch vụ với đa dạng các hạng phòng từ studio được trang bị và thiết kế đẹp mắt đến các căn hộ 2 phòng ngủ và 3 phòng ngủ
+3,1,"Tại Sea Stars, chúng tôi cung cấp đầy đủ những tiện ích đẳng cấp đạt tiêu chuẩn 5 sao quốc tế, từ spa, bể bơi hay trung tâm chăm sóc sức khỏe, nơi quý khách có thể tận hưởng những phương pháp làm đẹp, tái tạo năng lượng sau một hành trình dài."
+3,2,"Đối với những vị khách có gu ẩm thực thời thượng, không gian nhà hàng và các quán bar sang trọng tại Sea Stars với đa dạng phong cách phục vụ, cùng thực đơn đặc sắc, chắc chắn sẽ chiều lòng vị giác của bất kì thượng khách nào ghé qua."
+3,3,"Đồng hành cùng bạn trong chuyến hành trình nghỉ dưỡng lý tưởng với hệ thống bể bơi công nghệ cao và câu lạc bộ sức khỏe hiện đại, chúng tôi cam kết mang đến cho bạn những trải nghiệm dịch vụ ấn tượng và đáng nhớ. Hãy đến và tận hưởng kỳ nghỉ trong mơ tại khách sạn Sea Stars Hạ Long"
+4,1,"Nhà hàng Blue Bay không chỉ nổi bật với thực đơn đa dạng, mà còn ấn tượng bởi việc trang bị bếp mở. Thực khách sẽ được nhìn thấy những bước chế biến thức ăn trực tiếp, tạo ra một trải nghiệm ẩm thực độc đáo và gần gũi hơn"
+4,2,"Tại Wyndham Legend Halong, khách sạn truyền cảm hứng cho sự kiện và khách mời của bạn, với sự hỗ trợ đặc biệt bởi các ứng dụng công nghệ cao cùng đội ngũ nhân viên chuyên nghiệp."
+4,3,"Khách sạn Wyndham Legend Halong không chỉ có chuỗi phòng nghỉ cao cấp, hiện đại, sang trong, nơi tổ chức tiệc cưới thời thượng, khu vui chơi lành mạnh, an toàn cho trẻ em...mà còn có phòng tập hiện đại, tối tân cho dân thể"
+5,1,"Các phòng nghỉ với phong cách thiết kế mới mẻ, thoáng mát, hiện đại rất phù hợp cho du khách khi nghỉ dưỡng tại khách sạn"
+5,2,"không gian các phòng hội nghị hội thảo từ nhỏ tới lớn, các nhà hàng với phong cách ẩm thực đa dạng, dịch vụ chuyên nghiệp, bể bơi, phòng tập GYM, khu Spa & Massage cùng các trang thiết bị hiện đại đẳng cấp sẽ đáp ứng mọi nhu cầu của du khách"
+6,1,"D’Lecia Hạ Long làm điểm dừng chân, du khách sẽ được thư giãn thoải mái, với nhiều hạng phòng và dịch vụ đi kèm phù hợp cho các nhu cầu khác nhau của khách."
+6,2,"Mỗi căn phòng đều theo lối thiết kế hiện đại, kết hợp cùng những tông màu đặc trưng của khách sạn, tất cả tạo nên sự hài hòa với cảnh quan nơi đây. Bên cạnh đó, các phòng đều được trang bị cơ sở vật chất gồm những thiết bị và phương tiện hiện đại như ti vi thông minh, két sắt, minibar,…"
+6,3,"Các dịch vụ còn bao gồm dịch vụ đưa đón sân bay và cho thuê xe điện, đảm bảo luôn sẵn sàng phục vụ chuyến đi của quý khách."
+7,1,Grand Fleuve Boutique Hotel là lựa chọn sáng giá dành cho những ai đang tìm kiếm một trải nghiệm xa hoa đầy thú vị trong kỳ nghỉ của mình. Lưu trú tại đây cũng là cách để quý khách chiều chuộng bản thân với những dịch vụ xuất sắc nhất và khiến kỳ nghỉ của mình trở nên thật đáng nhớ.
+7,2,Dịch vụ thượng hạng song hành với hàng loạt tiện nghi phong phú sẽ đem đến cho quý khách trải nghiệm của một kỳ nghỉ viên mãn nhất.
+7,3,"Từ sự kiện doanh nghiệp đến họp mặt công ty, Grand Fleuve Boutique Hotel cung cấp đầy đủ các dịch vụ và tiện nghi đáp ứng mọi nhu cầu của quý khách và đồng nghiệp"
+7,4,Trung tâm thể dục của khách sạn là một trong những tiện nghi không thể bỏ qua khi lưu trú tại đây.
+8,1,Vị trí ở gần trung tâm và biển
+8,2,Hồ bơi ngoài trời với tầm nhìn bao trọn cảnh biển
+8,3,Nhà hàng phục vụ thực đơn đa dạng
+8,4,"Tiện ích khác: dịch vụ Spa, phòng Gym,..."
+9,1,"Khách sạn Mường Thanh Grand Hạ Long tọa lạc tại vị trí ngày cửa ngõ vào trung tâm du lịch Bãi Cháy. Với chất lượng đạt chuẩn 4 sao, có kiến trúc độc đáo quy mô lên tới192 phòng nghỉ được thiết kế hài hòa với thiên nhiên tạo ra không gian vô cùng thoải mái"
+9,2,Khách sạn Mường Thanh Grand Bãi Cháy tọa lạc tại vị trí đắc địa tại thành phố Hạ Long. Từ khách sạn có thể di chuyển thuận tiện và dễ dàng tới các điểm tham quan và công tác trong thành phố.
+9,3,"Là khách sạn đạt tiêu chuẩn 4 sao tại thành phố Hạ Long, Mường Thanh Grand Bãi Cháy là sự lựa chọn tuyệt vời cho quý khách tham quan cũng như công tác tại đây"
+10,1,"Halong Plaza Hotel nằm ở trung tâm thành phố Hạ Long, cách Ga cáp treo Nữ Hoàng 800 m. Khách sạn có hồ bơi ngoài trời, trung tâm thể dục và nhà hàng cũng như chỗ đỗ xe riêng miễn phí trong khuôn viên."
+10,2,"Tất cả các phòng nghỉ sang trọng tại đây được trang bị đầy đủ tiện nghi, bao gồm máy điều hòa, Wi-Fi miễn phí, đồ nội thất hiện đại, cửa sổ lớn đón nhiều ánh sáng tự nhiên và nhìn ra biển, TV truyền hình vệ tinh màn hình phẳng, tủ lạnh mini và tủ quần áo"
+10,3,Du khách có thể thư giãn với buổi xông hơi khô hoặc tận hưởng liệu pháp mát-xa nhẹ nhàng. Khách sạn còn có trung tâm dịch vụ doanh nhân đầy đủ trang thiết bị với dịch vụ fax và photocopy.
+11,1,"Royal Khanh Hotel tọa lạc trên đường Nguyễn Huệ, ngay Trung tâm thành phố Phú Yên - Tuy Hòa, nằm gần biển với bãi biển sạch đẹp, thoáng mát, giao thông đi lại rất thuận tiện"
+11,2,Nhà hàng của khách sạn nằm ở tầng 1 và tầng 7 với không gian thoáng đãng và cách bài trí ấm cúng có thể phục vụ cùng lúc 40 đến 200 thực khách với ẩm thực Á - Âu phong phú.
+11,3,"Đội ngũ cán bộ nhân viên của Khách sạn Royal Khanh luôn được trau dồi về chuyên môn và nghiệp vụ; với tinh thần nhiệt tình, hết lòng vì khách hàng, luôn ân cần và chu đáo sẽ mang đến cho du khách trải nghiệm tại Phú Yên cảm giác thân thiện, ấm cúng như đang được ở chính ngôi nhà của mình."
+12,1,"Sài Gòn Phú Yên Hotel là khách sạn 4 sao, thuộc hệ thống Saigontourist, tọa lạc tại trung tâm thành phố Tuy Hòa, nơi yêu thích nhất của du khách thập phương khi ghé thăm thành phố biển Tuy Hòa xinh đẹp."
+12,2,"Khách sạn có các phòng họp lớn, nhỏ với sức chứa từ 30 – 300 khách được trang bị đầy đủ tiện nghi cùng với phong cách phục vụ chuyên nghiệp."
+12,3,"Khách sạn có nhà hàng chuyên phục vụ các món ăn Âu, Á,… Đây là một trong những lựa chọn phù hợp để tổ chức những sự kiện, bữa cơm thân mật, những buổi tiệc, liên hoan, sinh nhật trong một không gian kín đáo, sang trọng."
+13,1,"Hồ bơi ngoài trời với diện tích lớn, có khu vực riêng cho trẻ em."
+13,2,"2 nhà hàng Hoa Hướng Dương và Hoa Hải Đường có sức chứa lớn, vừa phục vụ khách lưu trú vừa cung cấp dịch vụ tổ chức tiệc trọn gói."
+13,3,"phòng hội nghị, hội thảo được trang bị hiện đại, có sức chứa từ 150 đến 700 khách."
+13,4,"Các tiện ích khác: spa, sân tennis ngoài trời phục vụ 24/24h,..."
+14,1,Anya Quy Nhơn Hotel là khách sạn Quy Nhơn 4 sao tiêu chuẩn quốc tế được chính thức đi vào hoạt động từ tháng 10/2023.
+15,1,"Nằm ở Hạ Long, cách Bãi biển Marina Bay chưa đến 1 km, Hạ Long New Century Hotel cung cấp chỗ nghỉ có hồ bơi ngoài trời, chỗ đậu xe riêng miễn phí, trung tâm thể dục và phòng chờ chung."
+15,2,Khách sạn Hạ Long New Century là sự kết hợp của những công nghệ hiện đại cùng phong cách Việt gần gũi tạo cảm giác thoải mái và thân thiện
+15,3,"Nhà hàng sang trọng với sức chứa tối đa khoảng 200 khách, sẵn sàng phục vụ các bữa sáng, trưa, tối và các chương trình gala dinner phục vụ đa dạng các món ăn tinh hoa ẩm thực Việt Nam."
+15,4,"Hòa mình trong bầu không khí sôi động tại khu du lịch Bãi Cháy, phù hợp tổ chức các chuỗi hoạt động team building thú vị với đường bờ biển dài tới 2km."
+16,1,"Từ khách sạn, du khách có thể dễ dàng di chuyển đến các điểm tham quan nổi tiếng nhất tại Hà Nội chỉ với khoảng cách ngắn nhất"
+16,2,"KTừ khách sạn, du khách có thể dễ dàng di chuyển đến các điểm tham quan nổi tiếng nhất tại Hà Nội chỉ với khoảng cách ngắn nhất"
+16,3,"Từ khách sạn, du khách có thể dễ dàng di chuyển đến các điểm tham quan nổi tiếng nhất tại Hà Nội chỉ với khoảng cách ngắn nhất"
+17,1,"Hanoi Starlight Hotel tọa lạc tại 34 phố Hàng Gà – một trong những con phố cổ đẹp nhất trong lòng Phố Cổ Hà Nội, rất thuận tiện trong việc di chuyển, tham quan các địa điểm nổi tiếng"
+17,2,"Khách sạn là sự kết hợp hài hòa kiến trúc cổ điển và hiện đại với tổng cộng 30 phòng nghỉ cùng đội ngũ nhân viên được đào tạo chuyên nghiệp, nhiệt tình mang đến cho Quý khách một kỳ nghỉ nhiều trải nghiệm tuyệt vời."
+17,3,"Nội thất được bày trí khoa học, decor tối giản nhưng rất ấn tượng, màu chủ đạo đen trắng kết hợp với ánh sáng vàng tạo cảm giác thân thiện, ấn cúng như nhà mình"
+18,1,"Khách sạn Affa Boutique Hà Nội tọa lạc tại một trong những con phố sầm uất nhất của phố cổ Hà Nội, nơi luôn được các khách du lịch và cả những người dân yêu quý ghé thăm với những nét văn hóa đặc trưng của Hà Thành."
+18,2,"Khách sạn Affa Boutique Hà Nội mang tới một không gian nhẹ nhàng, cổ điển, thanh lịch xen kẽ trong dòng chảy sôi động của thành phố, là một không gian mà bạn có thể dừng lại để yên tĩnh nghỉ dưỡng, thư giãn và ngắm nhìn thành phố tuyệt đẹp này."
+18,3,"Không chỉ là điểm dừng chân, Affa Boutique Hotel còn là nơi kết nối những khoảnh khắc ý nghĩa cùng gia đình và bạn bè, giúp chuyến đi của bạn thêm trọn vẹn và đáng nhớ."
+19,1,"Khách sạn Ancient Paradise Hà Nội tọa lạc tại trung tâm phố cổ Hà Nội, có dịch vụ nhận phòng/trả phòng cấp tốc, phòng nghỉ tiện nghi sạch sẽ, nhà hàng,"
+19,2,"Khách sạn Ancient Paradise tọa lạc gần nhiều nhà hàng nổi tiếng, đảm bảo mang đến cho du khách những trải nghiệm ẩm thực tuyệt vời."
+19,3,"Khách sạn Ancient Paradise nằm gần nhiều điểm mua sắm phổ biến như Vietcraft, Hương Sen, Nhà may Nam, Chie Design và Yến Boutique"
+19,4,Khách sạn Ancient Paradise là một điểm đến lý tưởng cho du khách muốn khám phá Hà Nội và thư giãn trong một không gian tiện nghi và thoải mái.
+20,1,Khám phá các dịch vụ của khách sạn Melia Hà Nội và trải nghiệm đẳng cấp đỉnh cao.
+20,2,Khách sạn chăm chút từng chi tiết cho kỳ nghỉ của bạn để đảm mỗi khoảnh khắc tại Việt Nam đều trọn vẹn.
+20,3,"Lưu trú trong căn phòng với những tiện nghi tốt nhất, nhiều dịch vụ cá nhân hóa, đặc quyền riêng và quyền lui tới các khu vực VIP của khách sạn"
+20,4,"Trải nghiệm sự kết hợp hoàn hảo giữa thiết kế, tiện nghi và sang trọng trong thời gian lưu trú tại Hà Nộ"
+21,1,Khách sạn kết hợp giữa thiết kế cổ điển và tiện nghi hiện đại tạo nên một không gian lưu trú lý tưởng.
+21,2,"Không chỉ sở hữu vị trí giúp quý khách dễ dàng ghé thăm những địa điểm lý thú trong chuyến hành trình, H Hotel Ha Noi cũng sẽ mang đến cho quý khách trải nghiệm lưu trú mỹ mãn."
+21,3,"Tọa lạc gần sân bay, H Hotel Ha Noi là nơi nghỉ ngơi lý tưởng trong lúc quý khách đang chờ chuyến bay kế tiếp. Quý khách có thể tận hưởng không gian nghỉ dưỡng vừa ý nơi đây trong quá trình quá cảnh."
+23,1,Nằm ở trung tâm thành phố thuận lợi cho việc di chuyển
+23,2,Hồ bơi vô cực có tầm nhìn đẹp và có quầy bar bên hồ
+23,3,"Hai nhà hàng ATHENA và CRONUS cung cấp món ăn đa dạng, phong phú cho khách lưu trú"
+23,4,Phòng hội nghị hiện đại với sức chứa lớn
+23,5,"Nhiều tiện ích hấp dẫn: spa, gym,...."
+24,1,"Vị trí ở gần trung tâm, gần biển"
+24,2,Hồ bơi vô cực có tầm nhìn đẹp
+24,3,Phòng hội nghị hiện đại với sức chứa lớn
+24,4,"Nhiều tiện ích hấp dẫn: spa, gym,...."
+25,1,"Khách sạn Sala Tuy Hòa (Sala Tuy Hoa Beach Hotel) tọa lạc giữa trung tâm thành phố Tuy Hòa, tỉnh Phú Yên, cách sân bay Tuy Hòa khoảng 8.4 km và cách nhà ga Tuy Hòa khoảng 2.9 km."
+25,2,"Với không gian đa dạng cả trong và ngoài, khách sạn có thể tổ chức nhiều loại hình sự kiện, tiệc cưới, tiệc công ty, các hoạt động teambuilding ngoài trời,…"
+25,3,Nhà hàng tại sân vườn Sala Tuy Hoa Beach là nơi du khách có thể thưởng thức buffet sáng sang trọng với những món ăn tuyệt ngon để có thể bắt đầu một ngày mới tràn đầy năng lượng.
+26,1,Grand Tourane Hotel Da Nang có vị trí tuyệt đẹp trên bãi biển Mỹ Khê Đà Nẵng
+26,2,Bể bơi ngoài trời với diện tích rộng lớn nhìn thẳng ra biển Mỹ Khê
+26,3,"Số lượng phòng lớn phù hợp với nhiều yêu cầu khác nhau của du khách từ nghỉ ngơi đến hội nghị, hội thảo"
+27,1,"Tọa lạc trên đại lộ Hùng Vương - ngay công viên trung tâm, Phú Yên Everyday Hotel cung cấp chỗ nghỉ hiện đại ở thành phố Tuy Hòa và có nhiều nhà hàng, hồ bơi, trung tâm thể dục cùng chỗ đỗ xe miễn phí trong khuôn viên."
+27,2,"Khách sạn có nhà hàng Ocean Beach Restaurant với 200 - 250 chỗ ngồi là một trong những lựa chọn phù hợp để tổ chức những sự kiện, bữa cơm thân mật, những buổi tiệc, liên hoan, sinh nhật… trong một không gian kín đáo, sang trọng cùng với đội ngũ đầu bếp chuyên nghiệp có thể chế biến được nhiều món Âu Á đáp ứng được sự hài lòng của nhiều du khách khi đến với Khách sạn."
+27,3,"Phú Yên EveryDay Hotel có hồ bơi vô cực tuyệt đẹp để du khách có thể tận hưởng không khí trong lành, thả mình trên giường phơi nắng sang trọng hoặc thưởng thức đồ uống với cocktail đặc trưng ngon nhất của quầy bar bên hồ bơi."
+28,1,"Khách sạn Hùng Vương Tuy Hoà tọa lạc trên đường Hùng Vương, gần trung tâm thành phố Tuy Hòa, chỉ cách bờ biển vài phút đi bộ, cách ga Tuy Hòa khoảng 3 km và cách sân bay Tuy Hòa khoảng 9 km."
+28,2,"Khách sạn bao gồm các dịch vụ tiện ích như: hồ bơi ngoài trời, dịch vụ massage, bàn đặt tour, wifi công cộng, nhà hàng, quán cà phê, quầy bar."
+28,3,"Từ khách sạn, du khách có thể dễ dàng di chuyển tới các điểm tham quan thú vị như đình Hồ Sơn Cổ Tự, bảo tàng Phú Yên..."
+29,1,Gần các địa điểm thu hút và lựa chọn ăn uống thú vị
+29,2,Hồ bơi rộng rãi được đặt ở vị trí trung tâm của khách sạn
+29,3,Nhà hàng phục vụ món ăn đa dạng ẩm thực Á-Âu
+29,4,"Tiện ích khác: Đưa đón sân bay, phục vụ phòng 24/24, ..."
+30,1,Tọa lạc gần trục đường chính Trần Phú với nhiều trung tâm giải trí và mua sắm
+30,2,Bể bơi ngoài trời tầng 22 với tầm nhìn ra biển
+30,3,Thưởng thức ẩm thực hảo hạng tại nhà hàng Aaron
+30,4,"Các dịch vụ tiện ích khác: phòng thể dục,..."
+31,1,Vị trí đắc địa gần biển ở Vịnh biển Nha Trang
+31,2,"Hồ bơi tầng 7 xanh mát, sky bar phục vụ đồ uống đa dạng, thượng hạng"
+31,3,"Nhà hàng REDSUN phục vụ các món ăn đặc sắc, menu Âu, Á, A la carte đa dạng."
+31,4,"Các dịch vụ khác: phòng họp, spa, phòng tập thể dục,..."
+32,1,Khách sạn 5 sao với những dịch vụ nghỉ dưỡng sang trọng và đẳng cấp
+32,2,"Hệ thống phòng nghỉ hiện đại và rộng rãi với tầm nhìn tuyệt đẹp ra dòng sông thơ mộng, đường chân trời với những tòa nhà hiện đại hay vịnh Đà Nẵng."
+32,3,Sỡ hữu hồ bơi vô cực dát vàng 24K cao nhất và lớn nhất thế giới cùng tầm nhìn toàn cảnh ra thành phố Đà Nẵng xinh đẹp
+33,1,"Khách sạn Mường Thanh Luxury Đà Nẵng nằm bên bờ biển Mỹ Khê xinh đẹp, sẽ mang đến cho du khách một không gian sang trọng, quý phái khi đển thăm thành phố Đà Nẵng."
+33,2,"Du khách chỉ cần đi bộ vài bước chân là có thể đến bãi biển Mỹ Khê. Khoảng cách đến sân bay Đà Nẵng khoảng 5,5 km, ga Đà Nẵng 5 km."
+33,3,Địa điểm lưu trú thuận lợi giúp du khách dễ dàng di chuyển trong những địa điểm tham quan nổi tiếng của thành phố
+34,1,Khách sạn tọa lạc trên cung đường biển Võ Nguyên Giáp - Đà Nẵng
+34,2,Thiết kế hiện đại đầy đủ các trang thiết bị phòng nghỉ
+34,3,Bể bơi ngoài trời tại tầng thượng giúp du khách có giây phút tự do và thoải mái nhất
+35,1,Khách Sạn The LEAF Boutique nằm tại bãi biển Mân Thái ngay bên cạnh bãi biển Mỹ Khê xinh đẹp
+35,2,"The LEAF Boutique cung cấp chỗ nghỉ với hồ bơi ngoài trời, chỗ đỗ xe riêng miễn phí, quầy bar và sảnh khách chung"
+35,3,"Với thiết kế thanh lịch và gần gũi, sang trọng, tất cả phòng của khách hàng đều có trang bị tiện nghi chu đáo"
+36,1,"Với nội thất tinh tế, sàn gỗ ấm cúng, giường ngủ êm ái, bồn tắm sang trọng cùng ban công hướng biển, tất cả đem đến một trải nghiệm trọn vẹn và ấn tượng."
+36,2,"Thưởng thức  những món ăn bản địa độc đáo  đến ẩm thực quốc tế đặc sắc, từ bộ sưu tập bánh ngọt phong phú đến các thức uống bổ dưỡng, ngon miệng và cocktail sáng tạo"
+36,3,Với hệ thống Spa- vui chơi - giải trí -  Khách sạn hứa hẹn là nơi giao thoa giữa tận hưởng dịch vụ khách sạn chuẩn 5 sao đẳng cấp quốc tế và trải nghiệm văn hóa bản địa theo cách độc đáo và mới mẻ nhất.
+37,1,Tọa lạc tại cung đường biển đẹp nhất Nha Trang
+37,2,Hồ bơi ngoài trời nằm ở tầng 4 của khách sạn với tầm nhìn ra vịnh Nha Trang xinh đẹp.
+37,3,"rải nghiệm ẩm thực tươi ngon và đa dạng của vùng nhiệt đới tại hệ thống nhà hàng và bar: Nhà hàng Tulip, Nhà hàng Hoa Hồng, Camellia Bar, Daisy Pool Bar và Moonlight Café."
+37,4,"Với công suất khoảng 400 khách, khách sạn Horizon là địa điểm lý tưởng để tổ chức nhiều sự kiện lớn, nhỏ."
+37,5,"Các dịch vụ khác: Du thuyền Horizon, câu lạc bộ trẻ em, karaoke, spa,..."
+38,1,Hilton Garden Inn Đà Nẵng là khách sạn chất lượng 4 sao chỉ cách bãi biển Mỹ Khê vài bước chân
+38,2,"Khách sạn có bể bơi ngoài trời, nhà hàng và spa với các phương pháp trị liệu hiệu quả"
+38,3,Tất cả các phòng đều được thiết kế đầy đủ nội thất hiện đại cùng các thiết bị chất lượng
+39,1,Vị trí đắc địa chỉ cách bãi biển Tuy Hoà 10 phút đi bộ
+39,2,Hồ bơi vô cực trên tầng thượng của khách sạn với tầm nhìn ra biển vô cùng tuyệt vời
+39,3,Nhà hàng với sức chứ lớn lên đến 200 người phục vụ thực đơn đa dạng từ các món ăn truyền thống Việt Nam đến các món ăn ẩm thực Châu Âu
+39,4,Quầy bar bên hồ bơi với thực đơn đa dạng và phong phú
+39,5,Tiện nghi hội họp với đầy đủ các chức năng
+39,6,"Dịch vụ tiện ích khác như: dịch vụ spa, phòng gym, bãi đậu xe, đưa đón sân bay,..."
+40,1,"Khách sạn với đầy đủ các trang thiết bị nội thất đẹp mắt, hiện đại và trang nhã"
+40,2,Bể bơi ngoài trời trên tầng thượng khách sạn có tầm nhìn toàn cảnh biển Đà Nẵng xinh đẹp
+40,3,"Trung tâm Spa, phòng xông hơi khô, bể sục là nơi du khách có thể thư giãn với những liệu pháp massage chuyên nghiệp"
+40,4,"Vị trí thuận lợi gần Cầu Sông Hàn, Chợ Hàn và Chùa Linh Ứng giúp du khách dễ dàng di chuyển."
+41,1,Tọa lạc ngày gần trung tâm thành phố Tuy Hòa
+41,2,"Hệ thống nhà hàng mang đến nền ẩm thực đa dạng, phòng tiệc và tổ chức sự kiện với sức chứa lớn"
+41,3,"Các tiệc ích khác: phòng spa, khu vui chơi cho trẻ em,..."
+42,1,Royal Lotus Hotel Danang là khách sạn 4 sao quốc tế tọa lạc trên tuyến đường Nguyễn Văn Thoại sầm uất của thành phố biển Đà Nẵng
+42,2,"Kiến trúc hiện đại cùng loạt tiện ích cao cấp, khách sạn cam kết sẽ mang tới cho quý khách những khoảnh khắc nghỉ dưỡng đầy ấn tượng."
+42,3,"Royal Lotus Hotel Danang là điểm đến lý tưởng với tiện nghi giải trí đa dạng như phòng tập gym, spa, bể bơi"
+42,4,"Không gian trang trí sang trọng, đầy đủ tiện nghi với dịch vụ hoàn hảo."
+43,1,Khách sạn nằm ở vị trí vô cùng thuận lợi chỉ cách bãi biển Mỹ Khê vài phút đi bộ
+43,2,Nhà hàng khách sạn phục vụ bữa sáng buffet theo kiểu Á và Âu kết hợp
+43,3,Phòng nghỉ đầy đủ các thiết bị hiện đại và tiện ích
+43,4,Khách sạn sở hữu quầy bar ấn tượng tại tầng thượng bên cạnh bể bơi ngoài trời
+44,1,"Vị trí gần nhiều địa điểm nổi tiêng: Bãi biển Tuy Hòa(850 m), Tháp Nghinh Phong 2km, cách Hồ Điều Hòa Hồ Sơn 1,9km, cách Bãi Rêu Xanh - Xóm Rớ 6,6km, và cách Bãi Xép 13,5km."
+44,2,Hai hồ bơi ngoài trời diện tích lớn dành cho mọi độ tuổi
+44,3,"Thưởng thức ẩm thực tại: Vegan Rice restaurant, Good Vegan Restaurant,..."
+44,4,"Tiện ích khác: Wifi miễn phí, phòng tập thể hình,..."
+45,1,"Khách sạn với đầy đủ các tiện ích: phòng nghỉ, nhà hàng, quầy bar"
+45,2,Vị trí thuận lợi chỉ cách bãi biển Mỹ Khê khoảng 150m đi bộ
+45,3,Nhà hàng với sức chứa hơn 100 khách phục vụ bữa sáng buffet và các bữa theo thực đơn yêu cầu
+46,1,"Vị trí gần nhiều điểm đến nổi tiếng: Công viên Thiếu Nhi(800 m), Park(1,9 km), Quy Nhon Beach(450 m)"
+46,2,"Bể bơi ngoài trời tại tầng 1, có khu vực dành cho trẻ em."
+46,3,Nhà hàng có sức chứa lên tới 70 khách.
+46,4,Dịch vụ massage và trung tâm chăm sóc sức khỏe.
+47,1,"Vị thế thuận lợi chỉ cách trung tâm thành phố 2 km, bạn có thể tham quan những điểm du lịch nổi tiếng"
+47,2,Hệ thống phòng nghỉ thoải mái được thiết kế hiện đại với đầy đủ các tiện ích
+47,3,Du khách sẽ cảm nhận được khung cảnh hùng vĩ của đại dương bất tận trước mắt mình từ quầy bar trên tầng thượng của khách sạn
+48,1,"Hồ bơi ngoài trời thiết kế theo phong cách La Mã độc đáo, có khu vực cho trẻ em."
+48,2,"Hệ thống nhà hàng - bar: Nhà hàng Hương Việt, Nhà hàng Imperial, Lobby Lounge, Bar hồ bơi, Bar bãi biển, Sky Club."
+48,3,2 phòng họp lớn và 1 phòng họp nhỏ với sức chứa lên đến 150 người.
+48,4,"Tiện ích khác: phòng tập thể hình, yoga, dịch vụ Spa, ..."
+49,1,Khách sạn nằm ở vị trí vô cùng thuận lợi với vài bước chân là du khách có thể ra tới biển Mỹ Khê xinh đẹp
+49,2,"Phòng nghỉ của khách sạn được trang bị đầy đủ như ti vi màn hình phằng, bàn làm việc, phòng tắm riêng"
+49,3,Bể bơi ngoài trời nằm trên tầng thượng của khách sạn
+49,4,Bữa sáng buffet hàng ngày dành cho khách lưu trú tại khách sạn
+50,1,Vị trí đắc địa ngay trung tâm thành phố Đà Nẵng
+50,2,"Thiết kế hiện đại, sang trọng kết hợp truyền thống và thanh lịch kiểu Pháp"
+50,3,Phòng nghỉ sang trọng với đầy đủ tiện nghi cao cấp
+50,4,"Khách sạn sở hữu nhà hàng với thực đơn phong cách Á, Âu phù hợp với từng thực khách"
+51,1,"Vị trí trung tâm (khu phố Tây), đi bộ tới biển trong vòng 5 phút."
+51,2,Hồ bơi vô cực ở tầng thượng.
+51,3,Nhà hàng sang trọng phục vụ các món ăn theo thực đơn Á - Âu
+51,4,Quầy Bar tầng thượng ngắm nhìn toàn cảnh thành phố
+51,5,"Các dịch vụ bổ sung tiện ích: Gym, dịch vụ Spa, Khu vui chơi trẻ em, ..."
+52,1,"Vị trí: tọa lạc tại trung tâm thành phố Nha Trang, thuận tiện di chuyển"
+52,2,Bể bơi thoáng mát nằm tại tầng 3 của khách sạn
+52,3,"Nhà hàng QUI nằm tại tầng trệt, phục vụ những bữa ăn thịnh soạn từ Âu đến Á"
+52,4,"Tiện ích khác: Spa/Massage, phòng gym, khu vui chơi trẻ em, phòng chờ dân cư,..."
+53,1,"Khách sạn Paris Deli tọa lạc ngay mặt đường Võ Nguyên Giáp, phía trước là biển Mỹ Khê tuyệt đẹp"
+53,2,"Khách sạn gồm 23 tầng với hơn 103 phòng ngủ với thiết kế hiện đại, tiện nghi"
+53,3,Du khách có thể trải nghiệm không gian thoáng đãng ngoài trời tại SkyLine Bistro and Lounge trên tầng thượng của khách sạn
+53,4,Khoảng cách từ khách sạn đến các điểm du lịch nổi tiếng chỉ khoảng tử 5- 10 phút
+54,1,Chỉ cách bãi biển 5 phút đi bộ
+54,2,Sở hữu bể bơi trong nhà với đầy đủ tiện nghi
+54,3,"Nhà hàng Vesna với thực đơn Âu - Á đa dạng, phong phú có sức chứa lên đến 700 khách"
+54,4,Sảnh hội nghị diện tích 220m2 với sức chứa lên đến 300 khách
+54,5,"Các dịch vụ nổi bật khác: khu vui chơi trẻ em, phòng chăm sóc sức khỏe..."
+55,1,"Vị trí đẹp, nằm ngay trung tâm thành phố Nha Trang"
+55,2,Có hồ bơi ở tầng 18 kết hợp với với view cực chill
+55,3,"Nhà hàng phục vụ đa dạng thực đơn món ăn Âu, Á và các món ăn thuần túy Việt Nam."
+55,4,Phòng hội nghị với sức chứa lớn.
+55,5,"Có nhiều tiện ích hấp dẫn: gym, yoga, spa & massage..."
+56,1,Tọa lạc tại con đường nhộn nhịp nhất ở thành phố Nha Trang.
+56,2,Hồ bơi ngoài trời nằm trên tầng 26 của khách sạn có hướng nhìn tuyệt đẹp.
+56,3,"Nhà hàng Royal nằm trên tầng 2 của khách sạn, phục vụ những món ăn đẳng cấp đến từ châu Âu, châu Á và các món đặc sản địa phương. Imperial Bar mang đến cho khách những hương vị cocktail mới lạ."
+56,4,Phòng hội nghị có không gian rộng rãi với sức chứa hơn 120 khách.
+56,5,"Những tiện ích khác: spa, phòng gym, phòng xông hơi, chỗ đỗ xe,..."
+57,1,"Nằm đối diện bờ biển Nha Trang, ngay ngã 3 giao cắt giữa Trần Phú và Hoàng Diệu"
+57,2,Hồ bơi chia 2 khu vực: Dành cho người lớn (1.7m) và dành cho trẻ em (1m)
+57,3,"Nhà hàng và bar: Nhà hàng Xavia, Coffee Lounge, Pool Bar"
+57,4,Dịch vụ hội họp và sự kiện: Phòng hội nghị tại tầng 3 với sức chứa 350 khách
+57,5,"Nhiều tiện ích hấp dẫn: Phòng thể thao, spa, xông hơi khô, xông hơi ướt..."
+58,1,Khách sạn chỉ cách bãi biển Mỹ Khê vài phút di chuyển
+58,2,Thiết kế hiện đại mang phong cách Nhật Bản
+58,3,"Phòng nghỉ đầy đủ tiện ích như: tivi màn hình phẳng, phòng tắm riêng, máy sấy tóc, két an toàn..."
+58,4,"Khách sạn cũng sở hữu bể bơi vô cực độc đáo tại tầng thượng cùng với nhà hàng, quầy bar ấn tượng"
+59,1,"Khách sạn với thiết kế sang trọng, ấn tượng cách bãi biển Mỹ Khê chỉ vài phút đi bộ"
+59,2,"Khách sạn cung cấp đầy đủ các dịch vụ như: phòng nghỉ, nhà hàng, spa, chỗ đỗ xe miễn phí, câu lạc bộ trẻ em"
+59,3,Bể bơi với khu vườn thoáng đãng của khách sạn nằm trên tầng thượng
+59,4,"Nhà hàng của khách sạn phục vụ bữa sáng buffet và bữa trưa, bữa tối theo thực đơn hoặc yêu cầu của thực khách."
+60,1,Tọa lạc giữa lòng thành phố biển xinh đẹp Nha Trang
+60,2,Bể bơi ngoài trời với tầm nhìn hướng biển
+60,3,Nhà hàng với thực đơn đa dạng và phong phú đáp ứng nhiều đối tượng du khách
+60,4,"Phòng hội nghị sang trọng, đẳng cấp với đầy đủ các chức năng"
+60,5,"Các tiện ích khác: phòng gym, phòng tắm hơi,.."
+61,1,Vị trí gần các điểm tham quan nổi tiếng
+61,2,Bể bơi ngoài trời với tầm nhìn hướng biển
+61,3,"Không gian nhà hàng rộng rãi, phục vụ ẩm thực đa dạng"
+61,4,"Tiện ích khác: lễ tân 24h, đưa đón sân bay,..."
+62,1,Melia Đà Nẵng tọa lạc tại bãi biển Non Nước với bãi cát dài trắng mịn tuyệt đẹp
+62,2,Khu nghỉ chỉ cách sân bay Đà Nẵng khoảng 15 phút di chuyển và Ngũ Hành Sơn vài phút đi bộ và phố cổ Hội An khoảng 20 phút lái xe
+62,3,"Với kiến trúc hiện đại, khu nghỉ có bãi biển riêng, bể bơi ngoài trời, 2 nhà hàng phục vụ các món ăn Á, Âu theo thực đơn chọn món"
+63,1,Tọa lạc tại trung tâm thành phố và sát mặt biển
+63,2,Bể bơi ngoài trời tại tầng 27 với tầm nhìn hướng biển
+63,3,Thưởng thức nền ẩm thực phong phú và đa dạng từ nhà hàng Amore và Felicita
+63,4,Không gian hội nghị và tổ chức sự kiện linh hoạt cho mọi hình thức tổ chức
+63,5,"Các dịch vụ tiện ích khác: phòng spa, gym,..."
+64,1,"Nằm ở trung tâm thành phố thuận lợi cho việc di chuyển, tham quan vui chơi"
+64,2,Sở hữu bể bơi vô cực với tầm nhìn hướng biển
+64,3,Hệ thống nhà hàng và quầy bar Venue cung cấp đồ ăn đa dạng cho khách
+64,4,"Hoạt động tiện ích khác: kids meal, lễ tân 24/24,..."
+65,1,Khách sạn tọa lạc tại mặt biển Đà Năng với tầm nhìn thoáng đãng
+65,2,"Mỗi phòng đều có đầy đủ tiện nghi phòng nghỉ như: điều hòa, két an toàn, tivi màn hình phẳng, phòng tắm riêng"
+65,3,"Khách sạn còn có bể bơi ngoài trời, nhà hàng và phòng xông hơi khô"
+66,1,Nằm cách bãi biển Nha Trang 1 phút đi bộ
+66,2,Sở hữu bể bơi ngoài trời rộng rãi
+66,3,"Nhà hàng, bar phục vụ đủ loại món ăn địa phương và cung cấp nhiều lựa chọn đồ uống"
+66,4,Phòng họp Ballroom rộng 320m2 dành cho những cuộc họp có quy mô vừa và lớn của doanh nghiệp
+66,5,"Tiện ích hấp dẫn như: khu vực dành cho trẻ em, dịch vụ Spa-Massage,..."
+67,1,"Khách sạn với thiết kế vô cùng ấn tượng, cảnh quan xanh mát được bao phủ bởi cây xanh"
+67,2,Ngay phía trước khách sạn là mặt biển Đà Nẵng mênh mông và thoáng đãng
+67,3,Tất cả các phòng đều được trang bị đầy đủ thiết bị hiện đại và đẹp mắt
+67,4,"Khách sạn phục vụ bữa sáng buffet và bữa trưa, bữa tối theo thực đơn có sẵn hoặc theo yêu cầu của thực khách"
+68,1,Hồ bơi ngoài trời với tầm nhìn bao trọn cảnh biển
+68,2,"Nhà hàng phục vụ thực đơn đa dạng, ẩm thực Âu - Á độc đáo"
+68,3,"Tiện ích khác: dịch vụ Spa, phòng Gym,..."
+69,1,Lotte Hotel Hanoi là sự kết hợp độc đáo giữa lòng hiếu khách nồng hậu của Hàn Quốc và nền văn hóa Việt Nam đầy màu sắc
+69,2,"Khách sạn cung cấp nhiều địa điểm trang nhã phù hợp với mọi dịp như hội nghị quốc tế, hội thảo kinh doanh, sự kiện ra mắt sản phẩm mới, tiệc tùng, đám cưới và họp mặt gia đình"
+69,3,"Được thiết kế như một tác phẩm nghệ thuật thực sự, tự hào với tầm nhìn toàn cảnh thành phố Hà Nội tuyệt đẹp về đêm và các buổi biểu diễn nhạc sống sôi động"
+69,4,"Nằm trên những tầng cao nhất của toà nhà 65 tầng tráng lệ, khách sạn Lotte Hà Nội tự hào là đại diện cho tiêu chuẩn khách sạn 5 sao quốc tế mới tại Hà Nội nói riêng và Việt Nam nói chung."
+70,1,Silk Queen Grand Hotel có hồ bơi ngoài trời và tầm nhìn ra quang cảnh thành phố
+70,2,"Tại đây, bạn có thể tận hưởng những trải nghiệm thư giãn tuyệt vời như mua sắm tại các cửa hàng trong khuôn viên khách sạn"
+70,3,"Khách sạn cung cấp một trung tâm thể dục đầy đủ, nơi du khách có thể tập luyện và rèn luyện sức khỏe"
+70,4,"Với diện tích từ 26 đến 60 mét vuông, các loại phòng bao gồm Deluxe Inner View Room, Grand Luxury, Luxury Double or Twin, Luxury Family và Suite Balcony."
+71,1,Khách sạn có vị trí tuyêt đẹp nhìn thẳng ra sông Hàn thơ mộng của thành phố Đà Nẵng
+71,2,Mỗi phòng của khách sạn đều được trang bị nội thất hiện đại cùng cửa sổ lớn để du khách có thể ngắm nhìn toàn cảnh Đà Nẵng
+71,3,"Khách sạn sở hữu nhà hàng rộng rãi, bể bơi ngoài trời cùng Spa đẳng cấp"
+72,1,"Vị trí nằm ngay trung tâm, gần Cầu Rồng và Cầu Sông Hàn, tòa nhà văn phòng & cách biển Mỹ Khê ~2km"
+72,2,Chất lượng dịch vụ và trang thiết bị hướng tới chuẩn khách sạn 4* quốc tế
+72,3,"Có đủ các tiện nghi và dịch vụ: Aroma Spa, Nyx Sky Lounge, Mandarin Restaurant, Pool Bar, Firgun Corner Coffee, Gym Center"
+73,1,"Nằm ở khu riêng biệt trên đảo Hòn Tre, thích hợp cho nghỉ dưỡng"
+73,2,"Bể bơi chính rộng lớn hướng biển với diện tích lên đến 1.700m2, bên cạnh đó, mỗi villa cũng có bể bơi riêng"
+73,3,"Hệ thống ẩm thực tinh tế luôn sẵn sàng phục vụ khách lưu trú bao gồm 05 nhà hàng và 03 quầy bar: nhà hàng Buffet Windy, nhà hàng Clubhouse Pebble, nhà hàng Greens, Aqua Bar, Lobby Bar,..."
+73,4,"Hệ thống phòng hội họp rộng rãi, sức chứa lớn với đầy đủ các thiết bị âm thanh, ánh sáng hiện đại, cao cấp"
+74,1,"Không gian phòng nghỉ sang trọng, đẳng cấp đạt chuẩn 5 sao"
+74,2,Bể bơi vô cực với hướng nhìn toàn cảnh thành phố Nha Trang
+74,3,"Nằm ngay trong nội đô thành phố Nha Trang, thuận tiện để di chuyển đến các điểm tham quan du lịch"
+75,1,"Là khu nghỉ dưỡng duy nhất có nguồn nước khoáng nóng với hàm lượng khoáng cao ngay trong nội khu, được sách kỷ lục Việt Nam ghi nhận là 1 trong 5 suối khoáng tốt nhất Việt Nam ."
+75,2,"Toạ lạc tại thôn Kênh Gà, Ninh Bình chỉ cách Hanoi chưa đến 100km, thuận tiện cho du khách vừa nghỉ dưỡng vừa khám phá thiên nhiên hoang sơ của Ninh Bình"
+75,3,"Với hệ thống suối khoáng nóng tự nhiên, bạn sẽ được tận hưởng những lợi ích tuyệt vời cho cơ thể và tinh thần."
+75,4,ại đây có nguồn khoáng nóng tự nhiên với 5 loại muối khoáng và nhiệt độ ổn định quanh năm 53oC rất tốt cho sức khoẻ.
+76,1,"Tọa lạc ở Ninh Bình, cách Chùa Bái Đính 27 km, Tam Coc Lion Kings Hotel & Resort cung cấp chỗ nghỉ có xe đạp miễn phí, chỗ đậu xe riêng miễn phí, hồ bơi ngoài trời và khu vườn."
+76,2,"Nơi bạn có thể ngắm nhìn vẻ đẹp hùng vĩ của núi non Tam Cốc hay đơn giản là dạo bước quanh những con đường trong xanh, hòa mình vào vẻ đẹp thiên nhiên tươi mới mỗi độ xuân về."
+76,3,Khám phá bức tranh sống động của thiên nhiên tại Tam Coc Lion Kings Hotel & Resort
+77,1,"Với gam màu trầm ấm áp, điểm vào đó những mảng gốm mosaic độc đáo, các vật dụng mỹ nghệ tinh xảo cùng hướng nhìn đồng lúa uốn lượn bên dãy núi tuyệt đẹp, gợi lên không gian sống của những gia đình vương giả xưa."
+77,2,"Các nhà hàng của khách sạn Ninh Bình Hidden Charm sẽ dẫn lối các thực khách trải nghiệm từng phong vị riêng qua những món ăn dân dã rất đặc trưng như cơm cháy, thịt dê… đến những tinh hoa của ẩm thực Việt Nam và quốc tế"
+77,3,"Nằm giữa khu vườn xanh mát và được trang trí tinh tế, thực khách có những phút giây thư thái nhất trong hành trình khám phá ẩm thực của vùng đất cố đô Ninh Bình."
+77,4,"Ninh Bình Hidden Charm đưa quý khách đến một thiên đường của sự bình yên và thư giãn tuyệt đối, đánh thức tất cả các giác quan giúp phục hồi năng lượng sau một ngày tham quan mệt mỏi và giúp trẻ hóa cơ thể."
+78,1,"Vị trí thuận tiện, dễ dàng di chuyển đến chợ đêm Nha Trang, quán Sailing Club, Trung tâm Thuyền buồm Việt Nam,..."
+78,2,Thư giãn với bể bơi ngoài trời nằm trên tầng 21 của khách sạn.
+78,3,"Nhà hàng phục vụ đa dạng các phong vị ẩm thực châu Âu, châu Á."
+78,4,"Dịch vụ tiện ích khác: lễ tân 24/7, bãi đỗ xe, wifi miễn phí,..."
+79,1,"Vị trí thuận tiện, gần với Trung tâm Thuyền buồm Việt Nam, quán Sailing Club, chợ đêm Nha Trang,..."
+79,2,Thư giãn với hồ bơi vô cực nằm trên tầng 7 của khách sạn.
+79,3,Nhà hàng phục vụ đa dạng phong vị ẩm thực Á - Âu với hướng nhìn ra biển.
+79,4,"Tiện ích khác: gym, lễ tân 24/7, wifi miễn phí,..."
+80,1,Nằm ở vị trí đắc địa tại bãi biển Tuy Hòa
+80,2,Nhà hàng mang đến nền ẩm thực đa dạng
+80,3,Phòng hội họp được trang bị đầy đủ tiện nghi
+80,4,"Các tiện ích khác: lễ tân trực 24/24, chỗ đỗ xe,..."
+81,1,Salmalia Boutique Hotel & Spa nằm trên trục đường song song với cung đường dọc bãi biển đẹp nhất hành tinh.
+81,2,Hồ bơi với pool bar độc đáo nằm ngang mặt nước với sục Jacuzzi
+81,3,Mỗi phòng được thiết kế tinh tế hòa cùng màu tranh của Họa sĩ nổi tiếng Vũ Dương mang cảm giác rất thơ đến với người trải nghiệm
+81,4,Nhà hàng Salmalia Restaurant với sự tài hoa của Bếp trưởng 5*
+82,1,Sở hữu vị trí đắc địa cách bờ biển chỉ 1 phút đi bộ và nằm gần nhiều điểm tham quan du lịch nổi tiếng
+82,2,Bể bơi vô cực với góc nhìn hướng ra biển đem lại trải nghiệm mới lạ cho du khách.
+82,3,"Nhà hàng nổi tiếng với các món Á, Âu và Việt Nam mang cho lữ khách hương vị không thể nào quên."
+82,4,"Tiện ích khác: dịch vụ Spa, phòng Gym & Yoga,..."
+83,1,Eli Rina Hotel Hanoi mang vẻ đẹp xa hoa của lối kiến trúc Đông Dương cùng với tiện nghi cao cấp và phong cách phục vụ khách sạn 4 sao
+83,2,"Vị trí gần trung tâm cho phép du khách dễ dàng khám phá lịch sử, văn hoá và ẩm thực Thủ đô."
+83,3,"Nội thất thanh lịch, tiện nghi hiện đại và ban công riêng với tầm nhìn tuyệt đẹp, nơi đây là sự lựa chọn lí tưởng cho những du khách tìm kiếm trải nghiệm tuyệt vời với giá cả hợp lý."
+84,1,Khách sạn Vanda Đà Nẵng tọa lạc trên con đường sầm uất nối thẳng đến Cầu Rồng nổi tiếng Đà Nẵng
+84,2,Khách sạn cung cấp các phòng hội nghị có sức chứa lên đến 150 khách cũng như tổ chức tiệc cho 200 khách
+84,3,"Mỗi phòng của khách sạn đều được trang bị nội thất hiện đại, đẹp mắt và tầm nhìn thoáng đãng"
+85,1,"Khách sạn nằm trên phố Trần Bạch Đằng, cách bãi biển Mỹ Khê chỉ vài phút đi bộ"
+85,2,"Các phòng nghỉ đều được trang bị đầy đủ nội thất cao cấp, hiện đại"
+85,3,"Khách sạn cũng sở hữu bể bơi ngoài trời, nhà hàng và sky bar đẹp mắt"
+86,1,"Nằm ở trung tâm các điểm thăm quan nổi tiếng của Ninh Bình và có nhà hàng, dịch vụ phòng, quầy bar, khu vườn, hồ bơi ngoài trời mở quanh năm cũng như sân hiên phơi nắng"
+86,2,"Tất cả các căn có phòng tắm riêng, vòi sen, điều hòa, TV màn hình phẳng và tủ lạnh. Scenic Mountain Ecolodge Ninh Binh có phục vụ bữa sáng thực đơn à la carte hoặc kiểu lục địa."
+86,3,Scenic Mountain Ecolodge Ninh Binh cách Chùa Bái Đính 18 km và Nhà thờ đá Phát Diệm 32 km.
+87,1,Vị trí thuận lợi để di chuyển đến các điểm tham quan nổi tiếng của Phú Quốc
+87,2,Hồ bơi rộng lớn với diện tích 700m2
+87,3,Nhà hàng phục vụ đa dạng ẩm thực Á-Âu
+88,1,"Có bãi biển riêng trải dài, tất cả các hạng phòng đều có ban công riêng"
+88,2,Hồ bơi vô cực bên bờ biển xanh
+88,3,"Hệ thống nhà hàng và quán bar: The Kitchen, Sol Sets Rooftop, The Shack, Pool Bar, Ginger Bar"
+88,4,Body & Sol Spa với 4 phòng spa trong nhà và 1 spa ngoài trời mang đến chương trình trị liệu và detox tuyệt vời
+88,5,"Các hoạt động đặc biệt: Yoga sáng và hoàng hôn, kayak, đạp xe, bóng chuyền bãi biển, trải nghiệm khám phá địa phương..."
+89,1,Gần Grand World Phú Quốc với nhiều điểm check in hấp dẫn.
+89,2,"Nhà hàng và Bar: nhà hàng Ola Costa, Scorpio Bar."
+89,3,Bể bơi 800m2 với tầm nhìn khoáng đạt.
+89,4,Số lượng phòng nghỉ lớn: 687 phòng
+90,1,"Khách sạn tọa lạc trên mặt đường Võ Nguyên Giáp, phía trước là bãi biển Mỹ Khê tuyệt đẹp"
+90,2,"Tất cả các phòng đều được trang bị đầy đủ thiết bị nội thất hiện đại, cao cấp"
+90,3,Khách sạn sở hữu bể bơi ngoài trời độc đáo và đẹp mắt
+91,1,Vị trí thuận lợi cho di chuyển tới các địa điểm du lịch nổi tiếng
+91,2,Nhà hàng mang đến nền ẩm thực Á - Âu đa dạng
+91,3,"Các tiện ích khác: dịch vụ phòng, xe đưa đón tại sân bay,..."
+92,1,Bể bơi ngoài trời với hướng nhìn ra biển
+92,2,"Khuôn viên vườn cây xanh mát, thích hợp cho check in"
+92,3,Nhà hàng Tahiti Beach có thực đơn đa dạng phong phú chuyên phục vụ khách lưu trú tại khách sạn
+93,1,"Vị trí thuận lợi, nằm ở gần biển và gần các địa điểm du lịch nổi tiếng."
+93,2,Bể bơi ngoài trời với hướng nhìn ra biển.
+93,3,Nhà hàng phục vụ các món ăn Á - Âu đa dạng
+93,4,"Các tiện ích khác: quán bar, cho thuê xe hơi,..."
+94,1,Khu nghỉ dưỡng bao gồm cả phòng khách sạn và biệt thự riêng tư
+94,2,Không gian xanh mát với nhiều cây xanh tạo cho khu nghỉ sự gần gũi với thiên nhiên và thư giãn
+94,3,"Nhà hàng rộng rãi phục vụ bữa sáng buffet với thực đơn phong phú, phù hợp khẩu vị của thực khách"
+95,1,Vị trí gần biển
+95,2,Hồ bơi ngoài trời với tầm nhìn đẹp
+95,3,Nhà hàng phục vụ đa dạng các món ăn đặc sản tươi sống.
+96,1,Bãi biển riêng và cụm hồ bơi riêng biệt nằm trong khuôn viên
+96,2,Hệ thống nhà hàng Horizons và quầy bar liên tục thay đổi hài hòa và xuyên suốt các món ăn phục vụ khách lưu trú
+96,3,"Tiện ích khác: Spa, câu lạc bộ Amber Sands ,...."
+97,1,"Vị trí trung tâm phố, gần sân bay, cách cầu sông Hàn 700m, cách chợ Cồn - chợ Hàn 500m, cách biển 1.5km"
+97,2,"Khách sạn có tầm nhìn toàn cảnh thành phố Đà Nẵng, bể bơi vô cực, nhà hàng, spa, gym và phòng chơi cho trẻ em"
+97,3,Nhà hàng phục vụ bữa sáng buffet hàng ngày
+98,1,"Toạ lạc tại thiên đường biển Mỹ Khê, Estrella Boutique Hotel sở hữu vị trí đắc địa, chỉ cách bãi biển 500m, cách trung tâm thành phố chỉ 5 phút đi xe"
+98,2,"Khách sạn được xây dựng theo phong cách Rustic, đó là sự kết hợp hài hoà giữa những đường nét tối giản và mộc mạc"
+98,3,"Estrella có đầy đủ tiện nghi từ nhà hàng, hồ bơi, phòng gym, spa, xông hơi và quầy bar"
+99,1,"Vị trí: tọa lạc ngay trung tâm phường Dương Đông, Phú Quốc."
+99,2,Bể bơi Sunset với tầm nhìn hướng ra đại dương
+99,3,"Hệ thống nhà hàng & quầy bar đẳng cáp: nhà hàng Aroma, Pool Bar, Sense Lounge"
+99,4,02 phòng họp Sapphire và Ruby có sức chứa từ 40 - 160 khách
+99,5,"Tiện ích khác: dịch vụ Spa, phòng Gym, Kids Club,..."
+100,1,"Nằm ở vị trí trung tâm Dương Đông, thuận tiện cho quý khách lui tới các điểm tham quan tham quan thu hút của địa phương"
+100,2,Hồ bơi vô cực trong nhà và ngoài trời
+100,3,"Nhà hàng Soleil Fusion phục vụ đa dạng món ăn phong cách Á - Âu , có sức chứa 100 khách."
+100,4,"Phòng hội họp có thiết kế trang nhã , sang trọng"
+100,5,"Tiện ích khác: Gym, Sunset Spa, cửa hàng lưu niệm,..."
+101,1,"Khách sạn tọa lạc trên đường Võ Nguyên Giáp, con đường biển đẹp nhất Đà Nẵng"
+101,2,Tất cả các phòng nghỉ của khách sạn đều được trang bị đầy đủ nội thất hiện đại
+101,3,Bể bơi ngoài trời của khách sạn tại tầng thượng có tầm nhìn toàn cảnh biển Đà Nẵng
+102,1,"Nằm ở vị trí trung tâm Dương Đông, thuận tiện cho quý khách lui tới các điểm tham quan tham quan thu hút của địa phương"
+102,2,Hồ bơi và cafe tại sân thượng đầy ấn tượng
+102,3,Dịch vụ Buffet sáng Á – Âu.
+103,1,"Vị trí: tọa lạc ngay trung tâm phường Dương Đông, Phú Quốc."
+103,2,Sở hữu bãi biển riêng nên rất thuận tiện cho khách lưu trú tắm biển và tham gia các hoạt động thể thao dưới nước.
+103,3,"Hệ thống nhà hàng & quầy bar đẳng cáp: nhà hàng Le Bateau, Sea & Sail Pool Bar"
+103,4,"Tiện ích khác: dịch vụ Spa, phòng Gym, Kids Club,..."
+104,1,Khách sạn tọa lạc trên mặt đường Võ Nguyên Giáp ngay bên cạnh bãi biển Mỹ Khê tuyệt đẹp
+104,2,"Các phòng của khách sạn đều được trang bị đầy đủ thiết bị hiện đại, trang nhã"
+104,3,Bể bơi ngoài trời tại tầng thượng với tầm nhìn toàn cảnh biển Đà Nẵng
+105,1,Duc lịch vui vẻ tuyệt vời không bia rượu
+106,1,Vị trí: Nằm trên bãi Ông Lang - một trong những bãi biển đẹp nhất đảo Phú Quốc
+106,2,Bể bơi ngoài trên siêu rộng cùng làn nước luôn trong xanh
+106,3,"Nhà hàng phục vụ món ăn đa dạng, phong phú"
+106,4,"Tiện ích khác : phòng tập Gym, dịch vụ Spa, quầy Bar, Công viên giải trí, ..."
+107,1,"Khu nghỉ mang đậm phong cách Nhật Bản với thiết kế mới, hiện đại và đầy đủ tiện ích"
+107,2,Khu nghỉ có công viên nước hiện đại với nhiều trò chơi rất phù hợp cho gia đình có trẻ nhỏ
+107,3,"Tất cả các phòng nghỉ đều có diện tích rộng rãi, thoáng mát"
+108,1,Vị trí: Nằm trên bãi Ông Lang - một trong những bãi biển đẹp nhất đảo Phú Quốc
+108,2,Bể bơi ngoài trên siêu rộng cùng làn nước luôn trong xanh
+108,3,"Nhà hàng phục vụ món ăn đa dạng, phong phú"
+108,4,"Tiện ích khác : phòng tập Gym, dịch vụ Spa, quầy Bar,..."
+109,1,"Ru giấc giữa mây ngàn trong không gian ấm áp, đầy cảm hứng, thu hút với phong cách tối giản sang trọng kết hợp cùng họa tiết trang trí mang âm hưởng Tây Bắc tại các phòng nghỉ dưỡng của Lady Hill Sapa Resort."
+109,2,"Lady Hill Sapa Resort chào đón bạn bằng một ""khoảnh khắc chạm mây ngàn"" đầy cảm hứng, nơi mọi nỗi lo lắng sẽ bị ""thổi bay"" trong không gian thư giãn và yên bình của đồi núi Sa Pa"
+109,3,"Tại Lady Hill Sapa Resort, mỗi khoảnh khắc đều là một hành trình khám phá và hòa mình vào vẻ đẹp của thiên nhiên"
+109,4,"Lady Hill Sapa Resort – Nơi từng chiếc lá, từng trái cây kể câu chuyện về sự tinh túy và thuần khiết từ thiên nhiên"
+110,1,Khu nghỉ dưỡng với diện tích lên tới hơn 15 héc-ta có vị trí nhìn thẳng ra bãi biển Non Nước tuyệt đẹp
+110,2,Fusion Resort & Villas có 85 biệt thự riêng tư cùng 127 phòng khách sạn
+110,3,"Khu nghỉ cũng sở hữu hệ thống nhà hàng, bể bơi, spa, quầy bar với đầy đủ nội thất hiện đại và sang trọng"
+111,1,Hồ bơi bốn mùa được chia làm hai khu vực cho người lớn và trẻ em
+111,2,Nhà hàng có thực đơn đa dạng các món kiểu Á-Âu chuyên phụ vụ khách lưu trú tại khách sạn
+111,3,"Phòng tổ chức hội họp, tiệc, trung tâm dịch vụ doanh nhân có diện tích rộng, đầy đủ âm thanh ánh sáng."
+111,4,"Các hoạt động dịch vụ khác tại khách sạn: phòng GYM, Spa, Bida,...."
+112,1,Sapa Jade Hill Resort & Spa là khu nghỉ dưỡng rất phù hợp để nghỉ dưỡng cùng gia đình hay tận hưởng sự lãng mạn dành cho các cặp đôi.
+112,2,"Bước vào bản làng nhỏ Sapa Jade Hill Resort & Spa, hơi ấm lan tỏa từ những nụ cười nồng hậu của các bạn nhân sự bản địa, hơi ấm bay nhẹ từ lò sưởi củi bập bùng và từ cả những bữa ăn quầy quần ấm cúng."
+112,3,"""Bản làng"" Sapa Jade Hill những ngày này sau buổi sáng chìm trong biển mây là đến lúc khoảng trời trong xanh, nắng nhẹ, và những cơn gió mát lành dần ùa về."
+112,4,"Thong thả dạo bước dọc lối nhỏ thân quen, đâu cũng là những góc check in thật xinh xắn, cùng bạn và những người thương yêu lưu lại những kỷ niệm thật đẹp tại  bản làng cổ tích Sapa Jade Hill."
+113,1,"Thả hồn giữa bầu trời Sapa rực rỡ, thả dáng giữa khu vườn nên thơ, thả trôi tất cả âu lo trong chuyến đi ngập tràn sắc màu thanh xuân tại Pao's Sapa - điểm đến yêu thích của những nàng thơ giữa mây trời Tây Bắc."
+113,2,"Nằm trên sườn đồi giữa những ngọn núi hùng vĩ với tầm nhìn ngoạn mục ra thung lũng Mường Hoa thơ mộng và dãy núi Hoàng Liên Sơn hùng vĩ, Pao's Sapa Leisure tự hào là hiện thân của sự sang trọng bậc nhất tại trung tâm thị trấn miền núi Sapa."
+113,3,Pao's Sapa Leisure Hotel là điểm đến tuyệt vời cho chuyến tham quan sẽ kích thích các giác quan và trẻ hóa tâm hồn.
+113,4,"Tất cả các phòng đều có tiện nghi riêng, không gian thoáng đãng và ban công lãng mạn nhìn ra quang cảnh thiên nhiên hùng vĩ của vùng Tây Bắc."
+114,1,"Tất cả các phòng đều sở hữu tầm nhìn hướng ra thung lũng Mường Hoa thơ mộng, mang lại cảm giác thư thái và yên bình."
+114,2,"Tự hào là một trong những khách sạn cao cấp nhất tại thị trấn Sapa, KK Sapa Hotel xây dựng đội ngũ chuyên gia, đầu bếp đến từ cả ba miền Việt Nam và nước ngoài nhằm đem đến cho khách hàng trải nghiệm phong phú, trọn vẹn nhất."
+114,3,"Hoa Ban có diện tích lớn nhất trong hệ thống các phòng Hội nghị của khách sạn, được đánh giá là lựa chọn hàng đầu để tổ chức sự kiện cho các doanh nghiệp lớn Chi tiết"
+114,4,"Spa của KK Sapa Hotel nằm ở tầng 11, là Spa lớn nhất, hiện đại nhất tại Sapa. Dao Spa được đầu tư xây dựng với tiêu chí phục vụ khách hàng cao cấp với đầy đủ các tiện ích. Phòng Spa trọn gói bao gồm: dịch vụ xông hơi, tắm lá thuốc, massage …"
+115,1,Mỗi phòng nghỉ tại Silk Path Grand Sapa Resort & Spa là sự kết hợp hài hòa giữa kiến trúc Châu u thanh lịch với những nét chấm phá tinh hoa dân tộc thiểu số khu vực Tây Bắc.
+115,2,"Nuông chiều vị giác với những món ăn tinh hoa tại Silk Path Grand Sapa Resort & Spa, kết hợp hài hòa, tinh tế giữa nét độc đáo hương vị đặc trưng của vùng núi Tây Bắc và sự đa dạng trong văn hóa ẩm thực Đông Tây."
+115,3,Silk Path Grand Sapa Resort & Spa sở hữu hệ thống cơ sở vật chất giải trí hiện đại bậc nhất Sa Pa
+115,4,"Cho dù là một bữa tiệc thân mật hay hội nghị, hội thảo quốc tế, hãy để sự kiện của bạn trở nên độc đáo hơn khi tổ chức tại Silk Path Grand Sapa Resort & Spa."
+116,1,Vị trí thuận lợi di chuyển đến các địa điểm nổi bật của Phú Quốc
+116,2,Bể bơi vô cực giữa rừng xanh
+116,3,Nhà hàng Cá Gỗ phục vụ những món ăn độc đáo với không gian xung quanh là núi rừng và biển.
+116,4,"Phòng họp và hội nghị sang trọng được trang bị đầy đủ tiện nghi hiện đại, phù hợp với các cuộc họp nội bộ công ty hay họp với đối tác."
+116,5,"Các tiện ích khác: spa, khu vui chơi cho trẻ em, phòng tập gym, khu vực bi-a, tham quan hai hồ nuôi cá Koi lớn ngoài trời, tour tham quan Phú Quốc trọn gói,..."
+117,1,"Hồ bơi ngoài trời thoáng đãng, trải dài theo khuôn viên resort."
+117,2,"Nhà hàng Essence, Oasis và CView Bar chuyên cung cấp những món ăn hảo hạng cho khách."
+117,3,"Phòng sự kiện với diện tích 347m2, được trang bị đầy đủ hệ thống âm thanh, ánh sáng, trình chiếu,... hiện đại nhất."
+117,4,"Những tiện ích khác: Spa, phòng gym, lướt ván, tắm biển,..."
+118,1,Khu nghỉ tọa lạc trên đường Trường Sa gần với danh thắng Ngũ Hành Sơn
+118,2,"Khu nghỉ sỡ hữu bãi biển riêng, 2 bể bơi rộng, nhà hàng, quầy ba, spa và sân tennis"
+118,3,"Các phòng nghỉ đều rộng rãi và được trang bj đầy đủ nội thất sang trọng, hiện đại"
+119,1,"Nằm ở Bãi Trường ,gần các địa điểm nổi tiếng trên đảo"
+119,2,"Resort có hồ bơi được đặt vị trí trung tâm của khu nghỉ dưỡng, view hướng biển tuyệt đẹp"
+119,3,Nhà hàng phục vụ đa dạng món ăn Á-Âu
+119,4,"Các dịch vụ tiện ích khác như: mini bar, spa ,massage, ..."
+120,1,Furama Resort Đà Nẵng với thiết kế mang đậm phong cách Indochina sang trọng
+120,2,"Khu nghỉ sở hữu bể bơi nước ngọt, nhà hàng, quầy bar, spa với các phương pháp trị liệu chuyên sâu"
+120,3,"Nhà hàng của khu nghỉ phục vụ  bữa sáng buffet, bữa trưa và bữa tối theo thực đơn có sẵn các món Á, Âu, truyền thống Ý"
+121,1,"Giữa lòng phố núi mờ sương ấy, DeLaSol Sapa Hotel như một nốt nhạc êm đềm, chào đón bạn đến với hành trình khám phá xứ sở mây ngàn"
+121,2,Ngắm nhìn thung lũng Mường Hoa ngay tại ban công nhà hàng chính là điểm nhấn lãng mạn trong hành trình khám phá vị ngon Tây Bắc của thực khách khi lưu trú DeLaSol Sapa Hotel
+121,3,"Nơi ban công phòng nghỉ ngắm trọn khung cảnh biển mây bay bồng bềnh, nơi tách trà ấm cùng chiếc bánh ngọt mang lại cảm giác thư giãn và nơi mọi khoảnh khắc tuyệt vời ấy đã được ghi lại qua những bức ảnh tuyệt đẹp."
+122,1,"ước chân vào khách sạn, du khách thực sự bị ấn tượng bởi những họa tiết hoa văn đẹp mắt trên các sản phẩm thổ cẩm được sử dụng làm điểm nhấn cho không gian nội thất từ các bức tranh treo tường, gối, thảm,…"
+122,2,"Kết hợp tông màu trầm nền nã và những vật dụng quen thuộc được biến tấu khác lạ, xu hướng “vinh danh bản sắc” đã trở thành chủ đề xuyên suốt trong thiết kế nội thất của khách sạn."
+122,3,"Lựa chọn Pistachio Hotel Sapa, du khách còn được tận hưởng trọn vẹn các dịch vụ đẳng cấp như Bể bơi vô cực, Bể bơi 4 mùa, Phòng tập Gym, Quầy Bar, Dịch vụ Spa thư giãn, Phòng Karaoke"
+123,1,"Hãy tưởng tượng bạn đang ngồi trước ban công phòng, trước mắt là thung lũng Mường Hoa thơ mộng, xa xa là những thửa ruộng bậc thang đang mùa xanh ngát."
+123,2,"Tận hưởng không gian riêng tư, hòa mình vào thiên nhiên với bungalow rộng rãi, đầy đủ tiện nghi."
+123,3,"Phòng cao cấp với tầm nhìn ngoạn mục ra dãy Hoàng Liên Sơn hùng vĩ, mang đến trải nghiệm nghỉ dưỡng đẳng cấp."
+124,1,Khách sạn đầu tiên của Shilla Monogram tại Đà Nẵng- Việt Nam
+124,2,"Thiết kế hiện đại, sang trọng mang phong cách Hàn Quốc kết hợp văn hóa Việt Nam"
+124,3,"Khách sạn sở hữu bãi biển riêng cùng bể bơi, nhà hàng, spa với các phương pháp trị liệu chuyên sâu, hiệu quả"
+125,1,"Aqua Pool với tầm nhìn bao trọn cảnh biển, bên cạnh đó tất cả các villa đều có hồ bơi, sân vườn riêng"
+125,2,"Hệ thống nhà hàng & quầy bar cao cấp: Nhà hàng Ando Bistro, Ando Beach Bar"
+125,3,"Phòng hội họp trang bị đầy đủ các thiết bị âm thanh, ánh sáng"
+125,4,Andochine Spa & Wellness với các phương pháp trị liệu từ thiên nhiên
+125,5,"Các sự kiện giải trí: Live music, DJ show, Taste The Sunset Show, các hoạt động thể thao trên biển,..."
+126,1,Amazing mong bạn đến Sapa ngày gần nhất để tận hưởng mùa thu nơi rẻo cao để lòng mình ăm ắp cảm xúc rộn ràng xen lẫn bình yên.
+126,2,"Amazing Hotel Sapa mang đến cho bạn những hương vị Việt Nam trứ danh, đậm đà và khó quên."
+126,3,"Sau cả ngày khám phá Sapa, còn gì tuyệt vời hơn khi được thư giãn và tái tạo năng lượng với liệu pháp spa thảo dược truyền thống của người Dao Đỏ tại Amazing Hotel Sapa."
+126,4,"Không gian spa tại Amazing Hotel Sapa thơm dịu mùi thảo dược, mang lại cảm giác thanh bình, giúp bạn thả lỏng và tận hưởng sự an yên."
+127,1,"Với thiết kế ấn tượng, trang bị đầy đủ hệ thống âm thanh ánh sáng tối tân, đội ngũ nhân viên chuyên nghiệp. Hứa hẹn mang thành công tới mọi bữa tiệc, sự kiện lớn nhỏ của Du khách."
+127,2,"Nhà hàng sang trọng, có sức chứa 250 khách, mở ra một không gian trải nghiệm ẩm thực đặc sắc với tầm nhìn tuyệt đẹp hướng thung lũng và menu đa dạng các món ăn từ Á - Âu."
+127,3,"Trong không gian yên tĩnh với hương thảo mộc nhẹ dịu, từng động tác massage chuyên nghiệp, tinh tế và tắm lá thuốc Dao đỏ giúp bạn lấy lại cân bằng cho cơ thể, tận hưởng sự thư giãn tuyệt đối."
+127,4,"Bamboo Eden gây ấn tượng nhờ thiết kế độc đáo, đem đến cho Du khách cảm giác chạm tay tới khoảnh khắc hòa cùng mây trời trong không gian đầy thơ mộng."
+128,1,My Gallery Boutique Hotel & Spa là lựa chọn sáng giá dành cho những ai đang tìm kiếm một trải nghiệm xa hoa đầy thú vị trong kỳ nghỉ của mình.
+128,2,Lưu trú tại đây cũng là cách để quý khách chiều chuộng bản thân với những dịch vụ xuất sắc nhất và khiến kỳ nghỉ của mình trở nên thật đáng nhớ.
+128,3,Khách sạn này là lựa chọn hoàn hảo cho các kỳ nghỉ mát lãng mạn hay tuần trăng mật của các cặp đôi.
+128,4,"Với thiết kế độc đáo, My Gallery Boutique Hotel & Spa mang đến không gian lưu trú làm hài lòng quý khách."
+129,1,"Grand Flamant Sapa Hotel  - điểm dừng chân lý tưởng cho những người yêu thích sự tiện lợi, không gian riêng tư."
+129,2,Khách sạn Grand Flamant Sapa không chỉ mang đến một trải nghiệm nghỉ dưỡng tuyệt vời mà còn cung cấp nhiều tiện nghi giải trí hấp dẫn
+129,3,"Tiết kiệm, trải nghiệm và tận hưởng đúng nghĩa bằng sự tiện nghi, chuyên nghiệp của khách sạn với đầy đủ các dịch vụ hấp dẫn theo tiêu chuẩn 3 sao"
+130,1,"Khách sạn Mường Thanh Sapa được thiết kế với hệ thống 96 phòng nghỉ, tất cả đều đạt chuẩn, đầy đủ các tiện nghi với nhiều dịch vụ cần thiết đi kèm nhằm đáp ứng nhu cầu của bạn trong thời gian nghỉ dưỡng tại đây."
+130,2,"Một điều độc đáo để tạo nên điểm khác biệt của Khách sạn Mường Thanh Sapa chính là kiến trúc, nó được kết hợp hài hòa giữa phong cách hiện đại sang trọng và nét bình dị trong vẻ đẹp văn hóa của người dân đồng bào Tây Bắc."
+130,3,"Đặc biệt, Khách sạn Mường Thanh Sapa có tầm nhìn hướng ra hồ với mặt nước long lanh, tựa như mắt rồng in bóng toàn bộ khuôn viên khiến cho không gian khung cảnh nơi đây ngày càng thơ mộng."
+131,1,"Tất cả các phòng được thiết kế có ban công hoặc cửa sổ với tầm view rộng và thoáng  đãng, nhìn xuống thung lũng Mường Hoa thơ mộng và dãy núi Hoàng Liên Sơn hùng vĩ, đỉnh Fansipan."
+131,2,"Mỗi phòng nghỉ đều được thiết kế trang nhã với đồ nội thất hiện đại và có máy điều hòa hai chiều, thiết bị sưởi cũng như két an toàn cá nhân."
+131,3,Nhà hàng và bar tầng trên cùng sức chứa 120 khách rất phù hợp với khách đoàn tổ  chức sự kiện Gala dinner ngoài trời.
+132,1,"My Boutique Hotel & Spa sẽ là lựa chọn lưu trú hoàn hảo, nơi cung cấp các tiện nghi chất lượng và dịch vụ tuyệt vời."
+132,2,"Không chỉ sở hữu vị trí đắc địa, My Boutique Hotel & Spa còn là một trong những khách sạn nằm cách Chợ đêm Sapa chưa đầy 1,17 km và Thác Bạc chưa đầy 7,85 km."
+132,3,Khách sạn này là lựa chọn hoàn hảo cho các kỳ nghỉ mát lãng mạn hay tuần trăng mật của các cặp đôi.
+133,1,"Cùng với đó là thiết kế nội thất tinh tế và đa dạng,  là sự lựa chọn lý tưởng cho những khách hàng muốn trải nghiệm không gian nghỉ dưỡng rộng rãi, thoải mái và được trang bị đầy đủ tiện nghi hiện đại."
+133,2,"Nội thất trong phòng được thiết kế đơn giản và tinh tế, mang lại cảm giác sang trọng và ấm cúng"
+133,3,"Quầy bar mang đến cho du khách nhiều loại đồ uống phong phú, từ cocktail đặc trưng đến rượu vang ngon, đảm bảo đáp ứng tất cả các nhu cầu của khách hàng."
+134,1,"Sun halong hotel có đủ không gian để đáp ứng nhu cầu của du khách. Mỗi phòng được thiết kế sang trọng và tiện nghi, đảm bảo mang đến sự thoải mái và thoáng đãng cho khách hàng."
+134,2,"Khách sạn cũng rất thích hợp cho gia đình có trẻ em, vì theo chính sách của khách sạn, trẻ em từ 6 tuổi trở xuống được ở miễn phí."
+134,3,"Sun halong hotel không chỉ là một điểm đến tuyệt vời để thư giãn và khám phá vẻ đẹp của Hạ Long, mà còn cung cấp cho du khách nhiều tiện ích thể thao tuyệt vời."
+134,4,"Sun halong hotel là một khách sạn tuyệt vời tại Hạ Long, Việt Nam, với nhiều tiện ích tiện lợi để đáp ứng nhu cầu của khách hàng."
+135,1,"Cửa sổ lớn với tầm nhìn hướng ra thành phố kết hợp cùng rèm cửa, giúp phòng luôn tràn ngập ánh sáng tự nhiên nhưng vẫn đảm bảo sự riêng tư."
+135,2,"Hạ Long cuối tuần này trời xanh mây trắng nắng vàng, gió biển mơn man, hải sản tươi ngon kết hợp nghỉ dưỡng tại Essence Hạ Long Hotel chắc chắn là kế hoạch du lịch tuyệt vời, đảm bảo nhà mình ai ai cũng thích"
+135,3,Tại Essence Hạ Long Hotel các phòng nghỉ được thiết kế tinh tế đến từng chi tiết với mong muốn đem tới cho quý khách trải nghiệm nghỉ dưỡng xứng tầm
+135,4,"Tới Hạ Long và lựa chọn Essence Hạ Long Hotel là điểm dừng chân để chúng tôi giúp bạn tận hưởng những giây phút tuyệt vời, tạo nên thật nhiều khoảnh khắc đáng nhớ"
+136,1,"Khách sạn có các phòng được trang bị cơ sở vật chất sang trọng, tiện nghi với cách bài trí hài hòa, ấm cúng tạo nên vẻ lịch sự ở khách sạn"
+136,2,"Đội ngũ nhân viên chuyên nghiệp, nhiệt tình luôn mong muốn mang đến cho quý khách dịch vụ tốt nhất, chắc chắn quý khách sẽ cảm thấy hài lòng, tinh thần được thư giãn, thoải mái khi nghỉ tại KL Hạ Long Hotel."
+137,1,"Với trái tim kết nối và ý chí mạnh mẽ, từng khách sạn và khu nghỉ dưỡng trong chuỗi sản phẩm mang tên Silk Path Hotels & Resorts mang đến tinh hoa trải nghiệm nghỉ dưỡng, thể hiện dấu ấn văn hóa địa phương và lòng nhiệt thành, mến khách của con người tại từng điểm đến."
+137,2,"Từ nội thất tân cổ điển cho tới cách bài trí tinh tế theo tông từng tông màu chủ đạo như vàng – xanh – đỏ, tái hiện không gian cung điện vua chúa thời xưa"
+137,3,"Quý khách có thể cảm nhận trọn vẹn sự quý phái, trang nhã mà không kém phần tiện nghi, ấm cúng ngay trong các phòng nghỉ của Silk Path Grand Huế."
+137,4,"Thiết kế nội thất hiện đại bên trong phòng ngủ ấm cúng, mang đến sự pha trộn hoàn hảo giữa nét thanh lịch cổ điển và tiện nghi chu đáo."
+138,1,Nâng tầm từng sự kiện hội họp với dịch vụ chuyên nghiệp ngay giữa lòng thành phố tại Meliá Vinpearl Huế - nơi đồng hành lý tưởng để mọi cuộc họp luôn hiệu quả và chỉn chu.
+138,2,Lưu giữ những kỷ niệm đáng nhớ và cùng gia đình tận hưởng mọi khoảnh khắc sum vầy đầy ý nghĩa tại Meliá Vinpearl Huế - nơi tái hiện không khí lễ hội náo nhiệt bên mỹ vị không giới hạn và các hoạt động gắn kết yêu thương.
+138,3,"Nơi đón tiếp những vị khách quý bằng các tiện ích độc quyền, nâng tầm sự khác biệt trong từng dịch vụ được cá nhân hóa, ưu tiên mọi trải nghiệm của du khách luôn thoải mái và riêng tư."
+138,4,Ngày mới bắt đầu tràn đầy năng lượng khi được hoà mình thư giãn trong làn nước xanh mát của hồ bơi bốn mùa hay làm nóng cơ thể nơi phòng gym hiện đại tại Meliá Vinpearl Huế.
+139,1,"Nằm ở trung tâm, gần nhiều điểm tham quan, ăn uống và mua sắm."
+139,2,Hồ bơi tuyệt đẹp được đặt giữa trung tâm Resort
+139,3,Nhà hàng chuyên phục vụ hải sản và ẩm thực Á - Âu.
+139,4,"Hệ thống phòng hội nghị sức chứa từ 40 - 260 người, với âm thanh ánh sáng đầy đủ."
+139,5,"Các tiện ích hấp dẫn khác: Spa, karaoke,dịch vụ đưa đón sân bay,.."
+140,1,Vị trí đắc địa hưởng trọn vẻ đẹp thiên nhiên của cả rừng và biển
+140,2,"Hồ bơi bốn mùa ngoài trời rộng lớn, có khu vực riêng cho trẻ em"
+140,3,Nhà hàng Camia cung cấp ẩm thực đặc trưng làm từ các gia vị địa phương
+140,4,"Tiện ích khác: Spa, thuê xe đạp, chèo thuyền trên biển,..."
+141,1,"Gần bãi biển Bà Kèo, các khu vui chơi, các điểm tham quan nổi tiếng"
+141,2,Hồ bơi riêng với diện tích 800m2
+141,3,"Nhà hàng và Sky bar phục vụ thực đơn Âu - Á đa dạng, phong phú"
+141,4,"Các dịch vụ tiện ích khác như: Phòng Gym, khu vui chơi trẻ em ,..."
+142,1,Bể bơi vô cực dành cho người lớn và trẻ nhỏ.
+142,2,"Có nhà hàng với sức chứa lên đến 150 người, phục vụ đa dạng ẩm thực"
+142,3,"Phòng hội họp với sức chứa lớn, âm thanh ánh sáng đầy đủ hiện đại nhất"
+142,4,Tiện ích khác: Khu vui chơi trẻ em & dịch vụ trông giữ trẻ
+143,1,"Nằm ngay trên phố Lê Lợi sát bên bờ sông Hương, từ khách sạn Century, bạn có thể dễ dàng di chuyển và khám phá những điểm đến chất lượng khi ghé Huế mộng mơ vào mùa thu."
+143,2,"Khách sạn có không gian rộng lớn nhất nội đô Huế, Century Riverside Huế giống như một resort tọa lạc giữa một khu vườn xanh mát, ngay trong khu vực trung tâm nhìn ra khu “Phố Tây”, nơi mang vẻ đẹp của quá khứ và tương lai trộn lẫn."
+143,3,"Lưu lại Century Riverside Huế để được trải nghiệm nét văn hóa thấm nhuần qua ánh nhìn, âm thanh, mùi vị Huế đặc trưng tại một khách sạn mang phong cách bản địa"
+143,4,"Tại Century Riverside Huế, bạn sẽ được trải nghiệm trọn vẹn những tinh hoa ẩm thực xứ Huế trong không gian đẹp đẽ nhất, thơ mộng nhất."
+144,1,"Khách sạn có phòng nghỉ được trang trí đẹp mắt với tông màu tươi sáng, sàn gỗ, đồ nội thất theo phong cách tân cổ điển và tiện nghi xa hoa. Mọi chi tiết đều được thiết kế cẩn thận để đảm bảo “chạm đến từng cá nhân"
+144,2,"Thưởng thức sự sáng tạo ẩm thực tại nhà hàng chính Eldora phục vụ cả ngày, nơi phục vụ nhiều món ăn phương Tây, châu Á và địa phương."
+144,3,"Không gian trang trí theo phong cách cổ điển với đồ nội thất cao cấp, đèn tường nến và đèn chùm, Nhà hàng là không gian sang trọng để bàn công việc trong bữa sáng hoặc thư giãn và thưởng thức bữa ăn cùng bạn bè hoặc gia đình."
+145,1,"Khách sạn ÊMM Huế được trang bị đầy đủ các dịch vụ & tiện ích từ ăn uống, giải trí đến phòng họp… nhằm mang lại không gian nghỉ dưỡng & công tác trọn vẹn nhất."
+145,2,"Dễ dàng nạp lại năng lượng ngay cuối tuần này trong không gian bể bơi xanh mát, thiết kế hiện đại và phục vụ tận tâm của ÊMM Hotel Hue"
+145,3,"ọa lạc ngay trung tâm thành phố, dễ dàng tiếp cận mọi điểm đến nổi tiếng của Huế như Sông Hương, Cầu Tràng Tiền, Chợ Đông Ba và Tử Cấm Thành,..."
+145,4,"Không gian ấm cúng, gần gũi tại sảnh khách sạn ÊMM Huế, nơi bạn sẽ cảm nhận sự nồng hậu và chân thành của con người xứ Huế ngay từ khoảnh khắc đầu tiên."
+146,1,"Khách sạn Jasmine giúp bạn khám phá Huế một cách nhanh chóng và dễ dàng, giúp kì nghỉ của bạn trở nên thư giãn và thích thú."
+146,2,Khách sạn Jasmine sẽ mang đến cho bạn quãng thời gian lưu trú thư giãn và dễ chịu nhất có thể.
+146,3,"Khi ở tại Khách sạn Jasmine, du khách có thể khám phá Huyen Tran Princess Temple (0,1 km) và Tu Dam Pagoda (1,0 km), những điểm đến hàng đầu của Huế."
+146,4,"Huế có rất nhiều nhà hàng kiểu pháp. Vì thế khi ở đây, hãy nhớ thử những điểm ẩm thực yêu thích như Les Jardins de La Carambole, COCOCLUB và Bánh Mì Pháp, phục vụ một số món ăn rất tuyệt vời."
+147,1,"Baby Hotel là một lựa chọn tuyệt vời cho khách du lịch khi đến thăm Huế, mang đến những tiện nghi hữu ích cho suốt thời gian lưu trú của bạn."
+147,2,"Là “ngôi nhà xa xứ,” các phòng cơ sở kinh doanh có dịch vụ giới hạn cung cấp điều hòa nhiệt độ, tủ lạnh và quầy bar mini, và kết nối mạng thật dễ dàng, với wifi miễn phí sẵn có."
+147,3,"Baly Hotel Hue nằm gần An Cuu Market và chỉ cách 15 phút đi bộ từ trung tâm của Huế. Khách sạn này cung cấp xông hơi khô, massage và các hoạt động giải trí, cũng như các phòng khách nhìn ra thành phố."
+148,1,"Có bãi biển riêng, hồ bơi ngoài trời gồm khu vực cho trẻ em và người lớn."
+148,2,"Hệ thống nhà hàng - bar: Nhà hàng Romance Sea, Bar Dolphin, Bar Pool."
+148,3,Pure Spa phục vụ đa dạng liệu pháp chăm sóc sức khỏe và sắc đẹp.
+148,4,"Tiện ích khác: phòng gym, bể sục Jacuzzi, khu vui chơi cho trẻ em, phòng tắm hơi,..."
+149,1,Hồ bơi ngoài trời với diện tích lớn bên trong khuôn viên khách sạn
+149,2,"Nhà hàng chuyên phục vụ các món Á - Âu có không gian mở, sức chứa đến 70 khách"
+149,3,"Một số tiện ích khác: Wifi, bãi đậu xe, nhà hàng, quầy bar trong khuân viên,..."
+150,1,"Vị trí gần nhiều điểm vui chơi tham quan: chợ đêm Dương Đông, Dinh Cậu,..."
+150,2,Nhà hàng nằm ở tầng 8 khách sạn và quán bar trên sân thượng.
+150,3,Phòng họp sức chứa khoảng 40 người
+150,4,"Tiện ích khác: oto cho thuê,..."
+151,1,"Là nơi được lựa chọn để trải nghiệm chuyến nghỉ dưỡng, La Vela Hotel Huế luôn trân trọng giây phút được tiếp đón và chăm sóc tận tâm từng quý khách hàng"
+151,2,"Với phương châm đặt sự hài lòng của khách hàng lên hàng đầu, đội ngũ La Vela luôn gây ấn tượng đẹp với du khách ngay từ những bước chân đầu tiên và hứa hẹn sẽ đem lại những trải nghiệm tốt nhất dành cho khách hàng cho kỳ nghỉ tuyệt vời"
+151,3,"Đến với La Vela Hue Hotel là điểm hẹn gửi gắm những trải nghiệm được nâng tầm, trải nghiệm các món ăn thuần vị Huế tại nhà hàng Nhã Viên lại vẹn tròn, hoàn hảo với không gian truyền thống, cổ kín và sang trọng"
+151,4,"Tận hưởng kì nghỉ với sự thư thái đúng điệu tại La Vela Hue Hotel. Thư giãn và thưởng thức không gian sang trọng và ấm cúng, mọi khoảnh khắc yên bình của thành phố như hiện ra ngay trước mắt."
+152,1,"Bạn sẽ được ngắm nhìn quang cảnh sông Hương và vườn bưởi trong phòng nghỉ dưỡng sang trọng, thanh lịch này."
+152,2,"Hue Riverside Resort là một điểm đến lý tưởng cho những ai muốn tìm kiếm một nơi yên tĩnh, thanh bình"
+152,3,"Khám phá Hue Riverside Resort - nơi bạn có thể kết nối với thiên nhiên, tận hưởng những khoảnh khắc yên bình bên người thân yêu."
+152,4,"Với vị trí đắc địa bên bờ sông Hương, tất cả các phòng của resort đều có view sông, mang lại cảm giác thư thái và bình yên"
+153,1,"Vị trí thuận lợi, chỉ cách trung tâm Cát Bà và bãi biển Cát Cò 5 phút đi bộ"
+153,2,Có bể bơi ngoài trời lý tưởng cho du khách thư giãn ngắm hoàng hôn
+153,3,"Các tiện ích khác: nhà hàng, bể bơi bốn mùa, thuê xe máy,..."
+154,1,"Không chỉ cung cấp cho quý khách không gian tổ chức sang trọng và trang thiết bị hiện đại, The Reed Hotel còn có đội ngũ nhân sự vừa chuyên nghiệp vừa nhiệt tình, luôn sẵn sàng cho mọi sự kiện."
+154,2,The Reed Hotel sẽ mang đến không gian sân vườn thoáng đãng cho những trò chơi thú vị của cả team cùng nhiều dịch vụ tổ chức sự kiện cao cấp
+154,3,The Reed Hotel chính là địa điểm lý tưởng để các đơn vị tạo nên những dấu ấn khó phai tại buổi Team Building có 1-0-2 cho nhân sự.
+154,4,"Khách sạn phục vụ đa dạng các loại hình Team Building từ indoor, outdoor hay kết hợp cùng ẩm thực"
+155,1,"Với 35 phòng tiêu chuẩn và suite, Khách sạn được thiết kế sang trọng với nội thất cao cấp cùng nhiều dịch vụ tiện ích như sky bar, hồ bơi vô cực, bể sục nước nóng, phòng xông hơi & spa, khu tổ chức BBQ, team building,kid club……"
+155,2,"Các phòng đều có cửa sổ hướng ra núi, hồ sen, hoặc cánh đồng. Khách sạn Lalita Boutique Hotel & Spa Ninh Binh sẽ là sự lựa chọn lý tưởng cho du khách khi ghé thăm Cố Đô Ninh Bình."
+155,3,"Khách sạn nằm trong lòng Tam Cốc- Bích Động, trung tâm của Di sản thiên nhiên và văn hóa thế giới Tràng An, khách sạn Lalita Boutique Hotel & Spa Ninh Binh xuất hiện như một tòa lâu đài đẹp lộng lẫy bên hồ sen."
+156,1,Sở hữu bể bơi trong nhà và ngoài trời diện tích rộng
+156,2,"Hệ thống nhà hàng và quán bar phục vụ thực đơn da dạng, phong phú các món ăn đặc sản tươi sống"
+156,3,Phòng hội họp được thiết kế sang trọng trang bị đầy đủ tiện nghi cần thiết
+156,4,"Tiện ích khác: dịch vụ Spa, dịch vụ BBQ, quán coffee,.."
+157,1,"Tọa lạc tại trung tâm của Phú Quốc, nằm ngay sát các địa danh nổi tiếng như: Long beach, chợ Dương Đông,.."
+157,2,Bể bơi ngoài trời nằm giữa rừng nhiệt đới nguyên sinh tạo nên một bầu không khí thanh bình và thư giãn.
+157,3,"Hệ thống nhà hàng & bar sang trọng nhưng không kém phần ấm cúng, phục vụ nhiều món ăn độc đáo bao gồm: Nhà hàng Garden, Del Sol, Lê Việt Cafe, Cheers Bar."
+157,4,"Phòng hội thảo có đầy đủ trang thiết bị hiện đại cùng không gian rộng rãi, có sức chứa khoảng 50 khách."
+157,5,"Những tiện ích khác: Spa, phòng gym, hoạt động giải trí trên biển, cửa hàng lưu niệm, dịch vụ trông trẻ,..."
+158,1,Vị trí thuận lợi để di chuyển đến các địa điểm nổi tiếng của Phú Quốc
+158,2,Bãi biển riêng và hồ bơi ngoài trời cực rộng với nhiều hoạt động vui chơi giải trí trên biển
+158,3,Nhà hàng Chez Carole phục vụ đa dạng các món ăn Á - Âu
+158,4,"Tiện ích khác: Spa, phòng tập Gym, ...."
+159,1,"Vị trí thuận lợi cách trung tâm thị trấn Dương Đông 12km, sân bay 6km"
+159,2,Bể bơi ngoài trời diện tích hơn 110m2 có khu vực cho người lớn và trẻ em
+159,3,"Hệ thống nhà hàng - Bar phục vụ đa dạng ẩm thực vùng biển: Nhà hàng An Thới, Coral Bar, Sunny Bar, Rooftop Bar, ..."
+159,4,"Phòng tiệc, hội nghị hiện đại với sức chứa từ 40 – 450 khách"
+159,5,"Tiện ích khác: dịch vụ Spa, Gym, Tennis, Karaoke, ..."
+160,1,Nằm cách bãi biển chỉ 100m với view hướng biển
+160,2,Bể bơi ngoài trời góc nhìn thoáng rộng
+160,3,Nhà hàng với thực đơn đa dạng và phong phú
+160,4,"Các dịch vụ tiện ích khác: phòng thể dục, quầy đặt tour,..."
+161,1,"Thiết kế nhằm tái hiện lại khu chợ sôi động ngày xưa, phong cách trang trí đặc trưng như trưng bày các sản phẩm gốm sứ lạ mắt, mô phỏng bàn tính cổ điển của cảng thương mại sầm uất bằng gỗ và nhiều lớp ngói lợp bằng gốm được sắp xếp tinh xảo sẽ đưa bạn trở về một thời đã qua thực sự."
+161,2,"Với hồ bơi rộng rãi, thoáng mát, nhiều cây xanh, Pool Bar là nơi để bạn thư giãn sau một ngày tham quan di tích lịch sử, văn hóa khi đến Hội An hay đơn giản là chuyến đi nghỉ cuối tuần."
+161,3,"Không gian nội thất bắt đầu hành trình khám phá văn hóa địa phương của bạn với các bộ sưu tập tác phẩm nghệ thuật, văn học và hiện vật"
+161,4,"Serene Nature Hotel là một tác phẩm nghệ thuật tự thân, mỗi ngóc ngách đều được tô điểm bằng những tác phẩm kết nối với câu chuyện lớn hơn."
+162,1,"Khách sạn ÊMM Hội An đáp ứng mọi nhu cầu nghỉ dưỡng với 05 hạng phòng được thiết kế hiện đại, tiện nghi và sạch sẽ chuẩn quốc tế."
+162,2,"Khách sạn ÊMM Hội An được trang bị đầy đủ các dịch vụ & tiện ích từ ăn uống, giải trí, làm đẹp… nhằm mang lại trải nghiệm nghỉ dưỡng trọn vẹn nhất."
+162,3,"Khách sạn mang đến sự kết hợp hoàn hảo giữa nét hiện đại và cổ kính, với không gian trong lành và tiện nghi đẳng cấp, cho bạn trải nghiệm trọn vẹn Hội An vào thời khắc đẹp nhất này."
+163,1,Nhà hàng ăn sáng nằm cạnh hồ bơi của khách sạn với không gian thoáng đãng và gần gũi với thiên nhiên cùng thực đơn hấp dẫn
+163,2,"Hồ bơi Rooftop nằm giữa khu vườn xanh mát trên cao, sử dụng công nghệ muối điện phân thân thiện với làn da của bạn"
+163,3,"Dịch vụ cho thuê xe máy, ô tô luôn sẵn sàng đưa bạn đến mọi nơi"
+164,1,"Bể bơi ngoài trời nằm trên sân thượng, sở hữu không gian rộng rãi, thoáng mát và tầm nhìn ra toàn thành phố"
+164,2,Nhà hàng Mento phục vụ thực đơn Âu - Á đa dạng
+164,3,"Dịch vụ Spa, xông hơi bằng đá muối Himalaya"
+164,4,"Tiện ích khác: lễ tân 24/24, dọn phòng hàng ngày,..."
+165,1,Bể bơi vô cực với tầm nhìn bao quát toàn bộ khung cảnh thành phố biển
+165,2,"Nhà hàng Canary Gold và Canary Gold Sky Lounge sở hữu menu ẩm thực, thức uống đa dạng"
+165,3,"Phòng hội họp trang bị đầy đủ thiết bị âm thanh, ánh sáng"
+165,4,"Dịch vụ tiện ích khác: Spa, phòng tập Gym,..."
+166,1,"Các phòng đều được thiết kế và trang trí trang nhã theo phong cách hiện đại và tinh tế, với phần lớn các căn hộ mang hơi thở cổ điển – với tầm nhìn ra Bãi biển An Bàng rực rỡ."
+166,2,"Bên cạnh đó, đội ngũ nhân viên tận tâm và giàu kinh nghiệm của khu nghỉ dưỡng luôn sẵn sàng phục vụ, mang đến cho du khách những trải nghiệm trọn vẹn nhất."
+166,3,"Toạ lạc tại thành phố Hội An di sản, Citadines Pearl Hoi An là sự lựa chọn lý tưởng với các tiện nghi hàng đầu, mang đến cho quý khách một kỳ nghỉ thoải mái và thú vị nhất."
+166,4,"Citadines Pearl Hoi An sẽ làm bạn hài lòng với lễ cưới đẹp như mơ bên bờ biển An Bàng hoang sơ xinh đẹp và bãi cát trắng mịn. Dù là phong cách hiện đại hay truyền thống, sang trọng hay là nhẹ nhàng ấm cúng."
+167,1,"Nhà hàng tại Hội An Babylon Luxury Hotel & Spa là nhà hàng phục vụ bữa sáng tự chọn và hơn thế nữa, cung cấp cho du khách các món ăn truyền thống Việt Nam và các món ăn phương Tây phù hợp với mọi khẩu vị, sử dụng tất cả nguyên liệu có nguồn gốc địa phương"
+167,2,"Khám phá liệu pháp truyền thống Việt Nam bao quanh bởi vườn thảo dược, spa là một nơi trú ẩn hẻo lánh nơi có tiếng nước chảy và mùi tinh chất tự nhiên."
+167,3,"Khách sạn nằm cách Trung tâm phố cổ Hội An 900m, gần bãi đỗ xe trung tâm phố cổ, thuận tiện cho du khách di tham quan phố cổ hoặc có thể đi bộ để ngắm phố, khách sạn cũng cung cấp miễn phí xe đạp cho khách dạo chơi phố cổ & xe đưa đón ra biển An Bàng theo lịch trình khách sạn."
+168,1,"Khám phá năng lượng nhộn nhịp của Phố cổ Hội An, hoặc mạo hiểm đến Huế và Đà Nẵng - tất cả đều dễ dàng tiếp cận."
+168,2,"Nhà hàng Sowing và quầy bar tầng thương FiEELd của Rêu Hotel Hội An dệt nên bức tranh ẩm thực phong phú, tôn vinh hương vị của nguyên liệu địa phương. Hãy bắt đầu một cuộc phiêu lưu ẩm thực, nơi mỗi món ăn và thức uống mang đến cho bạn những trải nghiệm mới mẻ."
+168,3,"Tọa lạc giữa cánh đồng lúa xanh mát, chỉ cách Phố cổ Hội An 5 phút, Rêu là nơi lý tưởng để bạn tận hưởng không khí trong lành và khám phá vẻ đẹp cổ kính của phố cổ Hội A"
+169,1,"Khách sạn 5 sao Hội An Cozy Savvy Boutique sau bao năm xây dựng và phát triển, giờ đây đã có được cho mình những thành tựu nhất định. Khu nghỉ dưỡng lấy được niềm tin của khách hàng"
+169,2,Khách sạn Cozy Savvy Boutique thiết kế thiên về kiểu hướng hiện đại. Tất cả các đường nét chạm khắc ở đây đều ẩn hiện một ý nghĩa nào đó khó nói.
+169,3,"Khách sạn Hội An Cozy Savvy Boutique có diện tích khá rộng. Toàn bộ khuôn viên có trông và trang trí nhiều cây xanh mát, tạo không gian rộng mở thoải mái."
+169,4,Cozy Savvy Boutique sau bao năm vẫn giữ được nét đẹp truyền thống xưa. Nét thiết kế xen lẫn cả hiện đại và cổ điển đã tạo nên được một công trình mới lạ đặc sắc.
+170,1,Bể bơi vô cực với tầm nhìn bao quát toàn bộ khung cảnh thành phố biển
+170,2,"Nhà hàng Le Bon và D’Ruby Sky Lounge & Pool Bar sở hữu menu ẩm thực, thức uống đa dạng"
+170,3,"Phòng hội họp trang bị đầy đủ thiết bị âm thanh, ánh sáng"
+170,4,"Dịch vụ tiện ích khác: Spa, phòng tập Gym,..."
+171,1,"Vị trí: tọa lạc tại trung tâm thành phố, thuận tiện di chuyển đến các địa điểm vui chơi, tham quan"
+171,2,Hồ bơi ngoài trời với làn nước trong xanh và không gian riêng tư
+171,3,"Hệ thống nhà hàng và bar có thiết kế sang trọng, phục vụ ẩm thực đa dạng: Nhà hàng Hoa FengHuan, Nhà hàng La Maison, Sol Skybar & Lounge, The Books Garden Cafe"
+171,4,Phòng hội họp trang bị đầy đủ tiện nghi
+171,5,"Tiện ích khác: La Pensée Spa, phòng Gym."
+172,1,"Tất cả các phòng đều có ban công và bồn tắm, phòng đẹp, hiện đại theo đúng tiêu chuẩn khách sạn 4 sao đặc biệt  tivi có thể kết nối  Netflix; chăn ga gối nệm theo tiêu chuẩn Hàn Quốc, thiết bị vệ sinh phòng tắm tiêu chuẩn Châu Âu;"
+172,2,"Một Khách sạn & Spa thân thiện với môi trường cung cấp cho khách các lớp thể dục, cũng như quyền lui tới khu vực chăm sóc sức khỏe và phòng chờ spa."
+172,3,"Little Gem – An Eco Friendly Boutique Hotel Hoi An tự hào với tiêu chí thân thiện với môi trường, Nói KHÔNG với các chế phẩm nhựa sử dụng một lần"
+172,4,Mục tiêu của Little Gem là trở thành khách sạn  Xanh theo concept thân thiện với môi trường nhưng vẫn đem lại sự sang trọng và thoải mái nhất cho khách hàng.
+173,1,"Toạ lạc tại trung tâm thành phố - con phố Đào Duy Từ, chỉ cách phố cổ 4 phút đi bộ, La Charm Hoi An sẽ là điểm dừng chân lý tưởng cho quý khách với"
+173,2,"Nằm ở vị trí trung tâm thành phố Hội An, La Charm Hoi An Hotel and Spa là điểm đến lý tưởng để khám phá những nét đẹp văn hóa và lịch sử của địa phương."
+173,3,"Với cơ cấu 70 phòng cùng với trang thiết bị hiện đại, LA CHARM HOI AN HOTEL $ SPA sẽ đáp lại những mong muốn của du khách với một chỗ nghỉ thoải mái chỉ cách phố cổ Hội An vài phút đi bộ"
+173,4,"Tất cả các phòng đều có ban công, thoáng mát, đón ánh sáng mặt trời tự nhiên , nhưng vẫn đảm bảo sự riêng tư đầy đủ cho một kỳ nghỉ tuyệt vời."
+174,1,"Vị trí thuận tiện cho khách du lịch đến các địa điểm vui chơi giải trí nổi tiếng như: Làng cổ Phú Vinh, vịnh Ninh Vân, bãi Tranh,..."
+174,2,"Bể bơi trong nhà với không gian thoáng mát, rộng rãi"
+174,3,Thưởng thức ẩm thực 3 miền độc đáo tại nhà hàng Lucky Sun của khách sạn.
+174,4,Phòng hội nghị hội thảo với sức chứa 50 người
+174,5,"Tiện nghi hấp dẫn khác: Trung tâm thể thao, dịch vụ đưa đón sân bay, bãi đỗ xe miễn phí,..."
+175,1,Có hồ bơi ngoài trời và bãi biển riêng.
+175,2,Nhà hàng nằm ngay trên bãi biển phục vụ các món ăn phương Tây và châu Á.
+175,3,"Tham gia các tiện ích giải trí khác như : Minibar, Câu cá, Spa, Massage, Sân chơi trẻ em, Lặn, Cano,..."
+176,1,Hồ bơi ngoài trời với không gian rộng rãi
+176,2,Hệ thống nhà hàng Phú Vân và quầy bar nằm ở tầng 3 nhìn ra biển
+176,3,"Tiện ích khác: Spa, phòng tắm hơi, sân golf ( tại chỗ ),...."
+177,1,"Vị trí thuận lợi, dễ dàng di chuyển đến nhiều điểm du lịch nổi tiếng: Central Park(500 m), Tram Huong Tower(700 m),..."
+177,2,Hồ bơi vô cực nằm trên tầng 22 của khách sạn với hướng nhìn ra toàn thành phố.
+177,3,Hệ thống nhà hàng và quầy bar phục vụ ẩm thực địa phương cùng ẩm thực Châu Âu độc đáo và đa dạng các loại nước uống.
+177,4,Phòng hội họp với sức chứa 160 người và đầy đủ các tiện nghi.
+177,5,"Dịch vụ khác: phòng Spa, phòng Gym, dịch vụ đổi tiền tệ,..."
+178,1,"Hồ bơi vô cực trên tầng thượng tầm nhìn tuyệt đẹp ra bán đảo Sơn Trà, bãi biển Mỹ Khê, biển Đông"
+178,2,"Hệ thống nhà hàng, quầy cà phê và quầy bar đa dạng"
+178,3,"Phòng hội nghị có sức chứa lên tới 200 người, đầy đủ âm thanh ánh sáng hiện đại"
+178,4,"Dịch vụ tiện ích khác: Dịch vụ Shuttle Bus đưa đón khách tại sân bay, Dịch vụ chăm sóc sức khỏe Azure Spa & Massage, phòng tập Gym,.."
+179,1,Hồ bơi ngoài trời với tầm nhìn bao quát toàn thành phố
+179,2,"Nhà hàng phục vụ thực đơn đa dạng: các món ăn đặc sản Quy Nhơn, ẩm thực Việt Nam truyền thống"
+179,3,"Tiện ích khác: dịch vụ Lễ tân 24 giờ, dọn phòng mỗi ngày."
+180,1,Sở hữu bãi biển riêng và bể bơi ngoài trời diện tích rộng
+180,2,"Hệ thống nhà hàng & Bar: Garden Court, Prime Bar & Grill, Beach House, Achovy, Pool Bar, Patio Lounge."
+180,3,"Tiện ích khác: dịch vụ Spa, phòng tập Gym,..."
+181,1,Hồ bơi rộng rãi được đặt vị trí trung tâm khách sạn
+181,2,Nhà hàng đa dạng ẩm thực Á-Âu đáp ứng mọi nhu cầu du khách
+181,3,"Phòng hội họp với sức chứa hơn 200 người với hệ thống âm thanh ,ánh sáng hiện đại"
+181,4,"Các dịch vụ tiện ích khác: Spa ,Massage, Mini Bar, GYM, ..."
+182,1,Hồ bơi ngoài trời với diện tích lớn bên trong khuôn viên khách sạn
+182,2,Nhà hàng phục vụ các món Á - Âu có không gian mở
+182,3,"Một số tiện ích khác: Wifi, bãi đậu xe, nhà hàng, quầy bar trong khuân viên,..."
+183,1,Bể bơi ngoài trời và bể sục jacuzzi
+183,2,Hệ thống nhà hàng mang đến nền ẩm thực đa dạng
+183,3,Hệ thống phòng tổ chức sự kiện với sức chứa lớn
+183,4,"Các tiện ích khác: phòng tập gym, massage & spa,..."
+184,1,Bể bơi ngoài trời nằm giữa rừng nhiệt đới nguyên sinh tạo nên một bầu không khí thanh bình và thư giãn.
+184,2,"Hệ thống nhà hàng & bar sang trọng nhưng không kém phần ấm cúng, phục vụ nhiều món ăn độc đáo"
+184,3,"Những tiện ích khác: Spa, phòng gym, hoạt động giải trí trên biển,..."
+185,1,Bể bơi ngoài trời với tầm nhìn bao quát toàn thành phố
+185,2,"Nhà hàng, quán cafe phục vụ thực đơn đa dạng, hấp dẫn"
+185,3,"Phòng họp, tổ chức sự kiện Grand Ballroom với trang thiết bị hiện đại, tiên tiến nhất"
+185,4,"Tiện ích khác: đưa đón sân bay, lễ tân 24 giờ, dọn phòng hàng ngày."
+186,1,Nằm ở gần bãi biển Quy Nhơn xinh đẹp
+186,2,Bể bơi ngoài trời với thiết kế độc đáo
+186,3,Thưởng thức ẩm thực đa dạng tại hệ thống nhà hàng và bar sang trọng
+186,4,Hệ thống phòng hội họp với sức chứa cực lớn
+186,5,"Các tiện ích khác: phòng gym, phòng spa, dịch vụ giặt là,..."
+187,1,Nằm ở gần bãi biển Quy Nhơn xinh đẹp
+187,2,Bể bơi ngoài trời với thiết kế độc đáo
+187,3,"Các tiện ích khác: phòng gym, phòng spa, dịch vụ giặt là,..."
+188,1,Vị trí gần nhiều địa điểm nổi tiếng
+188,2,Nhà hàng mang đến nền ẩm thực Á - Âu đa dạng
+188,3,"Các tiện ích khác: phòng hội thảo, dịch vụ massage spa cùng hệ thống bể sục, bể ngâm/ jacuzzi, thảo dược, bấm huyệt, massage Nhật, hồ bơi dành cho trẻ em, tổ chức sự kiện, rạp chiếu phim ngoài trời, yoga bình minh.ện ích khác:"
+189,1,"Không chỉ đơn thuần là nơi nghĩ dưỡng, Malibu còn là nơi khởi đầu của sự thăng hoa và kết nố"
+189,2,"Malibu có tổng cộng 204 phòng được bài trí trang nhã với thiết kế đẹp mắt và được trang bị vô số tiện nghi. Từ tầng thứ 6 trở lên, bạn sẽ được trải nghiệm các không gian thoáng đãng cùng với quan cảnh biển đẹp mê hồn và lãng mạn hoặc có thể ngắm nhìn thành phố nhộn nhịp sôi động"
+189,3,"Dành cho những du khách muốn du lịch thoải mái cùng ngân sách tiết kiệm, The Malibu Hotel sẽ là lựa chọn lưu trú hoàn hảo, nơi cung cấp các tiện nghi chất lượng và dịch vụ tuyệt vời."
+189,4,"Từ sự kiện doanh nghiệp đến họp mặt công ty, The Malibu Hotel cung cấp đầy đủ các dịch vụ và tiện nghi đáp ứng mọi nhu cầu của quý khách và đồng nghiệp."
+190,1,"Khách sạn cao cấp với nhiều sự lựa chọn về các hạng phòng, cùng tầm nhìn ấn tượng hướng biển hoặc thành phố."
+190,2,"Tại Pullman Vũng Tàu, có đa dạng sự lựa chọn về địa điểm tổ chức tiệc bao gồm tòa hội nghị rộng lớn, khu sân vườn với đài phun nước thoáng đãng, hồ bơi tầng cao và các phòng tiệc hiện đại"
+190,3,"Phòng lưu trú rộng rãi, thân thiện với gia đình và những tiện ích trong khuôn viên của Pullman Vũng Tàu sẽ là một lựa chọn hoàn hảo cho kỳ nghỉ tiếp theo của bạn và những người thân yêu."
+190,4,"Cơ sở vật chất hiện đại, không gian tổ chức linh hoạt và đội ngũ sự kiện chuyên nghiệp, Pullman Vũng Tàu là sự lựa chọn hoàn hảo để tổ chức các buổi hội họp doanh nghiệp."
+191,1,Một môi trường sống đẳng cấp chỉ dành riêng cho giới thượng lưu đang được hình thành từng ngày tại thành phố Vũng Tàu. OYSTER BAY VŨNG TÀU hội tụ tất cả những tiêu chuẩn về một trải nghiệm sống hoàn hảo mà bất cứ ai cũng ao ước sở hữu.
+191,2,"Khách sạn với kiến trúc tân cổ điển mang đậm hơi thở Châu Âu hiện đại cùng hai tòa tháp vươn mình kiêu hãnh giữa một vùng biển xanh ngát. Trước mặt là bờ biển trải dài, nơi hội tụ sinh khí của đất trời, mang đến nguồn tài lộc dồi dào và sự bình yên cho du khách đến nghỉ dưỡng."
+191,3,"Trải nghiệm nghỉ dưỡng tại Khách sạn, du khách hoàn toàn có thể thưởng thức trọn vẹn khoảnh khắc của bình minh trong vắt hay hoàng hôn cùng những tia nắng vàng cam mỏng tan còn sót lại, tận hưởng phút giây nghỉ ngơi, thư giãn hưởng thụ với rất nhiều tiện ích."
+192,1,"Fusion Suites Vũng Tàu là lựa chọn tuyệt vời cho quý khách với phòng chức năng rộng lớn, được trang bị đầy đủ để sẵn sàng đáp ứng mọi yêu cầu."
+192,2,Khách sạn này là lựa chọn hoàn hảo cho các kỳ nghỉ mát lãng mạn hay tuần trăng mật của các cặp đôi. Quý khách hãy tận hưởng những đêm đáng nhớ nhất cùng người thương của mình tại Fusion Suites Vũng Tàu
+192,3,"Hầu hết các căn hộ và phòng khách sạn có tầm nhìn hướng biển, được thiết kế nhằm mang đến sự thư giãn tối đa và phong cách sống khỏe mạnh, hạnh phúc. Kiến trúc bên ngoài và thiết kế nội thất đều lấy ý tưởng từ những sắc màu và phong vị biển, mang đến cho du khách một không gian thân thiện, hiền hòa xanh mát."
+192,4,"Các tầng đều có bể bơi tràn bờ hướng biển, mang đến cảm giác được hòa mình vào biển xanh ngay trong lòng khách sạn. Tất cả tạo nên dấu ấn riêng, mang đến những trải nghiệm tuyệt vời đối với mỗi du khách."
+193,1,Nằm gần rất nhiều bãi biển nổi tiếng của Vũng Tàu
+193,2,Hồ bơi ngoài trời cực kì thoáng mát
+193,3,Nhà hàng phục vụ các bữa ăn kiểu lục địa
+193,4,Phòng họp hội nghị với sức chứa lớn
+193,5,"Các tiện ích khác: phòng gym, spa, kids club,..."
+194,1,Hồ bơi vô cực được thiết kế độc đáo tại tầng 4 của khách sạn.
+194,2,Hệ thống nhà hàng và quầy bar phục vụ đa dạng món ăn
+194,3,Phòng hội nghị của khách sạn có diện tích 82m sức chứa khoảng 80 khách.
+194,4,"Các tiện ích khác: dịch vụ spa, massage,..."
+195,1,"Hồ bơi nước mặn và hồ bơi nước ngọt vô cực ngoài trời, có khu vực hồ bơi dành cho trẻ em."
+195,2,"Hệ thống nhà hàng và quán bar phục vụ ẩm thực Việt - Ý, bao gồm: Nhà hàng hải sản Ocean Bay, Nhà hàng SOI, Infinity Lounge Bar & Coffee và Nhà hàng Ý Il Mare."
+195,3,Lotus Ballroom là phòng hội họp có tầm nhìn ra biển với sức chứa từ 40 đến 200 khách là một không gian tổ chức sự kiện lý tưởng.
+195,4,"Các tiện ích khác: Sabai Spa, phòng tập gym, tour du lịch khám phá Vũng Tàu trọn gói, các hoạt động vui chơi trên bãi biển,..."
+196,1,"Tọa lạc ngay trung tâm thị trấn Sapa cách quảng trường Sapa 90m, Nhà Thờ Đá 120m, núi Hàm Rồng 700m, bản Cát Cát 1,1km, Sun Plaza 40m,...."
+196,2,"Nhà hàng phục vụ từ các món đặc sản Tây Bắc đến các món Á, Âu."
+196,3,Thưởng thức trà chiều theo phong cách Châu Âu tại BB Terrace Coffee
+196,4,"Các tiện ích khác: phòng gym, spa,..."
+197,1,Tọa lạc giữa vườn quốc gia Tam Đảo
+197,2,Bể bơi trong nhà rộng lớn
+197,3,"Nhà hàng, quán cafe và quầy bar sang trọng với menu đa dạng các món Á, Âu"
+197,4,Phòng sự kiện được trang bị đầy đủ tiện nghi hiện đại
+197,5,"Những tiện ích khác: phòng xông hơi, spa thư giãn, phòng gym,...."
+198,1,"Nằm dọc Bãi Tắm Quán Cây Dương, cách trung tâm thành phố Vũng Tàu khoảng 33km, thuận tiện di chuyển."
+198,2,"Có bể bơi vô cực ngoài trời, bãi biển riêng."
+198,3,Nhà hàng sang trọng phục vụ đa dạng các món từ Á đến Âu
+198,4,"Dịch vụ tiện ích: Minibar, tivi, wifi miễn phí,..."
+199,1,"Nằm trên vùng biển Hồ Tràm nổi tiếng và ngay cạnh cây cầu Hamptons nổi tiếng với chiều dài hơn 200 mét, là nơi du khách có thể ngắm bình minh và hoàng hôn cũng như tận hưởng làn gió biển trong lành"
+199,2,"Hồ bơi trung tâm mang màu sắc của đại dương được bao quanh bởi những chiếc ghế tắm dài, cạnh dòng sông tuyệt đẹp cùng tầm nhìn hướng ra biển"
+199,3,Khu vui chơi trẻ em với nhiều trò chơi đa dạng
+199,4,"Dịch vụ massage & Spa chăm sóc sức khoẻ chuyên sâu đảm bảo mang tới cho du khách những phút giây thư thái, bình yên"
+200,1,"Khách sạn có 4 phòng họp, 2 phòng hội nghị, 2 nhà hàng, 1 quầy bar sảnh chờ, cung cấp nhiều lựa chọn ăn uống bao gồm hải sản tươi sống, ẩm thực Việt Nam, châu Á và quốc tế."
+200,2,"Sở hữu một góc nhìn đắt giá nhất thành phố, Phòng Premier Suite Bay View mang đến sự kết hợp hoàn hảo giữa sự tiện nghi hiện đại và vẻ đẹp đắm mình trong ánh sáng tự nhiên, với làn gió biển trong lành."
+200,3,"Khu vui chơi với không gian rộng rãi, thoáng mát và được trang bị đầy đủ các thiết bị an toàn."
+200,4,"Với lối trang trí theo phong cách hiện đại và tươi mới, mỗi phòng được trang bị đồ dùng tiện nghi chất lượng cao chắc chắn sẽ đưa đến cho quý khách những trải nghiệm lưu trú chưa từng có tại Hạ Long."
+201,1,"Bãi biển riêng, hồ bơi ngoài trời rộng lớn, các biệt thự đều có hồ bơi riêng"
+201,2,"Hệ thống nhà hàng & quán bar đẳng cấp: Sea Salt Restaurant, Beach Box Restaurant & Bar, Rush Cafe"
+201,3,03 phòng hội họp với sức chứa tối đa 1.100 khách
+201,4,"Maia Spa cung cấp các liệu trình chăm sóc sức khỏe, sắc đẹp cao cấp"
+201,5,"Tiện ích khác: sân golf The Bluffs, Kids Club, khu Casino, mua sắm,..."
+202,1,"Hệ thống nhà hàng: Le Rabelais Restaurant, Le Monet, Le Cosy Bar, The Palace Club, The Terrace phục vụ chuyên các món ăn Pháp và thức uống đa dạng."
+202,2,Sở hữu trung tâm hội nghị đẳng cấp quốc tế với sảnh hội nghị có sức chứa trên 1000 khách.
+202,3,Sân golf nằm trong khuôn viên của khách sạn là một trong những sân golf đẹp nhất Đông Nam Á.
+202,4,"Các tiện ích khác: Spa L'Aquitaine, phòng tập gym, karaoke hoàng gia, thư viện hoa hồng, khu vui chơi cho trẻ em,..."
+203,1,"Nhà hàng Le Bistro phục vụ các món Pháp, Âu, các món ăn Việt Nam và Quầy Bar Le Select cung cấp các loại đồ uống đa dạng."
+203,2,"Hệ thống 5 phòng họp, hội nghị được trang bị hiện đại và tiện nghi với sức chứa hơn 200 khách bao gồm: Cezanne I, II, III, Gauguin và Du Vin."
+203,3,Dịch vụ massage và xông hơi cải thiện sức khỏe tại tầng trệt của khách sạn.
+203,4,"Các tiện ích khác: quầy bar nhạc sống, karaoke hoàng gia, câu lạc bộ golf,..."
+204,1,"Sở hữu vị trí đắc địa nổi bật trên đại lộ Hùng Vương, là trục đường chính dẫn vào Thành phố Đà Lạt."
+204,2,"Khách sạn MerPerle Dalat sở hữu 389 phòng nghỉ với phân loại đa dạng cùng thiết kế tinh tế, sang trọng;"
+204,3,"Nhà hàng Rustic được thiết kế tinh tế, ấn tượng; với không gian riêng tư ấm cúng dành cho các sự kiện cá nhân, họp mặt gia đình, gặp gỡ bạn bè hoặc tiếp đãi đối tác cùng thực đơn đặc sắc đa dạng từ Á - Âu được sáng tạo bởi đầu bếp chuyên nghiệp và phong cách phục vụ chuẩn 5 sao."
+205,1,Nằm ở ngay trung tâm thành phố
+205,2,Nhà hàng mang nền ẩm thực Á - Âu
+205,3,"Các tiện ích khác: đưa đón sân bay, quầy bar, thuê xe máy, ô tô tự lái tour tham quan,..."
+206,1,Khách sạn có vị trí ở gần trung tâm.
+206,2,"Cơ sở vật chất hiện đại cùng không gian nghỉ dưỡng ấm cúng, tiện nghi. Nổi bật với thiết kế châu Âu sang trọng."
+206,3,"Nhà hàng phục vụ thực đơn sang trọng với các món ăn truyền thống Việt Nam, ẩm thực Âu - Á đa dạng"
+207,1,"Kiến trúc phòng nghỉ hài hòa với thiên nhiên, nơi vẻ tĩnh lặng của biển cả giao thoa cùng sự sôi động của thành phố Đà Nẵng."
+207,2,"Sở hữu vị trí đắc địa với tầm nhìn hướng biển tuyệt đẹp và chỉ mất vài phút để đến với trung tâm thành phố, rất thuận tiện cho du khách tham quan các điểm du lịch nổi tiếng của Đà Nẵng và các Di sản Văn hóa Thế giới như phố cổ Hội An, khu đền tháp Mỹ Sơn, cố đô Huế."
+207,3,"Nơi từng món ăn không chỉ khơi dậy vị giác mà còn chạm đến những rung động sâu thẳm, làm nên buổi hẹn khó quên"
+207,4,"Phòng nghỉ tiện nghi: Góc nghỉ ngơi yên bình giúp tái tạo năng lượng, mang đến khởi đầu đầy sức sống cho hành trình phía trước."
+207,5,Tiện ích chuẩn 5 sao: Thưởng thức buffet sáng phong phú nơi tầm view nhìn ngắm phố biển năng động.
+208,1,Nằm ở vị trí trung tâm khu vực Quận 1
+208,2,Nhà hàng mang đến nền ẩm thực Á - Âu đa dạng
+208,3,"Các tiện ích khác: lễ tân trực 24/24, chỗ đỗ xe,.."
+209,1,Tọa lạc tại trung tâm thành phố Hồ Chí Minh
+209,2,"Bể bơi ngoài trời rộng rãi, thoáng mát"
+209,3,Nhà hàng và quán bar mang đến nền ẩm thực Á - Âu đa dạng
+209,4,Hệ thống phòng họp hội nghị với sức chứa cực lớn
+209,5,"Các tiện ích khác: phòng gym, phòng spa,..."
+210,1,"Bể bơi ngoài trời 266m2, sâu 1,2m và hồ bơi trẻ em 87m2, sâu 0,5m"
+210,2,"Hệ thống nhà hàng & bar: Kitchen by the River, Madame Lam, quán bar Git on 8."
+210,3,"Hội nghị, sự kiện: Đa dạng không gian cho buổi họp doanh nghiệp, tiệc cá nhân, sinh nhật, tiệc cưới."
+210,4,"Các tiện ích khác: Phòng Spa, Phòng Gym, ..."
+211,1,Nằm ở vị trí đắc địa tại khu vực Quận 1
+211,2,Bể bơi ngoài trời cực kì rộng rãi
+211,3,Nhà hàng và quầy bar mang đến nền ẩm thực Á - Âu đa dạng
+211,4,"Các tiện ích khác: phòng tắm hơi, khu vui chơi cho trẻ em,..."
+212,1,"Bể bơi ngoài trời rộng lớn, có khu vực dành riêng cho trẻ em"
+212,2,"Nhà hàng Sen, Treehouse Dining, Veranda và An Lam Louge cung cấp các món ăn hấp dẫn"
+212,3,"Phòng họp Lục Bình, Lam's Corner, An House và Saigon River House vứi sức chứa lớn có view nhìn ra sông tuyệt đẹp"
+212,4,"Các tiện ích khác: phòng gym, spa,...."
+213,1,Tọa lạc ngay khu phố đi bộ trung tâm
+213,2,Các phòng ngủ được thiết kế vô cùng tiện nghi và hiện đại mang đến những giây phút nghỉ ngơi vô cùng thoải mái cho khách hàng
+213,3,"Các tiện ích khác: Bể bơi trong nhà, nhà hàng phục vụ ăn sáng và ăn trưa hoặc ăn tối theo yêu cầu, dịch vụ lễ tân 24/7."
+214,1,"Cách trung tâm thành phố Huế 0.6km, thuận tiện cho việc di chuyển đến các điểm tham quan."
+214,2,Bể bơi ngoài trời siêu rộng và thoáng đãng
+214,3,Nhà hàng các món ăn truyền thống có thể phục vụ cùng lúc hơn 400 khách. Thêm vào đó là quầy bar cho quý khách trải nghiệm
+214,4,"Phòng hội nghị, hội thảo và tổ chức sự kiện có sức chứa hơn 500 người"
+214,5,"Các tiện ích khác: phòng tập gym, spa & massage, ..."
+215,1,Bể bơi bốn mùa.
+215,2,"Hệ thống nhà hàng và bar: Nhà hàng Lotus, Imperial Lounge, The Prime Skybar đẳng cấp tại tầng 34 và Lobby Bar."
+215,3,"Phòng họp ""Long - Phụng"" với sức chứa tới 650 khách."
+215,4,"Nhiều tiện tích: Spa, phòng tập Gym, phòng y tế."
+216,1,Tọa lạc ngay trung tâm thành phố Pleiku
+216,2,"Các phòng đều có tầm nhìn thành phố và núi Hàm Rồng, nơi du khách có thể thư giãn trong không gian yên bình, chiêm ngưỡng cảnh sắc hùng vĩ của phố núi Pleiku."
+216,3,"Nhà hàng Biển Hồ và Nhà hàng Pleiku Ballroom, phục vụ đa dạng món đặc sản Tây Nguyên như Phở khô Gia Lai và Bò một nắng chấm muối kiến vàng,.."
+217,1,Tọa lạc giữa trung tâm cao nguyên Măng Đen
+217,2,Hồ bơi bốn mùa ngoài trời mang đến những giây phút thư giãn tuyệt vời cho du khách trong khung cảnh đẹp như tranh vẽ của thiên nhiên.
+217,3,"Dịch vụ khác: vận chuyển, thu đổi ngoại tệ,..."
+218,1,Nằm cách bãi biển Mỹ Khê chỉ 50m
+218,2,Hồ bơi trên tầng thượng của khách sạn với hướng nhìn toàn cảnh 180 độ
+218,3,"Hệ thống nhà hàng & bar với không gian độc đáo, cuốn hút: Le Paul's Kitchen, Crystal Blu Lounge, Café Maris"
+218,4,Trung tâm hội nghị Seaview với sức chứa 150 khách được trang bị đầy đủ tiện nghi
+218,5,"Những tiện ích khác: Spa, phòng gym,..."
+219,1,Nằm ngay tại khu du lịch Tam Cốc - Bích Động
+219,2,Bể bơi ngoài trời rộng 250m2
+219,3,"Hệ thống nhà hàng, bar: Nhà hàng Sunrise, Golden Rice, The Lantern Lounge, Bar Bát Giác"
+219,4,Phòng hội nghị với sức chứa 250 người và sân hội nghị ngoài trời có sức chứa 200 khách
+219,5,"Một số tiện ích khác: Charming spa, khu vực mua sắm, khu vui chơi trẻ em, phòng gym..."
+220,1,Nằm ở một ví trí đắc địa tại thành phố Ninh Bình
+220,2,Bể bơi ngoài trời thoáng mát
+220,3,Nhà hàng mang nền ẩm thực địa phương và Á - Âu đa dạng
+220,4,"Các tiện ích khác: phòng spa, phòng gym, dịch vụ phòng,..."
+221,1,"Khách sạn thẳng hướng biển, cách trung tâm thành phố 5km"
+221,2,"Hệ thống nhà hàng & bar: Nhà hàng Padma, Pool Bar, Lobby Lounge"
+221,3,Bể bơi ngoài trời rộng gần 900m2
+221,4,"Phòng tiệc lớn Grand Ballroom và các phòng họp nhỏ với thiết kế cao cấp, hiện đại"
+221,5,"Các tiện ích khác: Kids Club, Yoga, Gym, Vincharm Spa..."
+222,1,Có bãi biển riêng trải dài
+222,2,Công viên nước hiện đại và trò chơi bánh xe khổng lồ duy nhất tại khu vực Bắc Trung Bộ
+222,3,"Hệ thống bể bơi: 1 bể bơi chính, 1 bể bơi trẻ em , 1 bể sục Jacuzzi. Bể bơi chính là bể bơi ngoài trời lớn nhất khu vực Bắc Trung Bộ"
+222,4,Nhà hàng Sand Dream phục vụ các món ăn Á - Âu
+222,5,"Các tiện ích nổi bật khác: Vincharm Spa, Kids Garden, Sân Tennis..."
+223,1,Tọa lạc tại trung tâm thành phố Hà Tĩnh
+223,2,"Hệ thống phòng hội nghị với sức chứa lên đến 700 khách, sảnh hội nghị ngoài trời với sức chứa 400 khách"
+223,3,Bể bơi ngoài trời 550m2 và bể bơi trong nhà 350m2
+223,4,"Hệ thống nhà hàng và quầy bar: Nhà hàng Fusion, Sand Dream, Sky Bar, Diplomatic Bar, Pool Bar, Lobby Bar"
+223,5,"Các tiện ích khác: Vincharm Spa, Gym, Vincom Plaza"

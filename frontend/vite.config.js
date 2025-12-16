@@ -47,11 +47,19 @@ export default defineConfig(({ command, mode }) => {
             devSourcemap: isDev,
         },
         optimizeDeps: {
-            include: ["react", "react-dom"],
+            include: ["react", "react-dom", "@mui/icons-material"],
+            esbuildOptions: {
+                // Reduce memory pressure
+                target: "es2020",
+            },
+            force: false, // Set to true to force re-optimization
         },
         esbuild: {
             keepNames: isDev,
             minifyIdentifiers: !isDev,
+            // Improve stability in Docker containers
+            legalComments: "none",
+            logOverride: { "this-is-undefined-in-esm": "silent" },
         },
     };
 });

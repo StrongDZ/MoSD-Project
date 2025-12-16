@@ -1,0 +1,264 @@
+company_id,company_name,username,password,role
+1,CÔNG TY CỔ PHẦN ĐẦU TƯ TÂN HOA LƯ,company1,123456,company
+2,The Ascott Limited,company2,123456,company
+3,Sea Stars Group,company3,123456,company
+4,CÔNG TY CỔ PHẦN DU LỊCH DỊCH VỤ SAO HẠ LONG,company4,123456,company
+5,Geleximco Group,company5,123456,company
+6,CÔNG TY TNHH VINH QUANG HẠ LONG,company6,123456,company
+7,CÔNG TY CỔ PHẦN ĐẦU TƯ MINH ĐĂNG,company7,123456,company
+8,Boss Hotel Nha Trang,company8,123456,company
+9,CÔNG TY CỔ PHẦN TẬP ĐOÀN MƯỜNG THANH,company9,123456,company
+10,CÔNG TY TNHH LIÊN DOANH HẠ LONG PLAZA,company10,123456,company
+11,CTY TNHH VẬN TẢI THƯƠNG MẠI DỊCH VỤ AN BẢO KHANH,company11,123456,company
+12,CÔNG TY CỔ PHẦN DU LỊCH SÀI GÒN - PHÚ YÊN,company12,123456,company
+13,Tập đoàn Mường Thanh,company13,123456,company
+14,CÔNG TY CỔ PHẦN ĐẦU TƯ PHÁT TRIỂN DU LỊCH – DỊCH VỤ QUY NHƠN,company14,123456,company
+15,CÔNG TY CỔ PHẦN XÂY DỰNG DU LỊCH THƯƠNG MẠI BẠCH LONG,company15,123456,company
+16,CÔNG TY CỔ PHẦN MINASI WORLD,company16,123456,company
+17,HANOI STARLIGHT HOTEL,company17,123456,company
+18,CÔNG TY CỔ PHẦN LƯƠNG THỰC HỒNG HÀ - KHÁCH SẠN AFFA BOUTIQUE,company18,123456,company
+19,HANOI ANCIENT PARADISE HOTEL,company19,123456,company
+20,Melia Hotels International,company20,123456,company
+21,H HOTEL HANOI,company21,123456,company
+22,Công ty Cổ phần Địa ốc Alpha Nam Đà Nẵng,company22,123456,company
+23,CÔNG TY CỔ PHẦN LIBRA NHA TRANG,company23,123456,company
+24,Bonjour Nha Trang Hotel,company24,123456,company
+25,Sala Hotel Group,company25,123456,company
+26,Công ty TNHH TV Thương mại Quảng Nam  – Đà Nẵng – KS Grand Tourane,company26,123456,company
+27,Phú Yên Everyday Hotel ,company27,123456,company
+28,Hùng Vương Hotel Tuy Hoà,company28,123456,company
+29,Công Ty TNHH DV và Du lịch Phố Xanh,company29,123456,company
+30,Aaron Hotel Nha Trang,company30,123456,company
+31,CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ NANO,company31,123456,company
+32,CÔNG TY TNHH HÒA BÌNH – CHI NHÁNH ĐÀ NẴNG,company32,123456,company
+33,Khách sạn Mường Thanh Luxury Đà Nẵng – Chi nhánh  Công ty cổ phần tập đoàn Mường Thanh,company33,123456,company
+34, Yarra Ocean Suites Danang © 2023  Công Ty Cổ Phần Thương Mại Và Dịch Vụ Du Lịch Hùng Bảo Anh,company34,123456,company
+35,Khách sạn The LEAF Da Nang Boutique,company35,123456,company
+36,The Yacht Hạ Long by DC,company36,123456,company
+37,Nha Trang Horizon Hotel,company37,123456,company
+38,Công ty Cổ phần Đầu tư Thương mại và Xuất nhập khẩu Hải An tại Thành phố Đà Nẵng,company38,123456,company
+39,CÔNG TY TNHH TM& DV DU LỊCH HOÀNG HIẾN,company39,123456,company
+40,CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ KINH DOANH NHÀ VIỆT BEACH,company40,123456,company
+41,CÔNG TY CỔ PHẦN DU LỊCH VÀ THƯƠNG MẠI HOA PHƯỢNG,company41,123456,company
+42,CÔNG TY CỔ PHẦN DỊCH VỤ VÀ DU LỊCH CÁT LÂM,company42,123456,company
+43,Công ty Cổ phần Đầu tư Châu Á - Thái Bình Dương,company43,123456,company
+44,Công Ty TNHH Logistics Kỷ Nguyên Mới,company44,123456,company
+45,Công ty TNHH PHÚ HẢI,company45,123456,company
+46,CHI NHÁNH CÔNG TY TNHH KINH DOANH THƯƠNG MẠI DUNG NAM TẠI ĐÀ NẴNG - KHÁCH SẠN DYLAN,company46,123456,company
+47,Công ty Cổ phần Khách sạn và Dịch vụ Đại Dương (Ocean Hospitality – OCH) ,company47,123456,company
+48,CÔNG TY TNHH DU LỊCH VÀ KHÁCH SẠN PHƯƠNG LINH KHÁCH SẠN GREENERY ĐÀ NẴNG,company48,123456,company
+49,Grand Mercure Danang,company49,123456,company
+50,CÔNG TY TNHH ĐẦU TƯ MNB VIỆT NAM,company50,123456,company
+51,Khách sạn Paris Deli Đà Nẵng Beach Hotel,company51,123456,company
+52,Vesna Hotel Nha Trang,company52,123456,company
+53,CÔNG TY TNHH THƯƠNG MẠI – DU LỊCH THÁI MINH,company53,123456,company
+54,Công ty Cổ phần Du Lịch & Thương Mại Công Thắng,company54,123456,company
+55,CÔNG TY CỔ PHẦN ĐẦU TƯ GEDOSICO,company55,123456,company
+56,CÔNG TY CỔ PHẦN BĐS CĂN HỘ KS TOKYO GRAND,company56,123456,company
+57,CÔNG TY TNHH KHÁCH SẠN SUN KISS,company57,123456,company
+58,Saphia Hotel Nha Trang,company58,123456,company
+59,CÔNG TY TNHH SAO VIỆT NON NƯỚC,company59,123456,company
+60,CÔNG TY CỔ PHẦN ĐẦU TƯ VÀ DỊCH VỤ KHÁCH SẠN THÁI BÌNH DƯƠNG,company60,123456,company
+61,Venue Hotel Nha Trang,company61,123456,company
+62,Khách sạn Lavencos,company62,123456,company
+63,CÔNG TY TNHH MTV SAO HÔM NHA TRANG,company63,123456,company
+64,M Group Đà Nẵng,company64,123456,company
+65,CÔNG TY TNHH ATD –KHÁCH SẠN PRIME NHA TRANG,company65,123456,company
+66,LOTTE HOTEL VIETNAM,company66,123456,company
+67,CÔNG TY TNHH ĐỨC ĐỊNH,company67,123456,company
+68,Melia Vinpearl Hotels & Resort ,company68,123456,company
+69,Khách sạn HAIAN Riverfront Đà Nẵng,company69,123456,company
+70,Marriott International,company70,123456,company
+71,Melia Hotels Internationl & Vinpearl,company71,123456,company
+72,CÔNG TY CỔ PHẦN BÁN ĐẢO KÊNH GÀ,company72,123456,company
+73,CÔNG TY TNHH TIẾN HUYỀN,company73,123456,company
+74,CÔNG TY TNHH THÊU REN MẶT TRỜI XANH,company74,123456,company
+75,Melissa Nha Trang Hotel,company75,123456,company
+76,Masova Hotel Nha Trang,company76,123456,company
+77,Sunflower Hotel Tuy Hòa ,company77,123456,company
+78,CÔNG TY CỔ PHẦN XÂY DỰNG DỊCH VỤ VÀ THƯƠNG MẠI MỘC MIÊN,company78,123456,company
+79,M Group,company79,123456,company
+80,ELI RINA HOTEL,company80,123456,company
+81,CÔNG TY TNHH BINITIS,company81,123456,company
+82,Angel Hotels Beach Đà Nẵng,company82,123456,company
+83,Scenic Mountain Ecolodge Ninh Binh,company83,123456,company
+84,Leaf Hotel Phú Quốc,company84,123456,company
+85,Melia Hotels Internationl,company85,123456,company
+86,Vinpearl Join Stock Company - Vingroup JSC,company86,123456,company
+87,Nhà Khách Quốc Hội tại Đà Nẵng,company87,123456,company
+88,Tahiti Central Hotel Phú Quốc,company88,123456,company
+89,The Tahiti Beach Hotel Phú Quốc,company89,123456,company
+90,Tahiti Resort Phú Quốc,company90,123456,company
+91,CÔNG TY CỔ PHẦN DU LỊCH HOÀNG CƯỜNG,company91,123456,company
+92,CROWNE PLAZA,company92,123456,company
+93,G8 Luxury Hotel and Spa Đà Nẵng,company93,123456,company
+94,Công Ty Cổ Phần Tổng Hợp Sao Biển,company94,123456,company
+95,AMARIN RESORT & SPA,company95,123456,company
+96, Sunset Beach Resort & Spa,company96,123456,company
+97,Khách sạn Mandila Beach Đà Nẵng.,company97,123456,company
+98,Rock Mila Phú Quốc Hotel,company98,123456,company
+99,L'Azure Resort & Spa Phú Quốc,company99,123456,company
+100,Công Ty TNHH Thương Mại Dịch Vụ và Du Lịch Lý Bằng,company100,123456,company
+101,ok,company101,123456,company
+102,CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN OCEAN HOUSE  PHÚ QUỐC,company102,123456,company
+103,Tập đoàn Khách sạn Mikazuki ,company103,123456,company
+104,Lady Hill Sapa Resort,company104,123456,company
+105,Công ty TNHH Khách sạn và Biệt thự Nam Phát,company105,123456,company
+106,SANTA RESORT,company106,123456,company
+107,CÔNG TY CP QUẢN LÝ DỊCH VỤ CAO CẤP ĐỒI NGỌC SA PA,company107,123456,company
+108,CTX Holdings,company108,123456,company
+109,CÔNG TY CỔ PHẦN KK SAPA,company109,123456,company
+110,SILK PATH HOTELS & RESORTS,company110,123456,company
+111,Công ty TNHH Ha Na Station Phú Quốc,company111,123456,company
+112,Tập đoàn CEO,company112,123456,company
+113,VINACAPITAL DANANG RESORT LIMITED,company113,123456,company
+114,BAUHINIA RESORT  PHU QUOC,company114,123456,company
+115,CÔNG TY CỔ PHẦN KHU DU LỊCH BẮC MỸ AN,company115,123456,company
+116,KHÁCH SẠN DELASOL PHAT LINH SAPA,company116,123456,company
+117,CHI NHÁNH CÔNG TY TNHH ĐẦU TƯ XÂY DỰNG ĐỨC TUẤN-KS PISTACHIO,company117,123456,company
+118,Sapa Cat Cat Hills Resort & Spa   ,company118,123456,company
+119,CÔNG TY TNHH QUÊ VIỆT - QUẢNG NAM,company119,123456,company
+120,CÔNG TY TNHH MTV DỊCH VỤ DU LỊCH ĐẠI DƯƠNG XANH,company120,123456,company
+121,Amazing Hotel Sapa,company121,123456,company
+122,Bamboo Hotel Sapa,company122,123456,company
+123,My Gallery Boutique Sapa Hotel,company123,123456,company
+124,Công ty TNHH Tuấn Tú,company124,123456,company
+125,Mường Thanh Sapa,company125,123456,company
+126,Sapa Nature View Hotel,company126,123456,company
+127,My Boutique Sapa Hotel,company127,123456,company
+128,ELEGANT BOUTIQUE HOTEL,company128,123456,company
+129,Sun Hạ Long,company129,123456,company
+130,Essence Hotel Hạ Long,company130,123456,company
+131,KL Hotel Hạ Long,company131,123456,company
+132,Silk Path Grand Huế Resort & spa,company132,123456,company
+133,Vinpearl Hue,company133,123456,company
+134,CÔNG TY TNHH THIÊN THANH -THIÊN THANH PHÚ QUỐC RESORT,company134,123456,company
+135,CÔNG TY TNHH MỘT THÀNH VIÊN HOA TRÀ PHÚ QUỐC,company135,123456,company
+136,CÔNG TY TNHH MTV PHỤNG LÂN AN - BRENTA PHU QUOC HOTEL,company136,123456,company
+137,Aquasun Hotel Phú Quốc,company137,123456,company
+138,Century Riverside Hue,company138,123456,company
+139,Eldora Hotel Hue,company139,123456,company
+140,EMM HOTEL HUE,company140,123456,company
+141,Jasmine Huế,company141,123456,company
+142, Baly Hotel & Spa Hue,company142,123456,company
+143,CÔNG TY CỔ PHẦN ĐẦU TƯ DU LỊCH QUÝ HẢI PHÚ QUÔC,company143,123456,company
+144,Nesta Hotel Group,company144,123456,company
+145,CÔNG TY TNHH AN PHÚ (AN PHÚ HOTEL),company145,123456,company
+146,La Vela Huế Hotel,company146,123456,company
+147,CÔNG TY CỔ PHẦN VƯỜN XƯA,company147,123456,company
+148,Roza Palace Hotel Cát Bà,company148,123456,company
+149,The Reed Hotel Ninh Bình,company149,123456,company
+150,Lalita Boutique Hotel & Spa Ninh Bình,company150,123456,company
+151,CÔNG TY TNHH AVS VIET NAM PHU QUOC - AVS HOTEL PHU QUOC,company151,123456,company
+152,CÔNG TY TNHH PHƯƠNG ANH ĐỨC - FAMIANA RESORT & SPA PHU QUOC,company152,123456,company
+153,CÔNG TY TNHH CAROLE,company153,123456,company
+154,Mường Thanh Hospitality,company154,123456,company
+155,GAIA HOTEL PHU QUOC,company155,123456,company
+156, SHG - SHINING HOSPITALITY GROUP ,company156,123456,company
+157,EMM HOTEL HỘI AN,company157,123456,company
+158,Công ty TNHH Thương Mại Tổng Hợp Thanh Thảo (Le Mint Hotel),company158,123456,company
+159,Mento Hotel Quy Nhơn,company159,123456,company
+160,CÔNG TY TNHH DỊCH VỤ - KHÁCH SẠN CANARY,company160,123456,company
+161,Citadines Pearl Hội An,company161,123456,company
+162,HOI AN BABYLON LUXURY HOTEL & SPA,company162,123456,company
+163,CÔNG TY TNHH ĐẦU TƯ MINH LONG HỘI AN,company163,123456,company
+164,CÔNG TY TNHH ĐẦU TƯ HUY TẦM,company164,123456,company
+165,L’amor Boutique Hotel ,company165,123456,company
+166,CÔNG TY CỔ PHẦN ĐỊA ỐC NAM VIỆT,company166,123456,company
+167, Little Gem. An Eco-Friendly Boutique Hotel & Spa,company167,123456,company
+168,CÔNG TY TNHH DU LỊCH VÀ THƯƠNG MẠI ANH-MẠNH LA CHARM HOI AN HOTEL & SPA,company168,123456,company
+169,Lucky Sun Hotel Nha Trang,company169,123456,company
+170,CÔNG TY CỔ PHẦN MIỀN NHIỆT ĐỚI,company170,123456,company
+171,Phú Vân Resort & Spa,company171,123456,company
+172,CÔNG TY TNHH XÚC TIẾN DU LỊCH AN BÌNH,company172,123456,company
+173,Le Sands Oceanfront Đà Nẵng Hotel ,company173,123456,company
+174,Bel - Air Hotel Quy Nhơn,company174,123456,company
+175,Marriott International & Vinpearl,company175,123456,company
+176,CHI NHÁNH CÔNG TY TNHH ĐẦU TƯ & DỊCH VỤ DU LỊCH PHÚC LONG,company176,123456,company
+177,CÔNG TY TNHH MTV HƯNG PHÚ QUỐC,company177,123456,company
+178,CÔNG TY TNHH DỊCH VỤ VÀ DU LỊCH HƯƠNG VIỆT,company178,123456,company
+179,CÔNG TY TNHH PHƯƠNG ANH ĐỨC - FAMIANA GREEN VILLA,company179,123456,company
+180,ODIN HOTEL QUY NHON,company180,123456,company
+181,KHÁCH SẠN HẢI ÂU,company181,123456,company
+182,AURORA QUY NHƠN,company182,123456,company
+183,Malibu Vũng Tàu Hotel,company183,123456,company
+184,Accor Group,company184,123456,company
+185, Oyster Bay Hotel Vũmg Tàu,company185,123456,company
+186,CTY TNHH SERENITY HOLDING VIET NAM,company186,123456,company
+187, Ibis Styles Vũng Tàu Hotel,company187,123456,company
+188,GRAND GOSIA HOTEL,company188,123456,company
+189,Marina Bay Vũng Tàu Resort & Spa,company189,123456,company
+190,BB Group,company190,123456,company
+191,CÔNG TY TNHH DU LỊCH DỊCH VỤ TAM ĐẢO,company191,123456,company
+192,CÔNG TY TNHH ĐẦU TƯ THƯƠNG MẠI DU LỊCH KIM SA,company192,123456,company
+193,CÔNG TY CỔ PHẦN DU LỊCH THÀNH THÀNH CÔNG,company193,123456,company
+194,Best Western Premier Sapphire Halong,company194,123456,company
+195,The Grand Ho Tram ,company195,123456,company
+196,Đà Lạt Palace Heritage ,company196,123456,company
+197,Du Parc Hotel Đà Lạt,company197,123456,company
+198,MerPerle Đà Lạt Hotel,company198,123456,company
+199,Roy Dala Hotel Đà Lạt,company199,123456,company
+200,Akoya Saigon Central Hotel ,company200,123456,company
+201," 282 Võ Nguyên Giáp, Ngũ Hành Sơn, Đà Nẵng , Da Nang, ",company201,123456,company
+202,Cap Town Hotel Sài Gòn,company202,123456,company
+203, Nikko Sài Gòn Hotel,company203,123456,company
+204,Mia Saigon Luxury Boutique Hotel,company204,123456,company
+205,Somerset Hồ Chí Minh Hotel,company205,123456,company
+206,An Lâm Retreats Saigon River,company206,123456,company
+207,Eden Huế Hotel,company207,123456,company
+208,TTC Imperial Hotel Huế ,company208,123456,company
+209,Melia Vinpearl Hotel Huế ,company209,123456,company
+210,Mường Thanh Grand Gia Lai,company210,123456,company
+211,Golden Boutique Hotel Măng Đen ,company211,123456,company
+212,Stella Maris Beach Đà Nẵng,company212,123456,company
+213,Ninh Bình Hidden Charm Hotel & Resort,company213,123456,company
+214,Ninh Bình Legend Hotel,company214,123456,company
+215,Melia Vinpearl Cửa Hội Beach Resort ,company215,123456,company
+216,Melia Vinpearl Cửa Sót Beach Resort ,company216,123456,company
+217,Melia Vinpearl Hà Tĩnh ,company217,123456,company
+218,Công ty cổ phần Heritage Cruises,company218,123456,company
+219,Tập đoàn du lịch Hương Hải,company219,123456,company
+220,Công ty CPTM Du lịch HMT,company220,123456,company
+221,Tập đoàn Pelican ,company221,123456,company
+222,Công ty cổ phần du thuyền quốc tế Hạ Long,company222,123456,company
+223,Paradise Group,company223,123456,company
+224,Công ty  Du Lịch Châu Á Thái Bình Dương,company224,123456,company
+225,Công ty TNHH THD travel Việt Nam,company225,123456,company
+226,Tập đoàn Paradise,company226,123456,company
+227,Công ty cổ phần du thuyền Genesis Việt Nam,company227,123456,company
+228,Công ty cổ phần thương mại và dịch vụ Sư Tư châu Á,company228,123456,company
+229,CÔNG TY CỔ PHẦN DU THUYỀNHERMES,company229,123456,company
+230,Công ty du thuyền Aclass,company230,123456,company
+231,Công ty cổ phần đầu tư du lịch Renea,company231,123456,company
+232,Công ty Cổ phần đầu tư Việt Star Cruise,company232,123456,company
+233,Tập đoàn Pelican,company233,123456,company
+234,Công ty TNHH Scarlet Pearl Hạ Long,company234,123456,company
+235,Pelican Group,company235,123456,company
+236,Công ty cổ phần đầu tư du lịch Thiên Nga,company236,123456,company
+237,Big Bay Group,company237,123456,company
+238,Erina Group,company238,123456,company
+239,Công ty cổ phần du lịch Quốc Tế Athena Cruise,company239,123456,company
+240,Công ty du thuyền Doris,company240,123456,company
+241,Công ty TNHH du thuyền La Casta,company241,123456,company
+242,Công ty TNHH Sen Hoàng Gia,company242,123456,company
+243,Công ty TNHH vận tải Alisa,company243,123456,company
+244,Công ty CPTM & ĐT Du Thuyền Quốc Tế,company244,123456,company
+245,Công ty Cổ phần tập đoàn HALO ECO,company245,123456,company
+246,Công ty TNHH du thuyền Rosa,company246,123456,company
+247,Công ty TNHH MTV Dịch Vụ Du Lịch VIT Hạ Long,company247,123456,company
+248,Công ty du thuyền Sea Stars Hạ Long,company248,123456,company
+249,Elegance Hospitality Group,company249,123456,company
+250,SEALIFE GROUP ,company250,123456,company
+251,M’GLORIA GROUP,company251,123456,company
+252,Công ty du thuyền Verdure Lotus,company252,123456,company
+253,Công ty du thuyên Verdure Lotus,company253,123456,company
+254,Công ty TNHH du thuyền Bhaya,company254,123456,company
+255,Du thuyền Iris,company255,123456,company
+256,Công ty Saquila Hospitality ,company256,123456,company
+257,Công ty cổ phần những cánh buồm Phương Đông,company257,123456,company
+258,Bigbay Group,company258,123456,company
+259,APC Group,company259,123456,company
+260,CÔNG TY CỔ PHẦN HẠ LONG PACIFIC,company260,123456,company
+261,HƯƠNG HẢI GROUP,company261,123456,company
+262,"Công ty TNHH Thương mại, Dịch vụ, Du lịch Minh Loan",company262,123456,company
+263,Vedure Lotus Cruise,company263,123456,company

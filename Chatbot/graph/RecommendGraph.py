@@ -1,33 +1,37 @@
-
-from langgraph.graph import StateGraph, START, END
+import os
+from langgraph.graph import StateGraph, START, END, MessagesState
 from typing import Annotated
-from langchain.vectorstores import Qdrant
+import operator
+
+from langchain_community.vectorstores import Qdrant
 from qdrant_client import QdrantClient
-from IPython.display import Image, display
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 from langchain_community.tools import TavilySearchResults
-from langgraph.graph import MessagesState
 from langchain_core.messages import SystemMessage
+from langchain_openai import ChatOpenAI
 from .settings import OPENAI_API_KEY
 
-import operator
-from typing import Annotated
-from langchain_openai import ChatOpenAI
 llm = ChatOpenAI(model="gpt-4o", api_key=OPENAI_API_KEY)
+
+
 class RecommendState(MessagesState):
     query: str
     context: Annotated[list, operator.add]
+
+
 def RAG_retrieval(state):
-    """ Recommend hotels, restaurants based on user input """
-    client = QdrantClient(host="localhost", port=6333)
+    """Recommend hotels, restaurants based on user input"""
+    qdrant_host = os.getenv("QDRANT_HOST", "qdrant")
+    qdrant_port = int(os.getenv("QDRANT_PORT", "6333"))
+    collection_name = os.getenv("QDRANT_COLLECTION", "hotels_and_ship_and_restaurants")
+
+    # Connect to Qdrant
+    client = QdrantClient(host=qdrant_host, port=qdrant_port)
     embeddings = OpenAIEmbeddings()
-    
+
     # Load vectorstore từ collection đã tồn tại
-    vectorstore = Qdrant(
-        client=client,
-        collection_name="hotels_and_ship_and_restaurants",
-        embeddings=embeddings
-    )
+    # Sử dụng client như trong rag_qdrant.py
+    vectorstore = Qdrant(client=client, collection_name=collection_name, embeddings=embeddings)
     context_items = vectorstore.similarity_search(state["query"], k=5)
     # Lấy nội dung của các tài liệu
     context_text = "\n".join(
@@ -37,24 +41,22 @@ def RAG_retrieval(state):
     )
     context_text = "Dưới đây là thông tin về các khách sạn, nhà hàng, du thuyền trên cơ sở dữ liệu của website MonkeyDvuvi: " + context_text
     return {"context": [context_text]}
+
+
 def search_web(state):
-    
-    """ Retrieve docs from web search about everything related to tourism """
+    """Retrieve docs from web search about everything related to tourism"""
 
     # Search
     tavily_search = TavilySearchResults(max_results=5)
-    search_docs = tavily_search.invoke(state['query'])
-     # Format
-    formatted_search_docs = "\n\n---\n\n".join(
-        [
-            f'<Document href="{doc["url"]}">\n{doc["content"]}\n</Document>'
-            for doc in search_docs
-        ]
-    )
+    search_docs = tavily_search.invoke(state["query"])
+    # Format
+    formatted_search_docs = "\n\n---\n\n".join([f'<Document href="{doc["url"]}">\n{doc["content"]}\n</Document>' for doc in search_docs])
     formatted_search_docs = "Dưới đây là thông tin về các khách sạn, nhà hàng, du thuyền trong được search từ trên mạng: " + formatted_search_docs
-    return {"context": [formatted_search_docs]} 
+    return {"context": [formatted_search_docs]}
+
+
 def generateRecommend(state):
-    """ Generate a recommendation based on the context """
+    """Generate a recommendation based on the context"""
     context = "\n\n".join(str(item) for item in state["context"])
     query = state["messages"]
     prompt_template = """
@@ -66,9 +68,10 @@ Hãy chỉ đưa ra các khách sạn, du thuyền, nhà hàng trên cơ sở d�
 tin khác từ search web nếu muốn. Hãy cung cấp thông tin chi tiết về khách sạn, nhà hàng và tour du lịch theo như tôi yêu cầu, sử dụng các thông tin đã có và bổ sung thêm nếu có. Nếu có các thông tin về đường dẫn tới map hay facebook, website của khách sạn hay nhà hàng, hãy cung cấp cho tôi, đặc biệt là link của khách sạn hay nhà hàng đó trên website MonkeyDvuvi. Nếu không có thông tin nào, hãy nói là không có thông tin nào.
 """
     answer_instructions = prompt_template.format(context=context)
-    response = llm.invoke([SystemMessage(content=answer_instructions)] + state['messages'])
+    response = llm.invoke([SystemMessage(content=answer_instructions)] + state["messages"])
     return {"messages": response}
-    
+
+
 rs_builder = StateGraph(RecommendState)
 rs_builder.add_node("RAG_retrieval", RAG_retrieval)
 rs_builder.add_node("search_web", search_web)

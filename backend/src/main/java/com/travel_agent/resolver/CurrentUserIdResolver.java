@@ -35,11 +35,23 @@ public class CurrentUserIdResolver implements HandlerMethodArgumentResolver {
             ModelAndViewContainer mavContainer,
             NativeWebRequest webRequest,
             WebDataBinderFactory binderFactory) throws Exception {
+        System.out.println("=== CurrentUserIdResolver.resolveArgument() called ===");
+        
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        System.out.println(authentication);
+        System.out.println("Authentication: " + authentication);
+
+        if (authentication == null || !authentication.isAuthenticated() || "anonymousUser".equals(authentication.getPrincipal())) {
+            System.out.println("No authentication found or anonymous user");
+            return null;
+        }
 
         String username = authentication.getName();
-        System.out.println(username);
+        System.out.println("Username: " + username);
+
+        if (authentication.getAuthorities() == null || authentication.getAuthorities().isEmpty()) {
+            System.out.println("No authorities found");
+            return null;
+        }
 
         String role = authentication.getAuthorities().iterator().next().getAuthority();
         System.out.println("Role: " + role);
@@ -60,6 +72,7 @@ public class CurrentUserIdResolver implements HandlerMethodArgumentResolver {
                 return null;
 
             default:
+                System.out.println("Unknown role: " + role);
                 return null;
         }
     }

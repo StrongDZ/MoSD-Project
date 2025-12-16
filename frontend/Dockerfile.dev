@@ -21,8 +21,8 @@ COPY . .
 EXPOSE 5173
 
 # Optimize Node.js memory usage for development
-# Aggressively limit heap to 384MB, enable GC optimization, reduce semi-space
-ENV NODE_OPTIONS="--max-old-space-size=384 --optimize-for-size --gc-interval=100 --max-semi-space-size=2 --initial-old-space-size=128"
+# Set heap size to 512MB for esbuild stability
+ENV NODE_OPTIONS="--max-old-space-size=512"
 
 # Add Vite-specific env vars to reduce overhead
 ENV VITE_CJS_IGNORE_WARNING=true

@@ -16,4 +16,6 @@ TAVILY_API_KEY = os.getenv('TAVILY_API_KEY')
 # Construct database connection string
 DATABASE_URL = f"postgresql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
-print("DATABASE_URL: ", DATABASE_URL)
+# Only print database URL in development (not in production)
+if os.getenv('DEBUG', 'false').lower() == 'true':
+    print(f"Database connected to: {DB_HOST}:{DB_PORT}/{DB_NAME}")

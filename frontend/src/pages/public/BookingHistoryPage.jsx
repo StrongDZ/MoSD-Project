@@ -31,7 +31,7 @@ export default function BookingHistoryPage() {
                 setBookingList(response.data.data);
             } catch (error) {
                 console.error("Error fetching bookings:", error);
-                handleErrorToast(error, "�� c� l?i x?y ra khi t?i l?ch s? d?t ph�ng!");
+                handleErrorToast(error, "Đã có lỗi xảy ra khi tải lịch sử đặt phòng!");
             } finally {
                 setIsLoading(false);
             }
@@ -56,7 +56,7 @@ export default function BookingHistoryPage() {
                                     }`}
                                     onClick={() => setSelectedType("ship")}
                                 >
-                                    Du thuy?n
+                                    Du thuyền
                                 </button>
                                 <button
                                     className={`px-4 py-3 rounded-lg transition-all duration-200 text-left ${
@@ -66,7 +66,7 @@ export default function BookingHistoryPage() {
                                     }`}
                                     onClick={() => setSelectedType("hotel")}
                                 >
-                                    Kh�ch s?n
+                                    Khách sạn
                                 </button>
                             </div>
                         </div>

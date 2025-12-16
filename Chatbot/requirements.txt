@@ -3,7 +3,7 @@ langchain==0.3.21
 langchain-community==0.3.20
 langchain-core==0.3.56
 langchain-openai==0.3.14
-langchain-text-splitters
+langchain-text-splitters==0.3.7
 langgraph==0.3.34
 
 # Vector database
@@ -25,9 +25,9 @@ numpy==1.26.4
 pandas==2.2.1
 
 # Machine Learning
-scikit-learn==1.4.1.post1
-torch==2.6.0
-tensorflow==2.16.1
+# scikit-learn==1.4.1.post1
+# torch==2.6.0
+# tensorflow==2.16.1
 
 # Web frameworks
 fastapi==0.115.12

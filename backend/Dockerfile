@@ -31,10 +31,13 @@ RUN --mount=type=cache,target=/root/.m2 \
     -Dskip.native.build=true \
     -Dspring-boot.build-image.skip=true
 
-# Run stage - minimal JRE
+# Run stage - minimal JRE with PostgreSQL client
 FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
+
+# Install PostgreSQL client tools for database import
+RUN apk add --no-cache postgresql-client bash
 
 # Create non-root user for security
 RUN addgroup -S spring && adduser -S spring -G spring
@@ -42,8 +45,19 @@ RUN addgroup -S spring && adduser -S spring -G spring
 # Copy only the built jar (smallest possible)
 COPY --from=build /app/target/*.jar app.jar
 
+# Copy SQL files and data import script
+COPY database_create_table.sql review_tables.sql review_sample_data.sql db_2.sql /app/sql/
+COPY import-data.sh /app/import-data.sh
+
+# Copy CSV data files
+COPY data/ /app/data/
+
+# Ensure data directory exists
+RUN mkdir -p /app/data
+
 # Set ownership and permissions in one layer
-RUN chown spring:spring app.jar && \
+RUN chown -R spring:spring /app && \
+    chmod +x /app/import-data.sh && \
     chmod 755 app.jar
 
 # Switch to non-root user
@@ -60,5 +74,6 @@ ENV JAVA_OPTS="-Xmx256m -Xms128m -XX:+UseContainerSupport -XX:MaxRAMPercentage=5
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD wget --spider -q http://localhost:8080/actuator/health || exit 1
 
-# Start the application
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]
+# Start the application with data import
+# Import script will skip if data already exists or if SKIP_DATA_IMPORT=true
+ENTRYPOINT ["sh", "-c", "/app/import-data.sh; java $JAVA_OPTS -jar app.jar"]
