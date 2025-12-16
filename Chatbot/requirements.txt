@@ -38,3 +38,6 @@ trustcall==0.0.39
 # Additional dependencies for RAG
 langchain-community==0.3.20
 langchain-openai==0.3.14
+
+pymilvus[milvus_lite]==2.2.0
+langchain-milvus pymilvus==0.3.8

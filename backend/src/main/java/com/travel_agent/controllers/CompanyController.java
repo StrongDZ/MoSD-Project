@@ -2,7 +2,7 @@ package com.travel_agent.controllers;
 
 import com.travel_agent.services.CompanyService;
 import com.travel_agent.services.HotelService;
-// Missing import for ShipService but it's used in the code
+import com.travel_agent.services.ShipService;
 import com.travel_agent.annotation.CurrentUserId;
 import com.travel_agent.dto.CompanyDTO;
 import com.travel_agent.dto.CompanyUpdateDTO;

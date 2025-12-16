@@ -70,8 +70,7 @@ public class ShipController {
 
     @GetMapping("/{shipId}")
     public ResponseEntity<ResponseObject> getShipDetails(@PathVariable("shipId") Integer shipId) {
-        // Type error: getShipDetails expects Integer, not String
-        ShipDTO shipDto = shipService.getShipDetails(shipId.toString());
+        ShipDTO shipDto = shipService.getShipDetails(shipId);
 
         if (shipDto != null) {
             return ResponseEntity.ok(ResponseObject.builder()

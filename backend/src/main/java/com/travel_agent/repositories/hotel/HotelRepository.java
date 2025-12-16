@@ -22,4 +22,6 @@ public interface HotelRepository extends JpaRepository<HotelEntity, Integer> {
             @Param("maxPrice") Integer maxPrice,
             @Param("city") String city,
             Pageable pageable);
+    
+    List<HotelEntity> findByHotelNameContainingIgnoreCase(String keyword);
 }
