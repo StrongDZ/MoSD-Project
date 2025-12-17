@@ -2,6 +2,7 @@ package com.travel_agent.models.entity.hotel;
 
 import jakarta.persistence.*;
 import lombok.*;
+import com.travel_agent.models.entity.hotel.HotelEntity;
 
 @Entity
 @Data

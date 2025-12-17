@@ -57,7 +57,7 @@ public class HotelService {
     // Search hotel by name, price, city and features
     public ResultPaginationDTO searchHotelsByNamePriceAndCity(String name, Integer minPrice, Integer maxPrice, String city, String features, Pageable pageable) {
         Page<HotelEntity> hotelPage = hotelRepository.findByHotelNamePriceAndCity(name, minPrice, maxPrice, city, pageable);
-        
+
         List<HotelDTO> hotelDtos = hotelPage.getContent().stream().map(hotel -> {
             HotelDTO hotelDto = hotelMapper.hotelToHotelDTO(hotel);
 
@@ -81,7 +81,7 @@ public class HotelService {
         // Lọc theo features nếu có
         if (features != null && !features.isEmpty()) {
             List<String> requiredFeatures = List.of(features.split(","));
-            
+
             // Lấy danh sách featureId từ tên feature
             List<Integer> requiredFeatureIds = requiredFeatures.stream()
                 .map(featureName -> {
@@ -90,10 +90,10 @@ public class HotelService {
                 })
                 .filter(Objects::nonNull)
                 .toList();
-            
+
             hotelDtos = hotelDtos.stream()
                     .filter(hotel -> {
-                        boolean matches = hotel.getFeatureIds() != null && 
+                        boolean matches = hotel.getFeatureIds() != null &&
                                 requiredFeatureIds.stream()
                                         .allMatch(reqId -> hotel.getFeatureIds().contains(reqId));
                         return matches;
@@ -276,7 +276,7 @@ public class HotelService {
     public HotelDTO updateHotelGeneralInfo(Integer hotelId, CompanyUpdateDTO companyUpdateDTO) {
         HotelEntity hotelEntity = hotelRepository.findById(hotelId)
                 .orElseThrow(() -> new IllegalArgumentException("Hotel not found with ID: " + hotelId));
-    
+
         if (companyUpdateDTO.getAccommodationName() != null) {
             hotelEntity.setHotelName(companyUpdateDTO.getAccommodationName());
         }
@@ -292,14 +292,14 @@ public class HotelService {
         if (companyUpdateDTO.getMapLink() != null) {
             hotelEntity.setMapLink(companyUpdateDTO.getMapLink());
         }
-    
+
         // Lưu thay đổi
         HotelEntity updatedHotel = hotelRepository.save(hotelEntity);
-    
+
         // Chuyển đổi sang DTO để trả về
         return hotelMapper.hotelToHotelDTO(updatedHotel);
     }
-    
+
     // Update hotel
     public HotelDTO updateHotel(Integer hotelId, HotelDTO hotelDto) {
         HotelEntity hotelEntity = hotelRepository.findById(hotelId)
