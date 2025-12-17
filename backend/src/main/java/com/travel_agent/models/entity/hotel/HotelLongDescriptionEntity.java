@@ -23,6 +23,7 @@ public class HotelLongDescriptionEntity {
     private Integer blockId;
 
     private String type;
+    @Column(columnDefinition = "TEXT")
     private String data;
 }
 

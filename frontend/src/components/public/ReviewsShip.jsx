@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaSpinner } from "react-icons/fa";
 import config from "../../config";
 import { handleErrorToast } from "../../utils/toastHandler";
 import { axiosRequest } from "../../utils/axiosUtils";
 import { useAuth } from "../../contexts/AuthProvider";
 const ReviewsShip = ({ shipId, type = "ship" }) => {
     const [reviews, setReviews] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
     const [filteredStar, setFilteredStar] = useState(null);
     const [newReview, setNewReview] = useState({ name: "", content: "", stars: 5 });
     const { token } = useAuth();
 
     const fetchReviews = async () => {
+        setLoading(true);
         try {
             const res = await axiosRequest({
                 url: `${config.api.url}/api/${type}/${shipId}/reviews`,
@@ -20,6 +23,8 @@ const ReviewsShip = ({ shipId, type = "ship" }) => {
         } catch (err) {
             console.log(err);
             handleErrorToast(err, "Đã có lỗi xảy ra khi tải dữ liệu đánh giá!");
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -29,6 +34,7 @@ const ReviewsShip = ({ shipId, type = "ship" }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setSubmitting(true);
         try {
             await axiosRequest({
                 url: `${config.api.url}/api/${type}/${shipId}/reviews`,
@@ -42,6 +48,8 @@ const ReviewsShip = ({ shipId, type = "ship" }) => {
         } catch (err) {
             console.error("Lỗi gửi đánh giá:", err);
             handleErrorToast(err, "Đã có lỗi xảy ra khi gửi đánh giá!");
+        } finally {
+            setSubmitting(false);
         }
     };
 
@@ -69,7 +77,11 @@ const ReviewsShip = ({ shipId, type = "ship" }) => {
 
             {/* Danh sách đánh giá */}
             <div className="space-y-4">
-                {displayedReviews.length > 0 ? (
+                {loading ? (
+                    <div className="flex justify-center py-8">
+                        <FaSpinner className="animate-spin text-pink-500 text-3xl" />
+                    </div>
+                ) : displayedReviews.length > 0 ? (
                     displayedReviews.map((review, index) => (
                         <div key={index} className="border p-4 rounded-xl shadow-sm bg-white">
                             <div className="flex items-center justify-between mb-1">
@@ -122,8 +134,15 @@ const ReviewsShip = ({ shipId, type = "ship" }) => {
                             ))}
                         </select>
                     </div>
-                    <button type="submit" className="bg-pink-400 text-white px-6 py-2 rounded-full hover:bg-pink-500 transition-all">
-                        Gửi đánh giá
+                    <button 
+                        type="submit" 
+                        disabled={submitting}
+                        className={`bg-pink-400 text-white px-6 py-2 rounded-full transition-all flex items-center space-x-2 ${
+                            submitting ? "opacity-70 cursor-not-allowed" : "hover:bg-pink-500"
+                        }`}
+                    >
+                        {submitting && <FaSpinner className="animate-spin" />}
+                        <span>{submitting ? "Đang gửi..." : "Gửi đánh giá"}</span>
                     </button>
                 </form>
             </div>

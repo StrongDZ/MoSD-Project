@@ -14,4 +14,3 @@ public class HotelFeatureId implements Serializable {
     private Integer featureId;
 }
 
->>>>>>> 0e17a1c09a3ac1c12d89e41279b96596fcb2ecb5

@@ -35,7 +35,7 @@ public class HotelEntity {
     private String city;
     private String address;
 
-    @Column(name = "map_link")
+    @Column(name = "map_link", columnDefinition = "TEXT")
     private String mapLink;
 
     private String thumbnail;

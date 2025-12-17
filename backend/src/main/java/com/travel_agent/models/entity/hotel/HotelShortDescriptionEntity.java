@@ -22,5 +22,6 @@ public class HotelShortDescriptionEntity {
     @Column(name = "block_id")
     private Integer blockId;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
 }
