@@ -2,17 +2,6 @@
 -- Chạy file này sau khi đã tạo tables với review_tables.sql
 
 -- ============================================================
--- 0. INSERT SAMPLE COMPANIES FIRST (vì có foreign key constraint)
--- ============================================================
-INSERT INTO company (company_id, company_name, username, email, password, role)
-VALUES
-(1, 'Paradise Cruises', 'paradise_admin', 'admin@paradisecruises.com', '$2a$10$dummyHashedPassword1', 'COMPANY'),
-(2, 'Coastal Tours', 'coastal_admin', 'admin@coastaltours.com', '$2a$10$dummyHashedPassword2', 'COMPANY'),
-(3, 'Vinpearl', 'vinpearl_admin', 'admin@vinpearl.com', '$2a$10$dummyHashedPassword3', 'COMPANY'),
-(4, 'Saigon Hotels', 'saigon_admin', 'admin@saigonhotels.com', '$2a$10$dummyHashedPassword4', 'COMPANY')
-ON CONFLICT (company_id) DO NOTHING;
-
--- ============================================================
 -- 1. INSERT SAMPLE SHIPS (nếu chưa có)
 -- ============================================================
 INSERT INTO ship (ship_id, ship_name, launch, cabin, shell, trip, company_name, ship_price, address, map_link, thumbnail, company_id) 
