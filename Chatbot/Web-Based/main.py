@@ -5,7 +5,7 @@ import sys
 import os
 from langchain.schema import HumanMessage, SystemMessage
 
-from graph.memoryCcollection import PostgresStore
+from graph.memoryCollection import PostgresStore
 from typing import Optional
 
 # Setup path để import graph

@@ -29,30 +29,39 @@ public class AuthController {
     private final CompanyService companyService;
     private final PasswordEncoder passwordEncoder;
 
-
     @PostMapping("/login/user")
     @PreAuthorize("hasRole('USER')")
     public ResponseEntity<ResponseObject> loginUser(@RequestBody LoginRequest request) {
         try {
             // Check if the username is username or email then find the user
             UserDTO user = userService.findByUsernameOrEmail(request.getUsername());
-            
+
             System.out.println(user);
-            // Kiểm tra password bằng passwordEncoder.matches()
-            if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
-                    .message("Invalid password")
-                    .responseCode(HttpStatus.BAD_REQUEST.value())
-                    .build());
+            
+            // Kiểm tra password - hỗ trợ cả plain text và BCrypt
+            boolean passwordMatch;
+            if (user.getPassword().startsWith("$2a$") || user.getPassword().startsWith("$2b$")) {
+                // Password đã được hash bằng BCrypt
+                passwordMatch = passwordEncoder.matches(request.getPassword(), user.getPassword());
+            } else {
+                // Password là plain text (chưa hash)
+                passwordMatch = request.getPassword().equals(user.getPassword());
             }
             
+            if (!passwordMatch) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
+                        .message("Invalid password")
+                        .responseCode(HttpStatus.BAD_REQUEST.value())
+                        .build());
+            }
+
             String token = authService.generateToken(user.getUsername(), user.getRole());
             return ResponseEntity.ok(ResponseObject.builder()
                     .message("User logged in successfully")
                     .data(new LoginResponse(token, user.getRole(), user.getUsername()))
                     .responseCode(HttpStatus.OK.value())
                     .build());
-            
+
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
                     .message("Invalid username or password")
@@ -66,22 +75,22 @@ public class AuthController {
     public ResponseEntity<ResponseObject> loginCompany(@RequestBody LoginRequest request) {
         try {
             CompanyDTO company = companyService.findByUsernameOrEmail(request.getUsername());
-            
+
             // Kiểm tra password bằng passwordEncoder.matches()
             if (!request.getPassword().equals(company.getPassword())) {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ResponseObject.builder()
-                    .message("Invalid password")
-                    .responseCode(HttpStatus.BAD_REQUEST.value())
-                    .build());
+                        .message("Invalid password")
+                        .responseCode(HttpStatus.BAD_REQUEST.value())
+                        .build());
             }
-            
+
             String token = authService.generateToken(company.getUsername(), company.getRole());
             return ResponseEntity.ok(ResponseObject.builder()
                     .message("Company logged in successfully")
                     .data(new LoginResponse(token, company.getRole(), company.getUsername()))
                     .responseCode(HttpStatus.OK.value())
                     .build());
-            
+
         } catch (IllegalArgumentException e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ResponseObject.builder()
                     .message("Invalid username or password")

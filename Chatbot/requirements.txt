@@ -3,6 +3,7 @@ langchain==0.3.21
 langchain-community==0.3.20
 langchain-core==0.3.56
 langchain-openai==0.3.14
+langchain-text-splitters
 langgraph==0.3.34
 
 # Vector database
@@ -17,6 +18,7 @@ serpapi==0.1.0
 # Utilities
 python-dotenv==1.0.1
 ipython==8.22.1
+pydantic==2.10.5
 
 # Data processing
 numpy==1.26.4
@@ -34,10 +36,3 @@ uvicorn==0.34.0
 # Database
 psycopg2-binary==2.9.10
 trustcall==0.0.39
-
-# Additional dependencies for RAG
-langchain-community==0.3.20
-langchain-openai==0.3.14
-
-pymilvus[milvus_lite]==2.2.0
-langchain-milvus pymilvus==0.3.8
