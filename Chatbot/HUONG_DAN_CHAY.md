@@ -73,9 +73,9 @@ CREATE TRIGGER trigger_update_memories_updated_at
 
 ## 4. Khởi động Qdrant
 
-### Lần đầu (tạo container mới):
+### Lần đầu (tạo container với persistent storage):
 ```bash
-docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
+docker run -d --name qdrant -p 6333:6333 -v ./qdrant_storage:/qdrant/storage qdrant/qdrant
 ```
 
 ### Các lần sau (start container đã có):
@@ -122,7 +122,7 @@ API: http://localhost:8000/docs
 
 ```powershell
 .\venv\Scripts\Activate.ps1
-docker start qdrant 2>$null || docker run -d --name qdrant -p 6333:6333 qdrant/qdrant
+docker start qdrant 2>$null || docker run -d --name qdrant -p 6333:6333 -v ./qdrant_storage:/qdrant/storage qdrant/qdrant
 cd Web-Based
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
