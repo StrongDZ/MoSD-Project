@@ -22,5 +22,6 @@ public class ShipShortDescriptionEntity {
     @Column(name = "block_id")
     private Integer blockId;
 
+    @Column(columnDefinition = "TEXT")
     private String description;
 }

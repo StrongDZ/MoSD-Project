@@ -4,13 +4,16 @@ import com.travel_agent.dto.hotel.HotelDTO;
 import com.travel_agent.dto.hotel.HotelRoomDTO;
 import com.travel_agent.dto.ResponseObject;
 import com.travel_agent.dto.ResultPaginationDTO;
+import com.travel_agent.dto.hotel.HotelRoomDTO;
 import com.travel_agent.services.HotelService;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +25,7 @@ public class HotelController {
 
     private final HotelService hotelService;
 
+    @Autowired
     public HotelController(HotelService hotelService) {
         this.hotelService = hotelService;
     }
@@ -49,7 +53,7 @@ public class HotelController {
             @RequestParam(value = "features", required = false) String features,
             @RequestParam(value = "currentPage", defaultValue = "1") int currentPage,
             @RequestParam(value = "pageSize", defaultValue = "6") int pageSize) {
-        
+
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
         ResultPaginationDTO result = hotelService.searchHotelsByNamePriceAndCity(name, minPrice, maxPrice, city, features, pageable);
 

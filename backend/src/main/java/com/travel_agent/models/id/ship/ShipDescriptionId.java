@@ -12,5 +12,4 @@ import lombok.NoArgsConstructor;
 public class ShipDescriptionId implements Serializable {
     private Integer shipId;
     private Integer blockId;
->>>>>>> 0e17a1c09a3ac1c12d89e41279b96596fcb2ecb5
 }

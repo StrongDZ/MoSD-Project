@@ -19,16 +19,6 @@ export default defineConfig(({ command, mode }) => {
         server: {
             port: parseInt(process.env.PORT || "5173"),
             host: true,
-            watch: {
-                usePolling: false,
-                ignored: ['**/node_modules/**', '**/dist/**', '**/.git/**', '**/coverage/**']
-            },
-            hmr: {
-                overlay: isDev
-            },
-            fs: {
-                cachedChecks: true
-            },
             proxy: {
                 "/api": {
                     target: backendUrl,
@@ -39,51 +29,29 @@ export default defineConfig(({ command, mode }) => {
             },
         },
         build: {
-            sourcemap: false,
-            target: 'esnext',
-            minify: 'esbuild',
+            sourcemap: isDev,
             rollupOptions: {
                 output: {
-                    manualChunks: {
-                        'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-                        'mui-vendor': ['@mui/material', '@mui/icons-material', '@mui/x-data-grid'],
-                        'utils-vendor': ['axios', 'dayjs', 'react-toastify']
-                    },
+                    manualChunks: undefined,
                 },
             },
-            chunkSizeWarningLimit: 1000,
         },
         define: {
             __DEV__: isDev,
+            // Inject environment variables during build
             "process.env.VITE_BACKEND_HOST": JSON.stringify(backendHost),
             "process.env.VITE_BACKEND_PORT": JSON.stringify(backendPort),
             "process.env.NODE_ENV": JSON.stringify(mode),
         },
         css: {
-            devSourcemap: false,
+            devSourcemap: isDev,
         },
         optimizeDeps: {
-            include: [],
-            exclude: [
-                '@mui/material',
-                '@mui/icons-material',
-                '@mui/x-data-grid',
-                '@mui/x-date-pickers',
-                '@emotion/react',
-                '@emotion/styled'
-            ],
-            entries: ['src/main.jsx'],
-            esbuildOptions: {
-                logLevel: 'error',
-                treeShaking: true
-            }
+            include: ["react", "react-dom"],
         },
         esbuild: {
             keepNames: isDev,
             minifyIdentifiers: !isDev,
-            jsxInject: `import React from 'react'`,
-            logOverride: { 'this-is-undefined-in-esm': 'silent' }
         },
     };
 });
-

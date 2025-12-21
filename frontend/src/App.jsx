@@ -13,7 +13,7 @@ import Home from "./pages/public/Home";
 import TimDuThuyen from "./pages/public/TimDuThuyen";
 import TimKhachSan from "./pages/public/TimKhachSan";
 import ChiTietKhachSan from "./pages/public/ChiTietKhachSan";
-import DoanhNghiep from "./pages/public/DoanhNghiep";
+//import DoanhNghiep from "./pages/public/DoanhNghiep";
 import DuThuyen from "./pages/public/DuThuyen";
 import LoginPage from "./pages/public/LoginPage";
 import RegisterPage from "./pages/public/RegisterPage";
@@ -25,7 +25,6 @@ import ManageRoom from "./pages/admin/ManageRoom";
 import { AuthProvider } from "./contexts/AuthProvider";
 import BookingHistoryPage from "./pages/public/BookingHistoryPage";
 import CompanyDashboard from "./pages/admin/CompanyDashboard";
-import PaymentReturnPage from "./pages/public/PaymentReturnPage";
 
 const AppRoutes = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -53,7 +52,7 @@ const AppRoutes = () => {
               <Route path="/tim-du-thuyen" element={<TimDuThuyen />} />
               <Route path="/tim-khach-san" element={<TimKhachSan />} />
               <Route path="/khach-san/:id" element={<ChiTietKhachSan />} />
-              <Route path="/doanh-nghiep" element={<DoanhNghiep />} />
+              {/* <Route path="/doanh-nghiep" element={<DoanhNghiep />} /> */}
               <Route path="/blog" element={<div>Blog</div>} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
@@ -62,7 +61,6 @@ const AppRoutes = () => {
               {/* User Profile Routes */}
               <Route path="/profile" element={<div>Thông tin cá nhân</div>} />
               <Route path="/bookings" element={<BookingHistoryPage />} />
-              <Route path="/payment/return" element={<PaymentReturnPage />} />
             </Routes>
           </div>
         </div>
